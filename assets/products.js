@@ -20,7 +20,6 @@ window.PRODUCTS = [
     priceUsd: 9,
     emoji: "\u{1F4D8}",
     file: "products/zero-budget-playbook.html",
-    url: "https://www.mediafire.com/file/mkb8ebooh9aqbzu/zero-budget-playbook.pdf/file",
     summary:
       "A no-fluff guide to launching a legitimate online income project with zero upfront money: picking a niche, creating a digital product, accepting crypto, and getting the first buyers.",
     bullets: [
@@ -38,7 +37,6 @@ window.PRODUCTS = [
     priceUsd: 19,
     emoji: "\u{1F6D2}",
     file: "products/bitcoin-storefront-starter-kit.html",
-    url: "https://www.mediafire.com/file/pz8fto1anv2y43z/bitcoin-storefront-starter-kit.pdf/file",
     summary:
       "A working, dependency-free static storefront with live BTC pricing, QR checkout, on-chain payment verification, and instant digital delivery. Drop it on GitHub Pages in 5 minutes.",
     bullets: [
@@ -56,7 +54,6 @@ window.PRODUCTS = [
     priceUsd: 12,
     emoji: "\u{1F916}",
     file: "products/ai-automation-toolkit.html",
-    url: "https://www.mediafire.com/file/8y0s24ia923pbhk/ai-automation-toolkit.pdf/file",
     summary:
       "A curated pack of copy-paste prompts and small scripts for automating repetitive work: writing, research, data cleanup, and content pipelines.",
     bullets: [

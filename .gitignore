@@ -12,3 +12,5 @@ worker/.dev.vars
 .DS_Store
 
 worker/embedded.js
+
+worker/deliveries.local.json

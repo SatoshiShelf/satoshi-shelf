@@ -13,12 +13,18 @@ const { PRODUCTS, STORE_CONFIG } = new Function(
   src + "\nreturn { PRODUCTS: window.PRODUCTS, STORE_CONFIG: window.STORE_CONFIG };"
 )();
 
+const deliverFile = path.join(here, "deliveries.local.json");
+const deliveries = fs.existsSync(deliverFile)
+  ? JSON.parse(fs.readFileSync(deliverFile, "utf8"))
+  : {};
+
 const out = {};
 for (const p of PRODUCTS) {
+  const url = deliveries[p.id] || p.url;
   const entry = { name: p.name, priceUsd: p.priceUsd };
-  if (p.url) {
+  if (url) {
     // External delivery link (e.g. MediaFire). Served only after verified payment.
-    entry.url = p.url;
+    entry.url = url;
   } else {
     const fp = path.join(root, p.file);
     if (!fs.existsSync(fp)) {
