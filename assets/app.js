@@ -90,7 +90,9 @@
     try { d = await r.json(); } catch {}
     if (!r.ok) return { ok: false, reason: d.reason || ("Server error (" + r.status + ").") };
     if (!d.ok) return { ok: false, reason: d.reason || "Payment could not be verified." };
-    return { ok: true, downloadUrl: base + d.downloadUrl, paidSats: null, confirmed: !!d.confirmed };
+    const u = d.downloadUrl || "";
+    const downloadUrl = /^https?:\/\//i.test(u) ? u : base + u;
+    return { ok: true, downloadUrl, paidSats: d.paid || null, confirmed: !!d.confirmed };
   }
 
   window.Shelf = {

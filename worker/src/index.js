@@ -49,6 +49,11 @@ export default {
       const res = await verifyPayment({ txid: body.txid, address, minSats, fetchImpl: fetch });
       if (!res.ok) return json(res, 200);
 
+      // External link (e.g. MediaFire) — returned only after a verified payment.
+      if (product.url) {
+        return json({ ok: true, downloadUrl: product.url, confirmed: res.confirmed, paid: res.paid });
+      }
+
       const token = await makeToken(secret, { p: body.productId, t: String(body.txid).toLowerCase() }, 900);
       return json({ ok: true, token, downloadUrl: "/download?token=" + encodeURIComponent(token), confirmed: res.confirmed });
     }

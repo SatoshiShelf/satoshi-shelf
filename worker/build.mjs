@@ -15,19 +15,22 @@ const { PRODUCTS, STORE_CONFIG } = new Function(
 
 const out = {};
 for (const p of PRODUCTS) {
-  const fp = path.join(root, p.file);
-  if (!fs.existsSync(fp)) {
-    console.error("missing product file:", p.file);
-    process.exit(1);
+  const entry = { name: p.name, priceUsd: p.priceUsd };
+  if (p.url) {
+    // External delivery link (e.g. MediaFire). Served only after verified payment.
+    entry.url = p.url;
+  } else {
+    const fp = path.join(root, p.file);
+    if (!fs.existsSync(fp)) {
+      console.error("missing product file:", p.file);
+      process.exit(1);
+    }
+    const buf = fs.readFileSync(fp);
+    entry.filename = path.basename(p.file);
+    entry.contentType = p.file.endsWith(".html") ? "text/html; charset=utf-8" : "application/octet-stream";
+    entry.b64 = buf.toString("base64");
   }
-  const buf = fs.readFileSync(fp);
-  out[p.id] = {
-    name: p.name,
-    priceUsd: p.priceUsd,
-    filename: path.basename(p.file),
-    contentType: p.file.endsWith(".html") ? "text/html; charset=utf-8" : "application/octet-stream",
-    b64: buf.toString("base64"),
-  };
+  out[p.id] = entry;
 }
 
 const content =
