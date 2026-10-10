@@ -1,0 +1,14 @@
+# Private paid product files — must NEVER be committed to the public repo.
+# They are embedded into the Cloudflare Worker at deploy time instead.
+products/
+
+# Worker build output + local secrets/deps
+worker/src/embedded.js
+worker/node_modules/
+worker/.wrangler/
+worker/.dev.vars
+
+# OS cruft
+.DS_Store
+
+worker/embedded.js

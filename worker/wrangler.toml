@@ -1,0 +1,9 @@
+name = "satoshi-shelf"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+BTC_ADDRESS = "bc1qrs6leywqgu56d8h5ynw9ynn0e3kdduantgd2z3"
+
+# Set the signing secret (required) with:
+#   wrangler secret put DOWNLOAD_SECRET

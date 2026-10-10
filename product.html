@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Satoshi Shelf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23f7931a'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23201400' font-family='Arial' font-weight='bold'>&#8383;</text></svg>">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
+    <nav class="site"><a href="index.html#products">All products</a></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#products">Products</a> &nbsp;/&nbsp; <span id="crumb"></span></div>
+  <div class="product-layout">
+    <div class="product-head" id="head"></div>
+    <aside class="buybox" id="buybox"></aside>
+  </div>
+  <section class="section" id="related" style="padding-top:0">
+    <div class="section-head" style="margin-bottom:26px"><span class="kicker">Keep going</span><h2 style="font-size:24px">You might also like</h2></div>
+    <div class="related" id="relatedGrid"></div>
+  </section>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fine" style="border-top:none;margin-top:0;padding-top:0">
+      &copy; <span id="year"></span> Satoshi Shelf &middot; Payments to <span style="font-family:var(--mono)">bc1qrs6...gd2z3</span> &middot; All sales final
+    </div>
+  </div>
+</footer>
+
+<script src="assets/products.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/qrcode.js"></script>
+<script>
+const { fmtUsd, fmtSats, usdToBtc, btcUri, renderQR, verifyPayment, workerPurchase, isSecure, CFG } = window.Shelf;
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const id = new URLSearchParams(location.search).get("id");
+const p = window.PRODUCTS.find(x => x.id === id) || window.PRODUCTS[0];
+document.title = p.name + " — Satoshi Shelf";
+document.getElementById("crumb").textContent = p.name;
+
+document.getElementById("head").innerHTML = `
+  <div class="cover t1" style="height:150px;border-radius:16px;border:1px solid var(--border-soft);margin-bottom:22px">
+    <span class="tagpill">Digital download</span>
+    <span class="glyph" style="font-size:56px">${p.emoji}</span>
+  </div>
+  <h1>${p.name}</h1>
+  <p class="tag">${p.tagline}</p>
+  <div class="product-body">
+    <h2>What you get</h2>
+    <p>${p.summary}</p>
+    <h2>Highlights</h2>
+    <ul class="checks">${p.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
+    <h2>Delivery</h2>
+    <p>Immediately after your payment is confirmed on-chain, a download link appears right here on this page. No account, no email required — keep the page open until you download.</p>
+    <h2>Format</h2>
+    <p>Self-contained HTML file. Open it in any browser, or use your browser's <b>Print &rarr; Save as PDF</b> for an offline copy you own forever.</p>
+  </div>`;
+
+const related = window.PRODUCTS.filter(x => x.id !== p.id);
+document.getElementById("relatedGrid").innerHTML = related.map(x => `
+  <a class="mini" href="product.html?id=${encodeURIComponent(x.id)}">
+    <span class="g">${x.emoji}</span>
+    <span><span class="t">${x.name}</span><br><span class="p">$${x.priceUsd} &middot; ${x.tagline}</span></span>
+  </a>`).join("");
+
+const box = document.getElementById("buybox");
+box.innerHTML = `
+  <div class="flowsteps">
+    <div class="s active" id="st1">1&nbsp; Pay</div>
+    <div class="s" id="st2">2&nbsp; Verify</div>
+    <div class="s" id="st3">3&nbsp; Download</div>
+  </div>
+  <p class="title">${p.name}</p>
+  <div class="amount">${fmtUsd(p.priceUsd)}</div>
+  <div class="sats" id="sats">loading live BTC price&hellip;</div>
+  <button class="btn block" id="payBtn">Pay with Bitcoin</button>
+
+  <div class="pay" id="pay">
+    <div class="qrbox" id="qr"></div>
+    <div class="addr" id="addr" title="Click to copy">${CFG.btcAddress}</div>
+    <div class="copy-hint" id="hint">Tap the address to copy it</div>
+    <a class="btn ghost block small" id="walletLink" style="margin-bottom:16px">Open in wallet</a>
+    <label class="field" for="txid">Paste your transaction ID after paying</label>
+    <input class="control" id="txid" placeholder="64-character transaction ID" autocomplete="off" spellcheck="false">
+    <button class="btn block" id="verifyBtn" style="margin-top:12px">Verify payment</button>
+    <div class="notice" id="note"></div>
+    <div class="deliver hidden" id="deliver">
+      <h4>&#10004; Payment confirmed</h4>
+      <p class="muted" id="deliverMsg" style="margin:0 0 12px"></p>
+      <a class="btn small block" id="dl" href="#" download>Download now</a>
+    </div>
+  </div>
+
+  <div class="guarantee">
+    <div>&#9889; Instant delivery after payment</div>
+    <div>&#128274; No signup &middot; no card &middot; no tracking</div>
+    <div>&#8383; Paid on-chain to a self-custody address</div>
+  </div>`;
+
+let btcAmt = null;
+
+function note(kind, msg) {
+  const n = document.getElementById("note");
+  n.className = "notice show " + kind;
+  n.textContent = msg;
+}
+
+async function initPrice() {
+  try {
+    btcAmt = await usdToBtc(p.priceUsd);
+    document.getElementById("sats").innerHTML = fmtSats(btcAmt) + " BTC &middot; " + btcAmt.toFixed(8) + " BTC";
+  } catch (e) {
+    document.getElementById("sats").textContent = "live price unavailable — send the USD equivalent";
+  }
+}
+initPrice();
+
+document.getElementById("payBtn").addEventListener("click", async () => {
+  document.getElementById("pay").classList.add("show");
+  document.getElementById("st1").classList.add("active");
+  if (!btcAmt) await initPrice();
+  const uri = btcUri(CFG.btcAddress, btcAmt, "Satoshi Shelf: " + p.id);
+  renderQR(document.getElementById("qr"), uri);
+  document.getElementById("walletLink").href = uri;
+  const btn = document.getElementById("payBtn");
+  btn.textContent = "Waiting for payment\u2026";
+  btn.disabled = true;
+});
+
+document.getElementById("addr").addEventListener("click", async () => {
+  const h = document.getElementById("hint");
+  const old = h.textContent;
+  try { await navigator.clipboard.writeText(CFG.btcAddress); h.textContent = "Address copied \u2713"; }
+  catch { h.textContent = "Select and copy manually"; }
+  setTimeout(() => { h.textContent = old; }, 1600);
+});
+
+document.getElementById("verifyBtn").addEventListener("click", async () => {
+  const btn = document.getElementById("verifyBtn");
+  btn.disabled = true; btn.textContent = "Checking\u2026";
+  document.getElementById("st2").classList.add("active");
+  try {
+    if (!btcAmt) await initPrice();
+    let res, url = null;
+    if (isSecure()) {
+      res = await workerPurchase(p.id, document.getElementById("txid").value);
+      url = res.downloadUrl;
+    } else {
+      res = await verifyPayment(document.getElementById("txid").value, btcAmt || 0.00000001);
+    }
+    if (!res.ok) {
+      note("err", res.reason);
+    } else {
+      note("info", res.confirmed ? "Confirmed on-chain." : "Seen in mempool — confirmation follows shortly.");
+      document.getElementById("st3").classList.add("active");
+      document.getElementById("dl").href = url || p.file;
+      document.getElementById("deliverMsg").textContent = res.paidSats
+        ? "Paid " + res.paidSats.toLocaleString() + " sats. Thanks for supporting a middleman-free store."
+        : "Payment verified. Your secure download is ready — the link expires in 15 minutes.";
+      document.getElementById("deliver").classList.remove("hidden");
+    }
+  } catch (e) {
+    note("err", "Error: " + e.message);
+  } finally {
+    btn.disabled = false; btn.textContent = "Verify payment";
+  }
+});
+</script>
+</body>
+</html>
