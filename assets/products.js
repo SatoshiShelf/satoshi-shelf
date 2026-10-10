@@ -6,7 +6,7 @@ window.STORE_CONFIG = {
   btcAddress: "bc1qrs6leywqgu56d8h5ynw9ynn0e3kdduantgd2z3",
   // Secure delivery: paste your deployed Cloudflare Worker URL here.
   // Leave "" to fall back to public file links (not secure).
-  workerUrl: "",
+  workerUrl: "https://satoshi-shelf.xghabra.workers.dev",
   contact: "satoshishelf@proton.me",
   priceApi: "https://mempool.space/api/v1/prices",
   txApi: "https://mempool.space/api/tx/",
