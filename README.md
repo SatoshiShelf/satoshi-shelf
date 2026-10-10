@@ -56,10 +56,11 @@ Live at `https://xghabra.github.io/satoshi-shelf/`.
 
 ### Security note
 
-Client-side verification is fine for low-priced digital goods. A determined
-visitor can read the JS to find the file URL directly. For higher-value
-products add a serverless verifier (Cloudflare Worker / Vercel function) that
-checks the tx server-side and returns a one-time signed link.
+Paid files are **not** in this public site. They live only inside the
+Cloudflare Worker (`worker/`), which verifies the payment on-chain and returns
+a short-lived signed download link. The store uses this automatically when
+`workerUrl` is set in `assets/products.js`. If `workerUrl` is empty, the store
+falls back to public file links (not secure). See `worker/README.md` to deploy.
 
 ## Safety
 
