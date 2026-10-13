@@ -69,6 +69,15 @@ nav.site a.cta { color: #201400; background: linear-gradient(140deg, var(--accen
 nav.site a.cta:hover { color: #201400; filter: brightness(1.06); }
 @media (max-width: 640px) { nav.site a:not(.cta) { display: none; } }
 
+/* ---------- Announcement bar ---------- */
+.announce {
+  background: linear-gradient(90deg, rgba(247,147,26,.18), rgba(255,180,84,.06) 60%, rgba(247,147,26,.18));
+  border-bottom: 1px solid rgba(247,147,26,.28);
+  color: #ffd9a8; font-size: 13px;
+}
+.announce .wrap { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 24px; text-align: center; }
+.announce b { color: #fff; }
+
 /* ---------- Hero ---------- */
 .hero { padding: 88px 0 56px; text-align: center; position: relative; overflow: hidden; }
 .hero::before {
@@ -196,6 +205,9 @@ footer.site .brand { margin-bottom: 12px; }
 footer.site .muted { color: var(--muted-2); font-size: 13px; max-width: 420px; }
 footer.site a { color: var(--muted); font-size: 14px; margin-right: 18px; }
 footer.site a:hover { color: var(--text); }
+footer.site .cols > div { display: flex; flex-direction: column; gap: 4px; min-width: 150px; }
+footer.site .cols > div:first-child { flex: 1.4; min-width: 260px; }
+.fhead { font-size: 12px; letter-spacing: .09em; text-transform: uppercase; color: var(--accent-2); font-weight: 700; margin-bottom: 6px; }
 footer .fine { border-top: 1px solid var(--border-soft); margin-top: 30px; padding-top: 20px; color: var(--muted-2); font-size: 12.5px; }
 
 /* ---------- Product / checkout page ---------- */
@@ -338,6 +350,17 @@ footer.site .brand { color: var(--text); }
 }
 .loadmore { display: flex; justify-content: center; margin: 28px 0 0; }
 .empty { text-align: center; color: var(--muted); padding: 48px 0; font-size: 16px; }
+
+/* ---------- category tiles ---------- */
+.cattiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+.cattile {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--card); border: 1px solid var(--border-soft); border-radius: 12px; padding: 15px 17px;
+  transition: border-color .15s ease, transform .15s ease, background .15s ease;
+}
+.cattile:hover { border-color: #343d4c; transform: translateY(-2px); background: var(--card-2); }
+.cattile .cn { font-weight: 600; font-size: 14.5px; color: var(--text); text-transform: capitalize; }
+.cattile .cc { font-size: 12px; color: var(--muted); background: var(--card-2); border: 1px solid var(--border); border-radius: 999px; padding: 2px 9px; }
 
 /* ---------- format badges ---------- */
 .fmtbadge {

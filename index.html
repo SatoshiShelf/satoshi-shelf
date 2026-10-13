@@ -15,6 +15,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23f7931a'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23201400' font-family='Arial' font-weight='bold'>&#8383;</text></svg>">
 </head>
 <body>
+<div class="announce"><div class="wrap">&#9654; <b>New:</b> try any product free for 12 seconds &middot; instant Bitcoin checkout &middot; no account, no email</div></div>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
@@ -76,6 +77,17 @@
     </div>
   </div>
 </div>
+
+<section class="section" id="categories">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Browse</span>
+      <h2>Every category, ready to go</h2>
+      <p>From money and business to code, design and family life — find the exact tool you need.</p>
+    </div>
+    <div class="cattiles" id="cattiles"></div>
+  </div>
+</section>
 
 <section class="section" id="products">
   <div class="wrap">
@@ -151,13 +163,20 @@
     <div class="cols">
       <div>
         <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
-        <p class="muted">Practical digital products, paid in Bitcoin. Independent, no middlemen, no tracking.</p>
+        <p class="muted">Practical digital products, paid in Bitcoin. Independent, no middlemen, no tracking. Preview any product free before you buy.</p>
       </div>
       <div>
-        <a href="#products">Products</a>
+        <strong class="fhead">Shop</strong>
+        <a href="#products">All products</a>
+        <a href="#categories">Categories</a>
         <a href="custom.html">Hire me</a>
         <a href="#how">How it works</a>
         <a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <strong class="fhead">Connect</strong>
+        <a href="mailto:satoshishelf@proton.me">satoshishelf@proton.me</a>
+        <a href="https://t.me/xsaifsaifx" target="_blank" rel="noopener">Telegram @xsaifsaifx</a>
         <a href="https://github.com/xGhabra" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
@@ -232,7 +251,8 @@ function card(p) {
           <a class="btn small" href="product.html?id=${encodeURIComponent(p.id)}">View &amp; buy</a>
         </div>
       </div>
-    </div>`;
+    </div>
+  </article>`;
 }
 function update() {
   const list = filtered();
@@ -268,6 +288,15 @@ const sp = document.getElementById("statProducts");
 if (sp) sp.textContent = P.length;
 const sc = document.getElementById("statCats");
 if (sc) sc.textContent = cats.length;
+
+const ct = document.getElementById("cattiles");
+if (ct) {
+  const counts = {};
+  P.forEach(p => { counts[p.category] = (counts[p.category] || 0) + 1; });
+  ct.innerHTML = cats.map(c =>
+    `<a class="cattile" href="?cat=${encodeURIComponent(c)}#products"><span class="cn">${esc(catLabel(c))}</span><span class="cc">${counts[c]}</span></a>`
+  ).join("");
+}
 
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
