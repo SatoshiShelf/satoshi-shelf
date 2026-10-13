@@ -29,6 +29,9 @@ export default {
     const url = new URL(request.url);
 
     if (request.method === "OPTIONS") return new Response(null, { headers: CORS });
+    if (url.pathname === "/" || url.pathname === "") {
+      return Response.redirect(env.STORE_URL || "https://xghabra.github.io/satoshi-shelf/", 302);
+    }
     if (url.pathname === "/health") return json({ ok: true, products: Object.keys(PRODUCTS) });
 
     const secret = env.DOWNLOAD_SECRET || CONFIG.key;
