@@ -283,6 +283,13 @@ ul.checks { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 10
 ul.checks li { position: relative; padding-left: 26px; color: #c3cad6; }
 ul.checks li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
 
+/* how-to-run (script products) */
+ol.run-steps { margin: 12px 0; padding-left: 22px; display: grid; gap: 12px; color: #c3cad6; }
+ol.run-steps li { padding-left: 4px; }
+.mono, code.run-code { font-family: var(--mono); }
+code.run-code { font-size: 13px; background: var(--card-2); border: 1px solid var(--border); border-radius: 7px; padding: 2px 7px; color: var(--accent-2); }
+pre.run-code { margin: 8px 0 0; font-size: 13.5px; background: #0c0e13; border: 1px solid var(--border); border-radius: 9px; padding: 12px 14px; color: #d6deea; overflow-x: auto; }
+
 .buybox {
   position: sticky; top: 88px; background: var(--card);
   border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow);

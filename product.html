@@ -50,6 +50,7 @@
 </div>
 
 <script src="assets/products.js"></script>
+<script src="assets/runinfo.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/qrcode.js"></script>
 <script>
@@ -60,6 +61,29 @@ const id = new URLSearchParams(location.search).get("id");
 const p = window.PRODUCTS.find(x => x.id === id) || window.PRODUCTS[0];
 document.title = p.name + " — Satoshi Shelf";
 document.getElementById("crumb").innerHTML = `<a id="crumbcat" href="index.html?cat=${encodeURIComponent(p.category)}#products">${(p.category || "Products").replace(/-/g, " ")}</a> &nbsp;/&nbsp; ${p.name}`;
+
+function runBlock(p) {
+  const info = (window.RUNINFO || {})[p.id];
+  if (!info) return "";
+  const script = info.script || "your_script.py";
+  const deps = info.deps || [];
+  const depText = deps.length ? deps.join(", ") : "none — only the Python standard library";
+  const installStep = deps.length
+    ? `<li>Install the dependencies: <code class="run-code">pip install -r requirements.txt</code>${deps.length ? ` <span class="muted">(installs ${deps.join(", ")})</span>` : ""}</li>`
+    : "";
+  return `
+    <h2>How to run it</h2>
+    <p>This is a Python script bundle. You only need <b>Python 3</b> installed (free from <span class="mono">python.org</span>). External libraries: <b>${depText}</b>.</p>
+    <ol class="run-steps">
+      <li>Download and <b>unzip</b> the file.</li>
+      <li>Open a <b>terminal</b> (Command Prompt on Windows, Terminal on macOS/Linux) and go into the unzipped folder.</li>
+      ${installStep}
+      <li>Run the script:
+        <pre class="run-code">python ${script}</pre>
+      </li>
+    </ol>
+    <p class="muted">Every bundle includes a <b>README.md</b> with full instructions, options and examples — open it for the exact usage.</p>`;
+}
 
 document.getElementById("head").innerHTML = `
   <div class="cover product-cover">
@@ -78,6 +102,7 @@ document.getElementById("head").innerHTML = `
     <p>Immediately after your payment is confirmed on-chain, a download link appears right here on this page. No account, no email required — keep the page open until you download.</p>
     <h2>Format</h2>
     <p>${p.format || "Self-contained HTML file"}. ${/\.html$/.test(p.file) ? "Open it in any browser, or use your browser's <b>Print &rarr; Save as PDF</b> for an offline copy you own forever." : "Delivered as an instant download after your payment is verified."}</p>
+    ${runBlock(p)}
   </div>`;
 
 const related = window.PRODUCTS.filter(x => x.id !== p.id)

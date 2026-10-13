@@ -3,7 +3,6 @@ window.STORE_CONFIG = {
   "tagline": "Digital goods. Paid in Bitcoin. No middlemen.",
   "btcAddress": "bc1qrs6leywqgu56d8h5ynw9ynn0e3kdduantgd2z3",
   "workerUrl": "https://satoshi-shelf.xghabra.workers.dev",
-  "contact": "satoshishelf@proton.me",
   "priceApi": "https://mempool.space/api/v1/prices",
   "txApi": "https://mempool.space/api/tx/"
 };
