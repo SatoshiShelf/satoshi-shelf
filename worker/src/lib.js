@@ -23,6 +23,35 @@ export function b64ToBytes(b64) {
   return arr;
 }
 
+export function bytesToB64(bytes) {
+  let s = "";
+  for (const b of bytes) s += String.fromCharCode(b);
+  return btoa(s);
+}
+
+// AES-256-GCM at-rest encryption for paid deliverables.
+// The key never leaves the (gitignored) worker bundle / Worker secret, so the
+// encrypted copies committed to the public repo are useless without paying.
+async function aesKey(secret) {
+  const digest = await crypto.subtle.digest("SHA-256", enc.encode(secret));
+  return crypto.subtle.importKey("raw", digest, { name: "AES-GCM" }, false, ["encrypt", "decrypt"]);
+}
+
+export async function encryptBytes(secret, bytes) {
+  const key = await aesKey(secret);
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, bytes));
+  return { iv: b64url(iv), ct: b64url(ct) };
+}
+
+export async function decryptBytes(secret, ivB64, ctB64) {
+  const key = await aesKey(secret);
+  const pt = await crypto.subtle.decrypt(
+    { name: "AES-GCM", iv: ub64url(ivB64) }, key, ub64url(ctB64)
+  );
+  return new Uint8Array(pt);
+}
+
 async function hmac(secret, data) {
   const key = await crypto.subtle.importKey(
     "raw", enc.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]

@@ -1,5 +1,5 @@
 import { CONFIG, PRODUCTS } from "./embedded.js";
-import { makeToken, verifyToken, verifyPayment, b64ToBytes } from "./lib.js";
+import { makeToken, verifyToken, verifyPayment, b64ToBytes, decryptBytes } from "./lib.js";
 
 const PRICE_API = "https://mempool.space/api/v1/prices";
 const CORS = {
@@ -31,7 +31,8 @@ export default {
     if (request.method === "OPTIONS") return new Response(null, { headers: CORS });
     if (url.pathname === "/health") return json({ ok: true, products: Object.keys(PRODUCTS) });
 
-    const secret = env.DOWNLOAD_SECRET;
+    const secret = env.DOWNLOAD_SECRET || CONFIG.key;
+    const decKey = env.SHELF_KEY || CONFIG.key;
     const address = env.BTC_ADDRESS || CONFIG.btcAddress;
 
     if (url.pathname === "/verify" && request.method === "POST") {
@@ -64,7 +65,24 @@ export default {
       if (!payload) return new Response("This link is invalid or has expired. Verify your payment again.", { status: 403, headers: CORS });
       const product = PRODUCTS[payload.p];
       if (!product) return new Response("Unknown product.", { status: 404, headers: CORS });
-      return new Response(b64ToBytes(product.b64), {
+
+      let body;
+      if (product.ct) {
+        if (!decKey) return new Response("Server not configured.", { status: 500, headers: CORS });
+        try {
+          body = await decryptBytes(decKey, product.iv, product.ct);
+        } catch {
+          return new Response("Delivery error.", { status: 500, headers: CORS });
+        }
+      } else if (product.b64) {
+        body = b64ToBytes(product.b64);
+      } else if (product.url) {
+        return Response.redirect(product.url, 302);
+      } else {
+        return new Response("Unknown product.", { status: 404, headers: CORS });
+      }
+
+      return new Response(body, {
         headers: {
           ...CORS,
           "content-type": product.contentType || "application/octet-stream",

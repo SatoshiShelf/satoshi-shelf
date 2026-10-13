@@ -12,7 +12,9 @@ assets/products.js      YOUR catalog + BTC address  <- edit this
 assets/app.js           BTC price, QR, tx verification
 assets/qrcode.js        Vendored QR generator
 assets/style.css        Theme
-products/*.html         Deliverable files (what buyers download)
+products/*              Deliverable files (gitignored — never committed)
+secure/catalog.enc.json AES-256-GCM encrypted deliverables (safe to commit)
+worker/                 Cloudflare Worker: verifies BTC payment, serves files
 ```
 
 ## Configure
@@ -56,11 +58,12 @@ Live at `https://xghabra.github.io/satoshi-shelf/`.
 
 ### Security note
 
-Paid files are **not** in this public site. They live only inside the
-Cloudflare Worker (`worker/`), which verifies the payment on-chain and returns
-a short-lived signed download link. The store uses this automatically when
-`workerUrl` is set in `assets/products.js`. If `workerUrl` is empty, the store
-falls back to public file links (not secure). See `worker/README.md` to deploy.
+Paid files are **never** in this public site as plaintext. They are AES-256-GCM
+encrypted into the Cloudflare Worker (`worker/`), which verifies the payment
+on-chain and only then decrypts and streams the file behind a short-lived signed
+link. The public-safe encrypted copy lives in `secure/catalog.enc.json` — it is
+useless without the private key, which never leaves the worker. No file host is
+needed. See `worker/README.md` to deploy (one `wrangler deploy`).
 
 ## Safety
 

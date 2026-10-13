@@ -5,15 +5,19 @@ import worker from "./src/index.js";
 
 const ADDR = "bc1qtestaddress";
 const TXID = "b".repeat(64);
+const PRICE = 80000;
 
-globalThis.fetch = async (u) => {
-  if (u.includes("/v1/prices")) return { ok: true, status: 200, json: async () => ({ USD: 80000 }) };
-  if (u.includes("/tx/")) return {
-    ok: true, status: 200,
-    json: async () => ({ vout: [{ scriptpubkey_address: ADDR, value: 20000 }], status: { confirmed: true, block_height: 800000 } }),
+function mockFetch(paidSats, confirmed) {
+  return async (u) => {
+    const s = String(u);
+    if (s.includes("/v1/prices")) return { ok: true, status: 200, json: async () => ({ USD: PRICE }) };
+    if (s.includes("/tx/")) return {
+      ok: true, status: 200,
+      json: async () => ({ vout: [{ scriptpubkey_address: ADDR, value: paidSats }], status: { confirmed, block_height: 800000 } }),
+    };
+    return { ok: false, status: 404, json: async () => ({}) };
   };
-  return { ok: false, status: 404, json: async () => ({}) };
-};
+}
 
 const env = { DOWNLOAD_SECRET: "s3cret", BTC_ADDRESS: ADDR };
 const call = (path, opts) => worker.fetch(new Request("https://w.dev" + path, opts), env);
@@ -24,16 +28,29 @@ const call = (path, opts) => worker.fetch(new Request("https://w.dev" + path, op
   console.log("  ok - health");
 }
 
+let downloadPath;
 {
+  globalThis.fetch = mockFetch(1e8, true);
   const r = await call("/verify", {
     method: "POST", headers: { "content-type": "application/json" },
     body: JSON.stringify({ txid: TXID, productId: "playbook" }),
   });
   const j = await r.json();
   assert.ok(j.ok, "verify should pass: " + JSON.stringify(j));
-  assert.ok(/^https:\/\//.test(j.downloadUrl), "should return an absolute delivery URL: " + j.downloadUrl);
+  assert.ok(/^\/download\?token=/.test(j.downloadUrl), "should return a signed download path: " + j.downloadUrl);
   assert.ok(j.confirmed);
-  console.log("  ok - /verify returns the delivery link after a valid payment ->", j.downloadUrl.slice(0, 45) + "...");
+  downloadPath = j.downloadUrl;
+  console.log("  ok - /verify returns a signed download path after a valid payment");
+}
+
+{
+  const r = await call(downloadPath);
+  assert.strictEqual(r.status, 200);
+  assert.strictEqual(r.headers.get("content-type"), "text/html; charset=utf-8");
+  assert.ok(/attachment; filename=/.test(r.headers.get("content-disposition")));
+  const body = await r.text();
+  assert.ok(body.length > 200 && /<!DOCTYPE|<html/i.test(body), "decrypted deliverable should be readable HTML");
+  console.log("  ok - /download streams the decrypted deliverable (", body.length, "bytes )");
 }
 
 {
@@ -46,10 +63,7 @@ const call = (path, opts) => worker.fetch(new Request("https://w.dev" + path, op
 }
 
 {
-  globalThis.fetch = async (u) => {
-    if (u.includes("/v1/prices")) return { ok: true, status: 200, json: async () => ({ USD: 80000 }) };
-    return { ok: true, status: 200, json: async () => ({ vout: [{ scriptpubkey_address: ADDR, value: 10 }], status: { confirmed: false } }) };
-  };
+  globalThis.fetch = mockFetch(10, false);
   const j = await (await call("/verify", {
     method: "POST", headers: { "content-type": "application/json" },
     body: JSON.stringify({ txid: TXID, productId: "playbook" }),

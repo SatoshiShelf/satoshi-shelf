@@ -20,6 +20,7 @@
     <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
     <nav class="site">
       <a href="#products">Products</a>
+      <a href="custom.html">Hire me</a>
       <a href="free.html">Free guide</a>
       <a href="#how">How it works</a>
       <a href="#faq">FAQ</a>
@@ -57,6 +58,27 @@
   </div>
 </div>
 
+<div class="wrap">
+  <div class="hire" style="margin: 22px 0">
+    <div>
+      <span class="kicker">Custom work</span>
+      <h2>Need something built just for you?</h2>
+      <p>Beyond the ready-made products, I take on custom work — tools, spreadsheets, documents, scripts and whole projects, made to your spec.</p>
+      <a class="tg" href="https://t.me/xsaifsaifx" target="_blank" rel="noopener">&#9992;&#65039; Message me on Telegram &middot; @xsaifsaifx</a>
+    </div>
+    <div class="side">
+      <h3>What I can build</h3>
+      <ul>
+        <li>Excel models &amp; dashboards</li>
+        <li>Word documents &amp; contracts</li>
+        <li>Python scripts &amp; automation</li>
+        <li>Web tools &amp; landing pages</li>
+        <li>Presentations &amp; pitch decks</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <section class="section" id="products">
   <div class="wrap">
     <div class="section-head reveal">
@@ -64,7 +86,22 @@
       <h2>Tools that pay for themselves</h2>
       <p>Buy once. Keep forever. Delivered as a file the moment your payment clears.</p>
     </div>
+    <div class="shop-tools">
+      <div class="tool-row">
+        <input id="q" class="control" type="search" placeholder="Search products — try &ldquo;budget&rdquo;, &ldquo;CV&rdquo;, &ldquo;game&rdquo;, &ldquo;marketing&rdquo;&hellip;" autocomplete="off" aria-label="Search products">
+        <select id="cat" class="control" aria-label="Filter by category"><option value="">All categories</option></select>
+        <select id="sort" class="control" aria-label="Sort products">
+          <option value="price-asc">Price: low &rarr; high</option>
+          <option value="price-desc">Price: high &rarr; low</option>
+          <option value="name">Name: A &rarr; Z</option>
+          <option value="new">Newest first</option>
+        </select>
+      </div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="resultbar"><span id="count"></span><button class="linkbtn" id="clear" hidden>Clear filters</button></div>
     <div class="grid" id="grid"></div>
+    <div class="loadmore"><button class="btn ghost" id="more" hidden>Load more</button></div>
   </div>
 </section>
 
@@ -137,33 +174,98 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 const grid = document.getElementById("grid");
 const covers = ["t1", "t2", "t3"];
-const P = window.PRODUCTS.slice().sort((a, b) => a.priceUsd - b.priceUsd);
-P.forEach((p, i) => {
-  const el = document.createElement("article");
-  el.className = "card reveal";
-  el.innerHTML = `
-    <div class="cover ${covers[i % covers.length]}">
-      <span class="tagpill">Digital download</span>
-      <span class="glyph">${p.emoji}</span>
+const PAGE = 12;
+const P = window.PRODUCTS.slice();
+P.forEach((p, i) => { p._i = i; });
+const catLabel = s => (s || "").replace(/-/g, " ");
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+const st = { q: "", cat: "", sort: "price-asc", shown: PAGE };
+const qs = new URLSearchParams(location.search);
+if (qs.get("q")) st.q = qs.get("q");
+if (qs.get("cat")) st.cat = qs.get("cat");
+if (qs.get("sort")) st.sort = qs.get("sort");
+
+const catSel = document.getElementById("cat");
+const cats = [...new Set(P.map(p => p.category))].sort((a, b) => catLabel(a).localeCompare(catLabel(b)));
+cats.forEach(c => { const o = document.createElement("option"); o.value = c; o.textContent = catLabel(c); catSel.appendChild(o); });
+document.getElementById("q").value = st.q;
+catSel.value = cats.includes(st.cat) ? st.cat : "";
+document.getElementById("sort").value = st.sort;
+st.cat = catSel.value;
+
+const chips = document.getElementById("chips");
+function renderChips() {
+  chips.innerHTML = [["", "All"]].concat(cats.map(c => [c, catLabel(c)]))
+    .map(([v, l]) => `<button class="chip${v === st.cat ? " active" : ""}" data-cat="${esc(v)}">${esc(l)}</button>`).join("");
+}
+function filtered() {
+  const q = st.q.trim().toLowerCase();
+  return P.filter(p => {
+    if (st.cat && p.category !== st.cat) return false;
+    if (q) {
+      const hay = (p.name + " " + p.tagline + " " + (p.summary || "") + " " + (p.bullets || []).join(" ") + " " + catLabel(p.category)).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  }).sort((a, b) => {
+    if (st.sort === "price-desc") return b.priceUsd - a.priceUsd;
+    if (st.sort === "name") return a.name.localeCompare(b.name);
+    if (st.sort === "new") return b._i - a._i;
+    return a.priceUsd - b.priceUsd;
+  });
+}
+function card(p) {
+  return `<article class="card reveal in">
+    <div class="cover ${covers[p._i % covers.length]}">
+      <span class="catbadge">${esc(catLabel(p.category))}</span>
+      ${p.format ? `<span class="fmtbadge">${esc(p.format)}</span>` : ""}
+      <span class="glyph">${p.emoji || "&#128230;"}</span>
     </div>
     <div class="body">
-      <h3>${p.name}</h3>
-      <p class="tag">${p.tagline}</p>
-      <ul class="ticks">${p.bullets.slice(0, 4).map(b => `<li>${b}</li>`).join("")}</ul>
+      <h3>${esc(p.name)}</h3>
+      <p class="tag">${esc(p.tagline)}</p>
+      <ul class="ticks">${(p.bullets || []).slice(0, 4).map(b => `<li>${esc(b)}</li>`).join("")}</ul>
       <div class="foot">
         <div class="price">$${p.priceUsd}<small>USD &middot; one-time</small></div>
         <a class="btn small" href="product.html?id=${encodeURIComponent(p.id)}">View &amp; buy</a>
       </div>
     </div>`;
-  grid.appendChild(el);
+}
+function update() {
+  const list = filtered();
+  grid.innerHTML = list.length
+    ? list.slice(0, st.shown).map(card).join("")
+    : `<div class="empty">No products match your search. Try clearing the filters.</div>`;
+  document.getElementById("count").textContent = list.length + (list.length === 1 ? " product" : " products");
+  document.getElementById("more").hidden = list.length <= st.shown;
+  document.getElementById("clear").hidden = !(st.cat || st.q || st.sort !== "price-asc");
+  renderChips();
+  const url = new URL(location.href);
+  st.q ? url.searchParams.set("q", st.q) : url.searchParams.delete("q");
+  st.cat ? url.searchParams.set("cat", st.cat) : url.searchParams.delete("cat");
+  st.sort !== "price-asc" ? url.searchParams.set("sort", st.sort) : url.searchParams.delete("sort");
+  history.replaceState(null, "", url.pathname + url.search + "#products");
+}
+function refresh() { st.shown = PAGE; update(); }
+
+document.getElementById("q").addEventListener("input", e => { st.q = e.target.value; refresh(); });
+catSel.addEventListener("change", e => { st.cat = e.target.value; refresh(); });
+document.getElementById("sort").addEventListener("change", e => { st.sort = e.target.value; refresh(); });
+chips.addEventListener("click", e => { const b = e.target.closest(".chip"); if (b) { st.cat = b.dataset.cat; catSel.value = st.cat; refresh(); } });
+document.getElementById("more").addEventListener("click", () => { st.shown += PAGE; update(); });
+document.getElementById("clear").addEventListener("click", () => {
+  st.q = ""; st.cat = ""; st.sort = "price-asc";
+  document.getElementById("q").value = ""; catSel.value = ""; document.getElementById("sort").value = "price-asc";
+  refresh();
 });
 
+update();
+
 const io = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) { e.target.style.transitionDelay = (i % 3) * 70 + "ms"; e.target.classList.add("in"); io.unobserve(e.target); }
-  });
+  entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
 }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
-document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+document.querySelectorAll(".section-head.reveal").forEach(el => io.observe(el));
 </script>
 </body>
 </html>

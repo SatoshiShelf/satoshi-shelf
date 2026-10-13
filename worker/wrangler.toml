@@ -5,5 +5,8 @@ compatibility_date = "2024-11-01"
 [vars]
 BTC_ADDRESS = "bc1qrs6leywqgu56d8h5ynw9ynn0e3kdduantgd2z3"
 
-# Set the signing secret (required) with:
-#   wrangler secret put DOWNLOAD_SECRET
+# Optional hardening:
+#   wrangler secret put DOWNLOAD_SECRET   # download-link signing key
+#   wrangler secret put SHELF_KEY         # deliverable decryption key
+# If not set, the worker falls back to the private key in the build bundle,
+# so a plain `wrangler deploy` works with zero configuration.

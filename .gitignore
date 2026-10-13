@@ -4,6 +4,7 @@ products/
 
 # Worker build output + local secrets/deps
 worker/src/embedded.js
+worker/.shelfkey
 worker/node_modules/
 worker/.wrangler/
 worker/.dev.vars
@@ -14,3 +15,7 @@ worker/.dev.vars
 worker/embedded.js
 
 worker/deliveries.local.json
+
+# secure/ holds AES-256-GCM encrypted deliverables — safe to commit (useless
+# without the private key held only by the deployed Worker).
+!secure/

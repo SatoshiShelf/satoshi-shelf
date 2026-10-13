@@ -48,15 +48,16 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const id = new URLSearchParams(location.search).get("id");
 const p = window.PRODUCTS.find(x => x.id === id) || window.PRODUCTS[0];
 document.title = p.name + " — Satoshi Shelf";
-document.getElementById("crumb").textContent = p.name;
+document.getElementById("crumb").innerHTML = `<a id="crumbcat" href="index.html?cat=${encodeURIComponent(p.category)}#products">${(p.category || "Products").replace(/-/g, " ")}</a> &nbsp;/&nbsp; ${p.name}`;
 
 document.getElementById("head").innerHTML = `
   <div class="cover t1" style="height:150px;border-radius:16px;border:1px solid var(--border-soft);margin-bottom:22px">
-    <span class="tagpill">Digital download</span>
+    <span class="tagpill">${(p.category || "Digital download").replace(/-/g, " ")}</span>
     <span class="glyph" style="font-size:56px">${p.emoji}</span>
   </div>
   <h1>${p.name}</h1>
   <p class="tag">${p.tagline}</p>
+  ${p.format ? `<div class="fmtline"><span class="pill">${p.format}</span></div>` : ""}
   <div class="product-body">
     <h2>What you get</h2>
     <p>${p.summary}</p>
@@ -65,10 +66,12 @@ document.getElementById("head").innerHTML = `
     <h2>Delivery</h2>
     <p>Immediately after your payment is confirmed on-chain, a download link appears right here on this page. No account, no email required — keep the page open until you download.</p>
     <h2>Format</h2>
-    <p>Self-contained HTML file. Open it in any browser, or use your browser's <b>Print &rarr; Save as PDF</b> for an offline copy you own forever.</p>
+    <p>${p.format || "Self-contained HTML file"}. ${/\.html$/.test(p.file) ? "Open it in any browser, or use your browser's <b>Print &rarr; Save as PDF</b> for an offline copy you own forever." : "Delivered as an instant download after your payment is verified."}</p>
   </div>`;
 
-const related = window.PRODUCTS.filter(x => x.id !== p.id);
+const related = window.PRODUCTS.filter(x => x.id !== p.id)
+  .sort((a, b) => (b.category === p.category) - (a.category === p.category))
+  .slice(0, 6);
 document.getElementById("relatedGrid").innerHTML = related.map(x => `
   <a class="mini" href="product.html?id=${encodeURIComponent(x.id)}">
     <span class="g">${x.emoji}</span>
