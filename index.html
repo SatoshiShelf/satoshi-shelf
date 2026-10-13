@@ -212,7 +212,6 @@
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 const grid = document.getElementById("grid");
-const covers = ["t1", "t2", "t3"];
 const PAGE = 12;
 const P = window.PRODUCTS.slice();
 P.forEach((p, i) => { p._i = i; });
@@ -256,10 +255,10 @@ function filtered() {
 }
 function card(p) {
   return `<article class="card reveal in">
-    <div class="cover ${covers[p._i % covers.length]}">
+    <div class="cover">
+      <img class="cover-img" src="assets/covers/${encodeURIComponent(p.id)}.jpg" alt="${esc(p.name)} preview" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('noimg')">
       <span class="catbadge">${esc(catLabel(p.category))}</span>
       ${p.format ? `<span class="fmtbadge">${esc(p.format)}</span>` : ""}
-      <span class="glyph">${p.emoji || "&#128230;"}</span>
     </div>
     <div class="body">
       <h3>${esc(p.name)}</h3>

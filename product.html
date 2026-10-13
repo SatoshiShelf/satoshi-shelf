@@ -62,9 +62,9 @@ document.title = p.name + " — Satoshi Shelf";
 document.getElementById("crumb").innerHTML = `<a id="crumbcat" href="index.html?cat=${encodeURIComponent(p.category)}#products">${(p.category || "Products").replace(/-/g, " ")}</a> &nbsp;/&nbsp; ${p.name}`;
 
 document.getElementById("head").innerHTML = `
-  <div class="cover t1" style="height:150px;border-radius:16px;border:1px solid var(--border-soft);margin-bottom:22px">
-    <span class="tagpill">${(p.category || "Digital download").replace(/-/g, " ")}</span>
-    <span class="glyph" style="font-size:56px">${p.emoji}</span>
+  <div class="cover product-cover">
+    <img class="cover-img" src="assets/covers/${encodeURIComponent(p.id)}.jpg" alt="${p.name} preview" onerror="this.style.display='none';this.parentNode.classList.add('noimg')">
+    <span class="catbadge">${(p.category || "Digital download").replace(/-/g, " ")}</span>
   </div>
   <h1>${p.name}</h1>
   <p class="tag">${p.tagline}</p>
@@ -85,7 +85,7 @@ const related = window.PRODUCTS.filter(x => x.id !== p.id)
   .slice(0, 6);
 document.getElementById("relatedGrid").innerHTML = related.map(x => `
   <a class="mini" href="product.html?id=${encodeURIComponent(x.id)}">
-    <span class="g">${x.emoji}</span>
+    <span class="g"><img src="assets/covers/${encodeURIComponent(x.id)}.jpg" alt="" loading="lazy" onerror="this.style.display='none'"></span>
     <span><span class="t">${x.name}</span><br><span class="p">$${x.priceUsd} &middot; ${x.tagline}</span></span>
   </a>`).join("");
 

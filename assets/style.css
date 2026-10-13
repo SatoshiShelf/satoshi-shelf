@@ -192,19 +192,17 @@ nav.site a.cta:hover { color: #201400; filter: brightness(1.06); }
 .card:hover { transform: translateY(-4px); border-color: #343d4c; box-shadow: var(--shadow); }
 .card:hover::before { opacity: 1; }
 .cover {
-  height: 132px; display: grid; place-items: center; position: relative;
+  aspect-ratio: 16 / 9; display: grid; place-items: center; position: relative;
   background: linear-gradient(140deg, #1b2029, #12151b);
-  border-bottom: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft); overflow: hidden;
 }
-.cover::after {
+.cover-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cover.noimg { height: 132px; aspect-ratio: auto; }
+.cover.noimg::after {
   content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
   background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
   background-size: 12px 12px;
 }
-.cover .glyph { font-size: 46px; filter: drop-shadow(0 6px 16px rgba(0,0,0,.5)); position: relative; z-index: 1; }
-.cover.t1 { background: linear-gradient(140deg, rgba(247,147,26,.22), #12151b); }
-.cover.t2 { background: linear-gradient(140deg, rgba(56,189,248,.18), #12151b); }
-.cover.t3 { background: linear-gradient(140deg, rgba(168,85,247,.18), #12151b); }
 .cover .tagpill {
   position: absolute; top: 12px; left: 12px; font-size: 11px; font-weight: 600;
   background: rgba(10,12,16,.7); border: 1px solid var(--border); color: var(--muted);
@@ -273,6 +271,7 @@ footer .fine { border-top: 1px solid var(--border-soft); margin-top: 30px; paddi
 /* ---------- Product / checkout page ---------- */
 .crumbs { padding: 26px 0 0; color: var(--muted-2); font-size: 13px; }
 .crumbs a { color: var(--muted); }
+.product-cover { border-radius: 16px; border: 1px solid var(--border-soft); margin-bottom: 22px; }
 .product-layout { display: grid; grid-template-columns: 1fr 400px; gap: 46px; padding: 34px 0 80px; align-items: start; }
 @media (max-width: 900px) { .product-layout { grid-template-columns: 1fr; gap: 30px; } }
 .product-head .glyph-big { font-size: 42px; }
@@ -364,7 +363,8 @@ html { -webkit-text-size-adjust: 100%; }
 .related { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 18px; }
 .mini { display: flex; gap: 14px; align-items: center; background: var(--card); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 16px; transition: border-color .15s ease, transform .15s ease; }
 .mini:hover { border-color: #343d4c; transform: translateY(-2px); }
-.mini .g { font-size: 30px; }
+.mini .g { font-size: 30px; width: 56px; height: 40px; border-radius: 8px; overflow: hidden; flex: none; display: grid; place-items: center; background: var(--card-2); }
+.mini .g img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .mini .t { font-weight: 600; font-size: 15px; }
 .mini .p { color: var(--muted); font-size: 13px; }
 
