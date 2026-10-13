@@ -38,6 +38,17 @@
   </div>
 </footer>
 
+<div class="modal" id="previewModal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Product preview">
+    <div class="modal-bar">
+      <span class="modal-title"><span class="live"></span> Free one-time preview &middot; 12 seconds</span>
+      <button class="modal-x" data-close aria-label="Close preview">&times;</button>
+    </div>
+    <iframe id="previewFrame" title="Product preview" src="about:blank"></iframe>
+  </div>
+</div>
+
 <script src="assets/products.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/qrcode.js"></script>
@@ -88,6 +99,8 @@ box.innerHTML = `
   <p class="title">${p.name}</p>
   <div class="amount">${fmtUsd(p.priceUsd)}</div>
   <div class="sats" id="sats">loading live BTC price&hellip;</div>
+  <button class="btn ghost block" id="trialBtn" style="margin-bottom:10px">&#9654;&nbsp; Try it free &mdash; 12-second preview</button>
+  <div class="trialhint" id="trialHint"></div>
   <button class="btn block" id="payBtn">Pay with Bitcoin</button>
 
   <div class="pay" id="pay">
@@ -113,6 +126,43 @@ box.innerHTML = `
   </div>`;
 
 let btcAmt = null;
+
+(function trial() {
+  const TRIAL_KEY = "shelf_trial_" + p.id;
+  const btn = document.getElementById("trialBtn");
+  const hint = document.getElementById("trialHint");
+  const modal = document.getElementById("previewModal");
+  const frame = document.getElementById("previewFrame");
+  const used = () => { try { return !!localStorage.getItem(TRIAL_KEY); } catch (e) { return false; } };
+
+  function sync() {
+    if (used()) {
+      btn.disabled = true;
+      btn.innerHTML = "&#10003;&nbsp; Preview used \u2014 unlock the full version";
+      hint.textContent = "Your one-time preview was used on this device.";
+      hint.classList.add("show");
+    }
+  }
+  function open() {
+    if (used()) return;
+    frame.src = "previews/" + encodeURIComponent(p.id) + ".html";
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    btn.disabled = true;
+    btn.innerHTML = "&#9654;&nbsp; Preview running\u2026";
+  }
+  function close() {
+    modal.hidden = true;
+    frame.src = "about:blank";
+    document.body.style.overflow = "";
+    btn.disabled = false;
+    sync();
+  }
+  sync();
+  btn.addEventListener("click", open);
+  modal.addEventListener("click", e => { if (e.target.hasAttribute("data-close")) close(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !modal.hidden) close(); });
+})();
 
 function note(kind, msg) {
   const n = document.getElementById("note");

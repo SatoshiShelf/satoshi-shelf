@@ -21,7 +21,6 @@
     <nav class="site">
       <a href="#products">Products</a>
       <a href="custom.html">Hire me</a>
-      <a href="free.html">Free guide</a>
       <a href="#how">How it works</a>
       <a href="#faq">FAQ</a>
       <a class="cta" href="#products">Shop</a>
@@ -33,14 +32,15 @@
   <div class="wrap">
     <div class="eyebrow"><span class="dotlive"></span> Pay with Bitcoin &middot; instant delivery</div>
     <h1>Practical guides &amp; tools.<br><span class="grad">Paid in Bitcoin.</span></h1>
-    <p class="sub">No accounts. No cards. No middlemen taking a cut. Buy once, own it forever, and get it the second you pay.</p>
+    <p class="sub">No accounts. No cards. No middlemen taking a cut. Preview any product free for 12 seconds, then own it forever the moment you pay.</p>
     <div class="actions">
       <a class="btn" href="#products">Browse products</a>
-      <a class="btn ghost" href="free.html">Read the free guide</a>
+      <a class="btn ghost" href="#how">How it works</a>
     </div>
     <div class="trust">
       <span>&#8383; <b>Bitcoin-native</b></span>
       <span>&#9889; <b>Instant download</b></span>
+      <span>&#9654; <b>Free 12s preview</b></span>
       <span>&#128274; <b>No signup</b></span>
       <span>&#127760; <b>Pay from anywhere</b></span>
     </div>
@@ -48,13 +48,11 @@
 </section>
 
 <div class="wrap">
-  <div class="banner">
-    <div>
-      <span class="kicker">Free &middot; no email</span>
-      <h3>The 7-Day Digital Product Kickstart</h3>
-      <p>A short, practical plan to pick, build and launch your first sellable product in a week — with $0 upfront.</p>
-    </div>
-    <a class="btn" href="free.html">Read it free &rarr;</a>
+  <div class="stats-band reveal">
+    <div class="stat"><div class="n" id="statProducts">136</div><div class="l">Products ready to buy</div></div>
+    <div class="stat"><div class="n" id="statCats">20</div><div class="l">Categories</div></div>
+    <div class="stat"><div class="n">5</div><div class="l">File formats</div></div>
+    <div class="stat"><div class="n">12s</div><div class="l">Try any product free</div></div>
   </div>
 </div>
 
@@ -113,8 +111,8 @@
       <p>No checkout account, no card details, no waiting.</p>
     </div>
     <div class="steps-grid">
-      <div class="stepbox reveal"><div class="num">1</div><h3>Pick a product</h3><p>Open it and see the live Bitcoin price — converted from USD at checkout.</p></div>
-      <div class="stepbox reveal"><div class="num">2</div><h3>Pay by QR</h3><p>Scan with any Bitcoin wallet, or copy the address. Paid on-chain, straight to us.</p></div>
+      <div class="stepbox reveal"><div class="num">1</div><h3>Preview it free</h3><p>Every product has a one-time 12-second preview — try it before you spend a satoshi.</p></div>
+      <div class="stepbox reveal"><div class="num">2</div><h3>Pay by QR</h3><p>Scan with any Bitcoin wallet, or copy the address. Paid on-chain, straight to us — the price is shown in live BTC.</p></div>
       <div class="stepbox reveal"><div class="num">3</div><h3>Get instant access</h3><p>Paste your transaction ID, we verify it on-chain, and your download unlocks instantly.</p></div>
     </div>
   </div>
@@ -139,9 +137,10 @@
   <div class="wrap faq">
     <div class="section-head"><span class="kicker">FAQ</span><h2>Questions, answered</h2></div>
     <details open><summary>How do I pay?</summary><div class="a">Any Bitcoin wallet works — scan the QR code or copy the address shown at checkout. Your wallet will fill in the exact amount.</div></details>
-    <details><summary>What if I don't have Bitcoin?</summary><div class="a">You can buy Bitcoin in minutes from any reputable exchange in your country. The free guide covers the zero-setup options.</div></details>
+    <details><summary>What if I don't have Bitcoin?</summary><div class="a">You can buy Bitcoin in minutes from any reputable exchange in your country, then send it from your own wallet. There are no country restrictions here.</div></details>
     <details><summary>How fast do I get my product?</summary><div class="a">Immediately. As soon as we see your payment on-chain, the download link appears on the page — no waiting for email.</div></details>
     <details><summary>Do I need an account?</summary><div class="a">No. There's no signup, no email required, and nothing stored. Buy, pay, download.</div></details>
+    <details><summary>Can I try before I buy?</summary><div class="a">Yes. Every product has a one-time 12-second free preview — open it, look around, then decide. Each preview can only be used once per device.</div></details>
     <details><summary>Can I get a refund?</summary><div class="a">These are digital files delivered instantly, so all sales are final. If a file is broken or missing, contact us and we'll make it right.</div></details>
     <details><summary>Is my payment private?</summary><div class="a">You pay on-chain to a self-custody address. We don't collect personal data or card details.</div></details>
   </div>
@@ -156,7 +155,7 @@
       </div>
       <div>
         <a href="#products">Products</a>
-        <a href="free.html">Free guide</a>
+        <a href="custom.html">Hire me</a>
         <a href="#how">How it works</a>
         <a href="#faq">FAQ</a>
         <a href="https://github.com/xGhabra" target="_blank" rel="noopener">GitHub</a>
@@ -228,7 +227,10 @@ function card(p) {
       <ul class="ticks">${(p.bullets || []).slice(0, 4).map(b => `<li>${esc(b)}</li>`).join("")}</ul>
       <div class="foot">
         <div class="price">$${p.priceUsd}<small>USD &middot; one-time</small></div>
-        <a class="btn small" href="product.html?id=${encodeURIComponent(p.id)}">View &amp; buy</a>
+        <div class="cardbtns">
+          <a class="btn ghost small" href="previews/${encodeURIComponent(p.id)}.html" title="One-time 12-second preview">&#9654; Preview</a>
+          <a class="btn small" href="product.html?id=${encodeURIComponent(p.id)}">View &amp; buy</a>
+        </div>
       </div>
     </div>`;
 }
@@ -261,6 +263,11 @@ document.getElementById("clear").addEventListener("click", () => {
 });
 
 update();
+
+const sp = document.getElementById("statProducts");
+if (sp) sp.textContent = P.length;
+const sc = document.getElementById("statCats");
+if (sc) sc.textContent = cats.length;
 
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
