@@ -169,8 +169,8 @@ nav.site a.cta:hover { color: #201400; filter: brightness(1.06); }
 .btn.small { padding: 9px 15px; font-size: 14px; border-radius: 9px; }
 
 /* ---------- Section headings ---------- */
-.section { padding: 56px 0; }
-.section-head { text-align: center; max-width: 620px; margin: 0 auto 40px; }
+.section { padding: 28px 0; }
+.section-head { text-align: center; max-width: 620px; margin: 0 auto 20px; }
 .section-head h2 { font-size: clamp(24px, 3.5vw, 34px); letter-spacing: -.02em; margin: 0 0 10px; }
 .section-head p { color: var(--muted); margin: 0; font-size: 16px; }
 .kicker { color: var(--accent-2); font-weight: 650; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
