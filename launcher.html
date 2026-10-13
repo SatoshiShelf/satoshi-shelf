@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Satoshi Shelf Launcher — open what you own</title>
+<meta name="description" content="A free launcher: see everything you've bought on Satoshi Shelf. Open your downloaded files instantly, offline — or jump straight to buy what you're missing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23f7931a'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23201400' font-family='Arial' font-weight='bold'>&#8383;</text></svg>">
+<style>
+.launch-head { max-width: 760px; margin: 0 auto; text-align: center; }
+.launch-head h1 { font-size: clamp(30px, 5vw, 48px); letter-spacing: -.03em; margin: 8px 0 12px; }
+.launch-head .sub { color: var(--muted); font-size: clamp(15px, 2vw, 18px); margin: 0 auto 24px; max-width: 620px; }
+.launch-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.launch-bar {
+  display: grid; grid-template-columns: repeat(3, auto) 1fr; gap: 20px; align-items: center;
+  background: linear-gradient(180deg, var(--card), var(--bg-soft)); border: 1px solid var(--border-soft);
+  border-radius: var(--radius); padding: 18px 22px; margin: 34px 0 26px;
+}
+.lb-stat { display: flex; flex-direction: column; }
+.lb-stat b { font-size: 26px; font-weight: 800; letter-spacing: -.02em; background: linear-gradient(100deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lb-stat span { font-size: 12px; color: var(--muted); }
+.lb-progress { height: 8px; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--border); overflow: hidden; min-width: 120px; }
+.lb-progress span { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width .4s ease; }
+.owned-toggle { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; user-select: none; cursor: pointer; padding: 0 4px; }
+.owned-badge { position: absolute; bottom: 12px; left: 12px; z-index: 2; font-size: 11px; font-weight: 700; letter-spacing: .02em;
+  background: rgba(34,197,94,.9); color: #04240f; border-radius: 999px; padding: 4px 10px; backdrop-filter: blur(6px); }
+.owned-badge.miss { background: rgba(10,12,16,.72); color: var(--muted); border: 1px solid var(--border); }
+.dropzone { position: fixed; inset: 0; z-index: 100; display: none; place-items: center; background: rgba(10,12,16,.82); backdrop-filter: blur(6px); }
+.dropzone.on { display: grid; }
+.dropzone .dz { border: 2px dashed var(--accent); border-radius: 18px; padding: 60px 70px; text-align: center; color: var(--text); font-size: 20px; font-weight: 600; background: rgba(247,147,26,.06); }
+@media (max-width: 640px) { .launch-bar { grid-template-columns: 1fr 1fr; } .lb-progress { grid-column: 1 / -1; } }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
+    <nav class="site">
+      <a href="index.html#products">Products</a>
+      <a href="index.html#categories">Categories</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="cta" href="index.html#products">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section" style="padding: 40px 0 30px">
+  <div class="wrap">
+    <div class="launch-head">
+      <span class="kicker">Free tool</span>
+      <h1>Satoshi Shelf Launcher</h1>
+      <p class="sub">Point it at your downloads folder. It instantly shows everything you already own and opens those files — no server, nothing uploaded. Anything you're missing, one click takes you straight to buy it.</p>
+      <div class="launch-actions">
+        <button class="btn" id="scanBtn">&#128193; Connect my downloads folder</button>
+        <button class="btn ghost" id="filesBtn">Select files&hellip;</button>
+        <input id="dirInput" type="file" webkitdirectory multiple hidden>
+        <input id="fileInput" type="file" multiple hidden>
+      </div>
+      <p class="muted small" id="hint" style="margin-top:14px">Your files never leave your device. You can also drag &amp; drop them anywhere on this page.</p>
+    </div>
+
+    <div class="launch-bar reveal in">
+      <div class="lb-stat"><b id="ownedCount">0</b><span>owned</span></div>
+      <div class="lb-stat"><b id="totalCount">0</b><span>products</span></div>
+      <div class="lb-stat"><b id="missingCount">0</b><span>to discover</span></div>
+      <div class="lb-progress"><span id="lbFill"></span></div>
+    </div>
+
+    <div class="shop-tools">
+      <div class="tool-row">
+        <input id="q" class="control" type="search" placeholder="Search your products&hellip;" autocomplete="off" aria-label="Search">
+        <select id="cat" class="control" aria-label="Filter by category"><option value="">All categories</option></select>
+        <label class="owned-toggle"><input type="checkbox" id="ownedOnly"> Only what I own</label>
+      </div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="resultbar"><span id="count"></span><button class="linkbtn" id="clear" hidden>Clear filters</button></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
+        <p class="muted">Free launcher for everything you own. Files are read locally in your browser — nothing is uploaded.</p>
+      </div>
+      <div>
+        <strong class="fhead">Shop</strong>
+        <a href="index.html#products">All products</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div>
+        <strong class="fhead">Connect</strong>
+        <a href="https://t.me/xsaifsaifx" target="_blank" rel="noopener">Telegram @xsaifsaifx</a>
+        <a href="https://github.com/xGhabra" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="fine">&copy; <span id="year"></span> Satoshi Shelf &middot; Launcher runs entirely on your device.</div>
+  </div>
+</footer>
+
+<div class="dropzone" id="dropzone"><div class="dz">Drop your downloaded files here</div></div>
+
+<script src="assets/products.js"></script>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const P = window.PRODUCTS.slice();
+const found = new Map();
+const baseName = f => f.split("/").pop();
+const normName = n => {
+  n = String(n).toLowerCase();
+  const dot = n.lastIndexOf(".");
+  let base = dot >= 0 ? n.slice(0, dot) : n;
+  const ext = dot >= 0 ? n.slice(dot) : "";
+  base = base.replace(/\s*\(\d+\)\s*$/, "").replace(/[_]+/g, " ").replace(/\s+/g, " ").trim();
+  return base + ext;
+};
+const expect = new Map();
+P.forEach(p => expect.set(normName(baseName(p.file)), p.id));
+
+const st = { q: "", cat: "", ownedOnly: false };
+const catLabel = s => (s || "").replace(/-/g, " ");
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const cats = [...new Set(P.map(p => p.category))].sort((a, b) => catLabel(a).localeCompare(catLabel(b)));
+const catSel = document.getElementById("cat");
+cats.forEach(c => { const o = document.createElement("option"); o.value = c; o.textContent = catLabel(c); catSel.appendChild(o); });
+const chips = document.getElementById("chips");
+
+function renderChips() {
+  chips.innerHTML = [["", "All"]].concat(cats.map(c => [c, catLabel(c)]))
+    .map(([v, l]) => `<button class="chip${v === st.cat ? " active" : ""}" data-cat="${esc(v)}">${esc(l)}</button>`).join("");
+}
+function filtered() {
+  const q = st.q.trim().toLowerCase();
+  return P.filter(p => {
+    if (st.ownedOnly && !found.has(p.id)) return false;
+    if (st.cat && p.category !== st.cat) return false;
+    if (q) {
+      const hay = (p.name + " " + p.tagline + " " + catLabel(p.category)).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  }).sort((a, b) => (found.has(b.id) - found.has(a.id)) || a.name.localeCompare(b.name));
+}
+function card(p) {
+  const owned = found.has(p.id);
+  return `<article class="card">
+    <div class="cover">
+      <img class="cover-img" src="assets/covers/${encodeURIComponent(p.id)}.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+      <span class="catbadge">${esc(catLabel(p.category))}</span>
+      <span class="owned-badge${owned ? "" : " miss"}">${owned ? "\u2713 Owned" : "Not owned"}</span>
+    </div>
+    <div class="body">
+      <h3>${esc(p.name)}</h3>
+      <p class="tag">${esc(p.tagline)}</p>
+      <div class="foot">
+        <div class="price">$${p.priceUsd}<small>${owned ? "you own this" : "one-time"}</small></div>
+        <div class="cardbtns">
+          ${owned
+            ? `<button class="btn small" data-open="${esc(p.id)}">&#9654; Open file</button>
+               <a class="btn ghost small" href="product.html?id=${encodeURIComponent(p.id)}">Details</a>`
+            : `<a class="btn ghost small" href="product.html?id=${encodeURIComponent(p.id)}">View &amp; buy</a>`}
+        </div>
+      </div>
+    </div>
+  </article>`;
+}
+function render() {
+  const list = filtered();
+  document.getElementById("grid").innerHTML = list.length
+    ? list.map(card).join("")
+    : `<div class="empty">Nothing here yet. Connect your downloads folder to see what you own.</div>`;
+  document.getElementById("count").textContent = list.length + (list.length === 1 ? " product" : " products");
+  document.getElementById("clear").hidden = !(st.cat || st.q || st.ownedOnly);
+  renderChips();
+  bar();
+}
+function bar() {
+  const owned = found.size;
+  document.getElementById("ownedCount").textContent = owned;
+  document.getElementById("totalCount").textContent = P.length;
+  document.getElementById("missingCount").textContent = P.length - owned;
+  document.getElementById("lbFill").style.width = (P.length ? owned / P.length * 100 : 0) + "%";
+}
+
+function addFiles(fileList) {
+  let added = 0;
+  for (const f of fileList) {
+    const pid = expect.get(normName(f.name));
+    if (pid && !found.has(pid)) { found.set(pid, { name: f.name, file: f }); added++; }
+  }
+  render();
+  return added;
+}
+async function scanHandle(dirHandle) {
+  for await (const entry of dirHandle.values()) {
+    if (entry.kind !== "file") continue;
+    const pid = expect.get(normName(entry.name));
+    if (pid && !found.has(pid)) {
+      try { found.set(pid, { name: entry.name, file: await entry.getFile() }); } catch (e) {}
+    }
+  }
+  render();
+}
+function openOwned(pid) {
+  const e = found.get(pid);
+  if (!e) return;
+  const url = URL.createObjectURL(e.file);
+  const w = window.open(url, "_blank");
+  setTimeout(() => URL.revokeObjectURL(url), 120000);
+  if (!w) document.getElementById("hint").textContent = "Your browser blocked the pop-up — allow pop-ups for this page and try again.";
+}
+
+document.getElementById("grid").addEventListener("click", e => {
+  const b = e.target.closest("[data-open]");
+  if (b) openOwned(b.dataset.open);
+});
+document.getElementById("q").addEventListener("input", e => { st.q = e.target.value; render(); });
+catSel.addEventListener("change", e => { st.cat = e.target.value; render(); });
+chips.addEventListener("click", e => { const b = e.target.closest(".chip"); if (b) { st.cat = b.dataset.cat; catSel.value = st.cat; render(); } });
+document.getElementById("ownedOnly").addEventListener("change", e => { st.ownedOnly = e.target.checked; render(); });
+document.getElementById("clear").addEventListener("click", () => {
+  st.q = ""; st.cat = ""; st.ownedOnly = false;
+  document.getElementById("q").value = ""; catSel.value = ""; document.getElementById("ownedOnly").checked = false;
+  render();
+});
+document.getElementById("filesBtn").addEventListener("click", () => {
+  const inp = document.getElementById("fileInput");
+  inp.click();
+});
+document.getElementById("fileInput").addEventListener("change", e => { addFiles(e.target.files); e.target.value = ""; });
+document.getElementById("dirInput").addEventListener("change", e => { addFiles(e.target.files); e.target.value = ""; });
+
+const hasFS = "showDirectoryPicker" in window;
+document.getElementById("scanBtn").addEventListener("click", async () => {
+  if (!hasFS) { document.getElementById("dirInput").click(); return; }
+  try {
+    const dir = await window.showDirectoryPicker({ mode: "read" });
+    await scanHandle(dir);
+    try { await idb.set("dir", dir); } catch (e) {}
+  } catch (e) { /* cancelled */ }
+});
+
+const idb = {
+  db: null,
+  async open() { if (this.db) return this.db; this.db = await new Promise((res, rej) => { const r = indexedDB.open("satoshi-launcher", 1); r.onupgradeneeded = () => r.result.createObjectStore("kv"); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); }); return this.db; },
+  async get(k) { const db = await this.open(); return new Promise((res, rej) => { const q = db.transaction("kv", "readonly").objectStore("kv").get(k); q.onsuccess = () => res(q.result); q.onerror = () => rej(q.error); }); },
+  async set(k, v) { const db = await this.open(); return new Promise((res, rej) => { const q = db.transaction("kv", "readwrite").objectStore("kv").put(v, k); q.onsuccess = () => res(); q.onerror = () => rej(q.error); }); },
+};
+
+// drag & drop
+const dz = document.getElementById("dropzone");
+let dragDepth = 0;
+window.addEventListener("dragenter", e => { e.preventDefault(); dragDepth++; dz.classList.add("on"); });
+window.addEventListener("dragover", e => e.preventDefault());
+window.addEventListener("dragleave", e => { dragDepth--; if (dragDepth <= 0) dz.classList.remove("on"); });
+window.addEventListener("drop", e => { e.preventDefault(); dragDepth = 0; dz.classList.remove("on"); if (e.dataTransfer.files && e.dataTransfer.files.length) { const n = addFiles(e.dataTransfer.files); document.getElementById("hint").textContent = n ? `Added ${n} owned ${n === 1 ? "file" : "files"}.` : "No matching products found in those files."; } });
+
+// remember the folder across visits (Chromium)
+(async () => {
+  if (!hasFS) return;
+  try {
+    const dir = await idb.get("dir");
+    if (!dir) return;
+    const perm = await dir.queryPermission({ mode: "read" });
+    if (perm === "granted") { await scanHandle(dir); }
+    else {
+      document.getElementById("hint").innerHTML = 'Welcome back — click <b>Reconnect</b> to rescan your folder. <button class="linkbtn" id="reconnect">Reconnect</button>';
+      const rc = document.getElementById("reconnect");
+      if (rc) rc.addEventListener("click", async () => { try { if (await dir.requestPermission({ mode: "read" }) === "granted") { await scanHandle(dir); document.getElementById("hint").textContent = "Folder connected."; } } catch (e) {} });
+    }
+  } catch (e) {}
+})();
+
+render();
+</script>
+</body>
+</html>
