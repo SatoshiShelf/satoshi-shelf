@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview: Paint &amp; Material Estimator — Satoshi Shelf</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  body { background:#0a0c10; }
+  .pbar { position:sticky; top:0; z-index:20; height:44px; background:rgba(10,12,16,.92); border-bottom:1px solid var(--border);
+    display:flex; align-items:center; gap:12px; padding:0 18px; backdrop-filter:blur(12px); }
+  .pbar .ptag { font-size:12px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--accent-2); white-space:nowrap; }
+  .pbar .track { flex:1; height:6px; border-radius:999px; background:var(--bg-soft); overflow:hidden; border:1px solid var(--border-soft); }
+  .pbar .fill { height:100%; width:0%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); transition:width .95s linear; }
+  .pbar .pcount { font-family:var(--mono); font-size:13px; color:var(--muted); min-width:34px; text-align:right; }
+  .pwrap { max-width:980px; margin:0 auto; padding:34px 22px 70px; }
+  .phead h1 { font-size:clamp(24px,4vw,36px); letter-spacing:-.02em; margin:8px 0 6px; }
+  .phead .sub { color:var(--muted); font-size:clamp(15px,2.2vw,17px); }
+  .shotframe { border-radius:12px; overflow:hidden; border:1px solid var(--border); background:#000; }
+  .shot { width:100%; display:block; }
+  .plock { margin-top:22px; text-align:center; background:var(--card); border:1px solid var(--border); border-radius:14px; padding:22px; }
+  .plock h3 { margin:0 0 6px; }
+  .plock .btn { margin-top:12px; display:inline-block; }
+  .muted { color:var(--muted); }
+  .small { font-size:13px; }
+  .stage { position:relative; }
+  .stage.locked .shot { filter:blur(10px); opacity:.55; }
+  .wm { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none;
+    font-size:42px; font-weight:800; letter-spacing:.2em; color:rgba(255,255,255,.10); transform:rotate(-18deg); }
+</style>
+</head>
+<body data-id="paint-material-estimator">
+<div class="pbar">
+  <span class="ptag">Preview</span>
+  <span class="track"><span class="fill" id="fill"></span></div></span>
+  <span class="pcount" id="pcount">12s</span>
+</div>
+<div class="pwrap">
+  <div class="phead">
+    <span class="kicker">Preview &middot; Home DIY</span>
+    <h1>Paint &amp; Material Estimator</h1>
+    <p class="sub">Buy exactly the paint you need.</p>
+    <div class="pmeta"><span class="pill">HTML app</span><span class="price">$5 <small style="font-size:12px;color:var(--muted);font-weight:500">one-time</small></span></div>
+  </div>
+  <div class="stage" id="stage">
+    <div class="shotframe"><img class="shot" src="img/paint-material-estimator.png" alt="Paint &amp; Material Estimator preview" loading="eager"></div>
+    <div class="wm">PREVIEW</div>
+    <p class="muted small">A live, interactive version runs in your browser after purchase — no install needed.</p>
+  </div>
+  <div class="plock" id="lock" hidden>
+    <h3>Preview ended</h3>
+    <p class="muted">That was your one-time 12-second preview. This page won't play again on this device — unlock the full product to keep going.</p>
+    <a class="btn" href="../product.html?id=paint-material-estimator" target="_top">Unlock full version &middot; $5</a>
+  </div>
+  <p class="foot muted small">This is a watermarked preview. The complete file is delivered instantly after your payment is verified on-chain.</p>
+</div>
+<script>
+(function () {
+  var id = document.body.dataset.id;
+  var KEY = "shelf_trial_" + id;
+  var used = false;
+  try { used = !!localStorage.getItem(KEY); } catch (e) {}
+  var stage = document.getElementById("stage");
+  var lock = document.getElementById("lock");
+  var fill = document.getElementById("fill");
+  var pcount = document.getElementById("pcount");
+  function ended() {
+    if (stage) stage.classList.add("locked");
+    if (lock) lock.hidden = false;
+    if (fill) fill.style.width = "100%";
+    if (pcount) pcount.textContent = "0s";
+  }
+  if (used) { ended(); return; }
+  try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
+  var t = 12;
+  if (pcount) pcount.textContent = t + "s";
+  var iv = setInterval(function () {
+    t--;
+    if (fill) fill.style.width = ((12 - t) / 12 * 100) + "%";
+    if (pcount) pcount.textContent = Math.max(t, 0) + "s";
+    if (t <= 0) { clearInterval(iv); ended(); try { window.parent.postMessage({ source: "shelf-trial", id: id }, "*"); } catch (e) {} }
+  }, 1000);
+})();
+</script>
+</body>
+</html>

@@ -2210,5 +2210,831 @@ window.PRODUCTS = [
       "Share with family or a planner"
     ],
     "file": "products/Wedding-Planning-Deck.pptx"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "category": "Money-Finance",
+    "name": "Compound Interest Calculator",
+    "tagline": "See how your money grows over time.",
+    "priceUsd": 7,
+    "emoji": "\ud83d\udcc8",
+    "format": "HTML app",
+    "file": "products/Compound-Interest-Calculator.html",
+    "summary": "Project your savings with monthly contributions and a year-by-year table.",
+    "bullets": [
+      "See final balance, interest and contributions",
+      "Adjust contributions and return to compare",
+      "Full year-by-year breakdown",
+      "Works offline in any browser"
+    ]
+  },
+  {
+    "id": "salary-takehome-calculator",
+    "category": "Money-Finance",
+    "name": "Salary & Take-Home Pay Calculator",
+    "tagline": "Work out your real take-home pay.",
+    "priceUsd": 7,
+    "emoji": "\ud83d\udcb5",
+    "format": "HTML app",
+    "file": "products/Salary-Takehome-Calculator.html",
+    "summary": "Turn a gross salary into net pay per year, month, week and day.",
+    "bullets": [
+      "Net pay per year, month, week and day",
+      "Include tax, pension and deductions",
+      "Instantly updates as you type",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "content-calendar",
+    "category": "Marketing-Social",
+    "name": "Social Media Content Calendar",
+    "tagline": "Plan a month of posts in minutes.",
+    "priceUsd": 7,
+    "emoji": "\ud83d\uddd3",
+    "format": "HTML app",
+    "file": "products/Content-Calendar.html",
+    "summary": "Add posts by date and platform and keep your whole content plan in one place.",
+    "bullets": [
+      "Organise posts by date and platform",
+      "Saves automatically in your browser",
+      "Great for batching a week of content",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "seo-meta-generator",
+    "category": "Marketing-Social",
+    "name": "SEO Title & Meta Generator",
+    "tagline": "Write titles and descriptions Google loves.",
+    "priceUsd": 7,
+    "emoji": "\ud83d\udd0d",
+    "format": "HTML app",
+    "file": "products/SEO-Title-Meta-Generator.html",
+    "summary": "Craft a page title and meta description with live length checks and a search preview.",
+    "bullets": [
+      "Live Google-style search preview",
+      "Character-length guidance as you type",
+      "Craft compelling titles and descriptions",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "subject-line-tester",
+    "category": "Marketing-Social",
+    "name": "Email Subject Line Tester",
+    "tagline": "Stop writing subject lines that get ignored.",
+    "priceUsd": 5,
+    "emoji": "\u2709",
+    "format": "HTML app",
+    "file": "products/Email-Subject-Line-Tester.html",
+    "summary": "Score any subject line for length, spam words and curiosity before you hit send.",
+    "bullets": [
+      "Instant score out of 100",
+      "Flags common spam trigger words",
+      "Checks length, caps and curiosity",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "interview-question-bank",
+    "category": "Career-Jobs",
+    "name": "Interview Question Bank",
+    "tagline": "Walk in prepared, not nervous.",
+    "priceUsd": 7,
+    "emoji": "\ud83d\udcac",
+    "format": "HTML app",
+    "file": "products/Interview-Question-Bank.html",
+    "summary": "Practise real interview questions by category and draft answers with the STAR method.",
+    "bullets": [
+      "Dozens of real interview questions",
+      "Grouped by behavioural, situational and more",
+      "STAR answer framework built in",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "salary-negotiation-scripts",
+    "category": "Career-Jobs",
+    "name": "Salary Negotiation Scripts",
+    "tagline": "Word-for-word scripts to get paid more.",
+    "priceUsd": 7,
+    "emoji": "\ud83d\udcdd",
+    "format": "HTML app",
+    "file": "products/Salary-Negotiation-Scripts.html",
+    "summary": "Fill in the blanks and copy a proven script to ask for a raise or counter an offer.",
+    "bullets": [
+      "Multiple tested negotiation scripts",
+      "Fill in your role, target and evidence",
+      "Copy to clipboard with one click",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "client-proposal-builder",
+    "category": "Freelancing-Remote",
+    "name": "Client Proposal Builder",
+    "tagline": "Send a proposal that wins the job.",
+    "priceUsd": 9,
+    "emoji": "\ud83d\udcc4",
+    "format": "HTML app",
+    "file": "products/Client-Proposal-Builder.html",
+    "summary": "Fill in the fields and get a clean, professional proposal you can print or save as PDF.",
+    "bullets": [
+      "Professional proposal layout",
+      "Live preview as you type",
+      "Print or save straight to PDF",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "freelance-rate-calculator",
+    "category": "Freelancing-Remote",
+    "name": "Freelance Rate Calculator",
+    "tagline": "Work out exactly what to charge.",
+    "priceUsd": 7,
+    "emoji": "\ud83d\udcb0",
+    "format": "HTML app",
+    "file": "products/Freelance-Rate-Calculator.html",
+    "summary": "Turn your income goal into the hourly, day and project rates you need to hit it.",
+    "bullets": [
+      "Hourly, day and weekly rates",
+      "Accounts for expenses and billable hours",
+      "Quick project price estimator",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "product-description-generator",
+    "category": "Ecommerce",
+    "name": "Product Description Generator",
+    "tagline": "Write listings that sell.",
+    "priceUsd": 7,
+    "emoji": "\ud83d\udecd",
+    "format": "HTML app",
+    "file": "products/Product-Description-Generator.html",
+    "summary": "Turn a product name and features into a polished description with benefit bullets.",
+    "bullets": [
+      "Turn features into selling copy",
+      "Choose from several tones",
+      "Copy the description in one click",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "order-shipping-tracker",
+    "category": "Ecommerce",
+    "name": "Order & Shipping Tracker",
+    "tagline": "Every order in one tidy board.",
+    "priceUsd": 7,
+    "emoji": "\ud83d\udce6",
+    "format": "HTML app",
+    "file": "products/Order-Shipping-Tracker.html",
+    "summary": "Track orders through pending, packed, shipped and delivered with live counts.",
+    "bullets": [
+      "Status counts update instantly",
+      "Advance orders with one click",
+      "Saved in your browser",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "quiz-test-maker",
+    "category": "Teachers-Students",
+    "name": "Quiz & Test Maker",
+    "tagline": "Build a quiz, then take it.",
+    "priceUsd": 9,
+    "emoji": "\ud83e\udde0",
+    "format": "HTML app",
+    "file": "products/Quiz-and-Test-Maker.html",
+    "summary": "Create multiple-choice questions, sit the quiz and get scored automatically.",
+    "bullets": [
+      "Build your own multiple-choice quizzes",
+      "Take the quiz and get scored",
+      "Questions saved in your browser",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "seating-chart-planner",
+    "category": "Teachers-Students",
+    "name": "Seating Chart Planner",
+    "tagline": "Plan your classroom layout in seconds.",
+    "priceUsd": 5,
+    "emoji": "\ud83e\ude91",
+    "format": "HTML app",
+    "file": "products/Seating-Chart-Planner.html",
+    "summary": "Paste your class list and generate a printable seating chart, alphabetical or shuffled.",
+    "bullets": [
+      "Generate a chart from a class list",
+      "Alphabetical or randomly shuffled",
+      "Adjustable rows and seats",
+      "Print-friendly"
+    ]
+  },
+  {
+    "id": "sleep-mood-tracker",
+    "category": "Health-Wellness",
+    "name": "Sleep & Mood Tracker",
+    "tagline": "See the link between rest and how you feel.",
+    "priceUsd": 7,
+    "emoji": "\ud83d\ude34",
+    "format": "HTML app",
+    "file": "products/Sleep-and-Mood-Tracker.html",
+    "summary": "Log hours slept and daily mood, and watch your recent trend build itself.",
+    "bullets": [
+      "Log sleep hours and daily mood",
+      "See averages update automatically",
+      "Recent trend at a glance",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "one-rep-max-calculator",
+    "category": "Fitness-Sports",
+    "name": "One-Rep Max Calculator",
+    "tagline": "Know your true strength, safely.",
+    "priceUsd": 5,
+    "emoji": "\ud83c\udfcb",
+    "format": "HTML app",
+    "file": "products/One-Rep-Max-Calculator.html",
+    "summary": "Estimate your one-rep max from any set and get a full percentage training table.",
+    "bullets": [
+      "Estimate your 1RM from any set",
+      "Full percentage training table",
+      "Switch between kg and lb",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "cooking-measurement-converter",
+    "category": "Food-Recipes",
+    "name": "Cooking Measurement Converter",
+    "tagline": "Cups, grams, ounces - sorted.",
+    "priceUsd": 5,
+    "emoji": "\ud83c\udf73",
+    "format": "HTML app",
+    "file": "products/Cooking-Measurement-Converter.html",
+    "summary": "Convert between cups, tablespoons, teaspoons, millilitres and grams for any ingredient.",
+    "bullets": [
+      "Cups, spoons, ml, litres and grams",
+      "Ingredient density for accurate grams",
+      "Live conversion as you type",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "paint-material-estimator",
+    "category": "Home-DIY",
+    "name": "Paint & Material Estimator",
+    "tagline": "Buy exactly the paint you need.",
+    "priceUsd": 5,
+    "emoji": "\ud83c\udfa8",
+    "format": "HTML app",
+    "file": "products/Paint-Material-Estimator.html",
+    "summary": "Work out wall area and how many litres and tins of paint a room needs.",
+    "bullets": [
+      "Calculates paintable wall area",
+      "Accounts for doors and windows",
+      "Tells you litres and tins needed",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "json-formatter",
+    "category": "Tech-Code-AI",
+    "name": "JSON Formatter & Validator",
+    "tagline": "Turn messy JSON into clean data.",
+    "priceUsd": 5,
+    "emoji": "\ud83e\uddfe",
+    "format": "HTML app",
+    "file": "products/JSON-Formatter.html",
+    "summary": "Validate, pretty-print or minify JSON with clear error messages when something is wrong.",
+    "bullets": [
+      "Pretty-print with 2 or 4 spaces",
+      "Minify in one click",
+      "Clear validation errors",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "regex-tester",
+    "category": "Tech-Code-AI",
+    "name": "Regex Tester & Explainer",
+    "tagline": "Test any regex against your text.",
+    "priceUsd": 5,
+    "emoji": "\ud83d\udd0e",
+    "format": "HTML app",
+    "file": "products/Regex-Tester.html",
+    "summary": "Highlight every match and list capture groups, with clear errors for bad patterns.",
+    "bullets": [
+      "Test regex live against your text",
+      "Lists every capture group",
+      "Flags support (g, i, m, s)",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "color-contrast-checker",
+    "category": "Creative-Design",
+    "name": "Color Contrast Checker",
+    "tagline": "Make your text accessible to everyone.",
+    "priceUsd": 5,
+    "emoji": "\ud83c\udfa8",
+    "format": "HTML app",
+    "file": "products/Color-Contrast-Checker.html",
+    "summary": "Check any text and background pair against WCAG AA and AAA contrast standards.",
+    "bullets": [
+      "WCAG AA and AAA pass/fail at a glance",
+      "Live text preview",
+      "Exact contrast ratio",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "bitcoin-dca-calculator",
+    "category": "Crypto-Web3",
+    "name": "Bitcoin DCA Calculator",
+    "tagline": "See what dollar-cost averaging would have done.",
+    "priceUsd": 7,
+    "emoji": "\u20bf",
+    "format": "HTML app",
+    "file": "products/Bitcoin-DCA-Calculator.html",
+    "summary": "Enter your buy amounts and the price at each buy to see total sats, average cost and profit.",
+    "bullets": [
+      "Total sats and average cost across buys",
+      "See profit or loss at the current price",
+      "Add as many buy prices as you like",
+      "Works offline"
+    ]
+  },
+  {
+    "id": "game-snake",
+    "category": "Games-Interactive",
+    "name": "Snake (Arcade)",
+    "tagline": "Eat, grow, don't bite yourself.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udc0d",
+    "format": "HTML game",
+    "file": "products/game-snake.html",
+    "summary": "The classic. Steer the snake, eat the food, and grow as long as you can without crashing into yourself or the walls. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-breakout",
+    "category": "Games-Interactive",
+    "name": "Breakout (Arcade)",
+    "tagline": "Smash every last brick.",
+    "priceUsd": 3,
+    "emoji": "\ud83e\uddf1",
+    "format": "HTML game",
+    "file": "products/game-breakout.html",
+    "summary": "Bounce the ball off your paddle and clear the wall of bricks. Lose the ball and it costs you a life. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-pong",
+    "category": "Games-Interactive",
+    "name": "Pong (Arcade)",
+    "tagline": "The one that started it all.",
+    "priceUsd": 3,
+    "emoji": "\ud83c\udfd3",
+    "format": "HTML game",
+    "file": "products/game-pong.html",
+    "summary": "The original arcade duel. Move your paddle, outplay the CPU, and reach the winning score. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-blockfall",
+    "category": "Games-Interactive",
+    "name": "Blockfall (Arcade)",
+    "tagline": "Stack the falling blocks.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udfe6",
+    "format": "HTML game",
+    "file": "products/game-blockfall.html",
+    "summary": "Rotate and drop the falling pieces, fill complete lines to clear them, and survive as the speed ramps up. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-flappy",
+    "category": "Games-Interactive",
+    "name": "Flappy Wing (Arcade)",
+    "tagline": "One tap. Endless pipes.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udc24",
+    "format": "HTML game",
+    "file": "products/game-flappy.html",
+    "summary": "Tap to flap and thread the bird through the pipes. Simple to learn, brutal to master. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-2048",
+    "category": "Games-Interactive",
+    "name": "2048 (Arcade)",
+    "tagline": "Merge tiles to reach 2048.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udd22",
+    "format": "HTML game",
+    "file": "products/game-2048.html",
+    "summary": "Slide the tiles, merge matching numbers, and chase the 2048 tile before the board fills up. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-memory",
+    "category": "Games-Interactive",
+    "name": "Memory Match (Arcade)",
+    "tagline": "Find every matching pair.",
+    "priceUsd": 3,
+    "emoji": "\ud83c\udccf",
+    "format": "HTML game",
+    "file": "products/game-memory.html",
+    "summary": "Flip cards two at a time and memorise where each symbol hides. Clear the board in as few moves as possible. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-minefield",
+    "category": "Games-Interactive",
+    "name": "Minefield (Arcade)",
+    "tagline": "Clear the grid, dodge the mines.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udca3",
+    "format": "HTML game",
+    "file": "products/game-minefield.html",
+    "summary": "Use the number clues to work out where the mines are, then reveal every safe square without detonating one. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-invaders",
+    "category": "Games-Interactive",
+    "name": "Space Invaders (Arcade)",
+    "tagline": "Defend the planet.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udc7e",
+    "format": "HTML game",
+    "file": "products/game-invaders.html",
+    "summary": "Aliens march down the screen as you shoot from below. Don't let them reach the bottom. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-tictactoe",
+    "category": "Games-Interactive",
+    "name": "Tic-Tac-Toe AI (Arcade)",
+    "tagline": "Try to beat the unbeatable.",
+    "priceUsd": 3,
+    "emoji": "\u274c",
+    "format": "HTML game",
+    "file": "products/game-tictactoe.html",
+    "summary": "Play X against a CPU that never loses. Can you force a draw, or catch it off guard? It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-sudoku",
+    "category": "Games-Interactive",
+    "name": "Sudoku (Arcade)",
+    "tagline": "A fresh logic puzzle every time.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udd32",
+    "format": "HTML game",
+    "file": "products/game-sudoku.html",
+    "summary": "Fill the grid so every row, column and box holds the digits 1-9. A new puzzle is generated each game. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-wordsearch",
+    "category": "Games-Interactive",
+    "name": "Word Search (Arcade)",
+    "tagline": "Hunt the hidden words.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udd24",
+    "format": "HTML game",
+    "file": "products/game-wordsearch.html",
+    "summary": "Words are hidden across the grid in every direction. Find them all against the clock. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-hangman",
+    "category": "Games-Interactive",
+    "name": "Hangman (Arcade)",
+    "tagline": "Guess the word before it's too late.",
+    "priceUsd": 3,
+    "emoji": "\ud83e\ude9d",
+    "format": "HTML game",
+    "file": "products/game-hangman.html",
+    "summary": "Pick letters to reveal the secret word. Six wrong guesses and it's over. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-simon",
+    "category": "Games-Interactive",
+    "name": "Simon Says (Arcade)",
+    "tagline": "Repeat the growing pattern.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udd34",
+    "format": "HTML game",
+    "file": "products/game-simon.html",
+    "summary": "Watch the colours light up, then repeat the sequence. It gets one step longer every round. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-whack",
+    "category": "Games-Interactive",
+    "name": "Whack-a-Mole (Arcade)",
+    "tagline": "Fast fingers only.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udd28",
+    "format": "HTML game",
+    "file": "products/game-whack.html",
+    "summary": "Moles pop up all over the board - hit as many as you can before the clock runs out. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-doodle",
+    "category": "Games-Interactive",
+    "name": "Doodle Jump (Arcade)",
+    "tagline": "Climb as high as you can.",
+    "priceUsd": 3,
+    "emoji": "\ud83e\udd98",
+    "format": "HTML game",
+    "file": "products/game-doodle.html",
+    "summary": "Bounce your way up an endless tower of platforms. Miss one and you fall. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-asteroids",
+    "category": "Games-Interactive",
+    "name": "Asteroids (Arcade)",
+    "tagline": "Blast the drifting rocks.",
+    "priceUsd": 3,
+    "emoji": "\u2604\ufe0f",
+    "format": "HTML game",
+    "file": "products/game-asteroids.html",
+    "summary": "Spin, thrust and shoot through a field of asteroids that split into smaller ones when hit. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-sokoban",
+    "category": "Games-Interactive",
+    "name": "Sokoban (Arcade)",
+    "tagline": "Push every box onto its target.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udce6",
+    "format": "HTML game",
+    "file": "products/game-sokoban.html",
+    "summary": "A classic box-pushing puzzle. Plan your moves carefully - one wrong shove and you're stuck. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-lightsout",
+    "category": "Games-Interactive",
+    "name": "Lights Out (Arcade)",
+    "tagline": "Switch every light off.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udca1",
+    "format": "HTML game",
+    "file": "products/game-lightsout.html",
+    "summary": "Tapping a light toggles it and its neighbours. Turn the whole grid off in the fewest taps. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-connect4",
+    "category": "Games-Interactive",
+    "name": "Connect Four AI (Arcade)",
+    "tagline": "Four in a row wins.",
+    "priceUsd": 3,
+    "emoji": "\ud83d\udd35",
+    "format": "HTML game",
+    "file": "products/game-connect4.html",
+    "summary": "Drop your discs and line up four before the CPU does. It blocks - and it attacks. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-stacker",
+    "category": "Games-Interactive",
+    "name": "Stacker (Arcade)",
+    "tagline": "Build the tallest tower.",
+    "priceUsd": 3,
+    "emoji": "\ud83c\udfd7\ufe0f",
+    "format": "HTML game",
+    "file": "products/game-stacker.html",
+    "summary": "Time your moves to stack blocks into a tower. Overhang gets trimmed away - stay precise. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-maze",
+    "category": "Games-Interactive",
+    "name": "Maze Runner (Arcade)",
+    "tagline": "Find the way out.",
+    "priceUsd": 3,
+    "emoji": "\ud83c\udf00",
+    "format": "HTML game",
+    "file": "products/game-maze.html",
+    "summary": "A randomly generated maze every time. Race to the exit and try to beat your best time. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-reaction",
+    "category": "Games-Interactive",
+    "name": "Reaction Test (Arcade)",
+    "tagline": "How fast are your reflexes?",
+    "priceUsd": 3,
+    "emoji": "\u26a1",
+    "format": "HTML game",
+    "file": "products/game-reaction.html",
+    "summary": "Wait for green, then click as fast as you can. Average your five tries for a true score. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-typing",
+    "category": "Games-Interactive",
+    "name": "Typing Speed (Arcade)",
+    "tagline": "Words per minute.",
+    "priceUsd": 3,
+    "emoji": "\u2328\ufe0f",
+    "format": "HTML game",
+    "file": "products/game-typing.html",
+    "summary": "Type the passage against the clock and get your real words-per-minute and accuracy score. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "game-rps",
+    "category": "Games-Interactive",
+    "name": "Rock Paper Scissors (Arcade)",
+    "tagline": "Best of five versus the CPU.",
+    "priceUsd": 3,
+    "emoji": "\u270a",
+    "format": "HTML game",
+    "file": "products/game-rps.html",
+    "summary": "The timeless duel. First to three wins the match - the CPU mixes it up to keep you guessing. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "bullets": [
+      "Plays instantly in any browser \u2014 no install",
+      "Works fully offline, forever",
+      "Saves your best score on your device",
+      "Keyboard, mouse & touch controls",
+      "One clean HTML file you own"
+    ]
+  },
+  {
+    "id": "arcade-vault",
+    "category": "Games-Interactive",
+    "name": "Arcade Vault \u2014 25 Classic Games",
+    "tagline": "25 classic games. One offline file.",
+    "priceUsd": 19,
+    "emoji": "\ud83d\udd79\ufe0f",
+    "format": "HTML app",
+    "file": "products/arcade-vault.html",
+    "summary": "Every classic in one place: Snake, Breakout, 2048, Space Invaders, Sudoku, Pong, Asteroids and 18 more. Open the single file, pick a game from the menu and play \u2014 no install, no internet, nothing to set up.",
+    "bullets": [
+      "25 complete games in a single file",
+      "No install, no account \u2014 open and play",
+      "Works offline, forever",
+      "Searchable game menu",
+      "Keyboard, mouse & touch support",
+      "One file you own and can back up"
+    ]
   }
 ];
