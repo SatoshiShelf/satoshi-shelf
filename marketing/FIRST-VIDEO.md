@@ -45,9 +45,9 @@ Length target: **25–30 seconds.** Vertical 1080×1920.
 **YouTube description (paste):**
 ```
 3 side hustles you can start today with $0. Full free 7-day plan here:
-https://xghabra.github.io/satoshi-shelf/free.html
+https://satoshishelf.github.io/satoshi-shelf/free.html
 
-Guides & tools: https://xghabra.github.io/satoshi-shelf/
+Guides & tools: https://satoshishelf.github.io/satoshi-shelf/
 
 #sidehustle #makemoneyonline #passiveincome #digitalproducts
 ```

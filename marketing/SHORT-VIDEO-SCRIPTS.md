@@ -5,7 +5,7 @@
 **Make each one like this:**
 - **Hook (0–3s):** big text on screen + spoken. This decides everything.
 - **Beats:** 3–5 quick lines, one per screen, ~2–3s each. Keep text short.
-- **CTA:** send them to your **bio link** (the free guide): `https://xghabra.github.io/satoshi-shelf/free.html`
+- **CTA:** send them to your **bio link** (the free guide): `https://satoshishelf.github.io/satoshi-shelf/free.html`
 - **Bio link + pinned comment** carry the link. Never say a raw URL out loud.
 
 **Post:** 1–2/day to TikTok + YouTube Shorts + Instagram Reels (same file everywhere).

@@ -12,8 +12,8 @@ Free guide (free.html)  ->  builds trust  ->  paid products
   posted/shared in communities you actually help in   BTC checkout
 ```
 
-Your store: https://xghabra.github.io/satoshi-shelf/
-Freebie: https://xghabra.github.io/satoshi-shelf/free.html
+Your store: https://satoshishelf.github.io/satoshi-shelf/
+Freebie: https://satoshishelf.github.io/satoshi-shelf/free.html
 
 ---
 
@@ -48,7 +48,7 @@ Find your subs fast: search Reddit for the exact problem ("how do I invoice as a
 > Day 6: free hosting + a payment method you control.
 > Day 7: launch in 3 communities where those people hang out.
 >
-> Full free guide here (no signup): https://xghabra.github.io/satoshi-shelf/free.html
+> Full free guide here (no signup): https://satoshishelf.github.io/satoshi-shelf/free.html
 >
 > Curious what you'd add — what's stopped you from launching?
 

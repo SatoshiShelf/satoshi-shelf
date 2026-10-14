@@ -41,12 +41,12 @@ git init
 git add .
 git commit -m "Satoshi Shelf store"
 git branch -M main
-git remote add origin https://github.com/xGhabra/satoshi-shelf.git
+git remote add origin https://github.com/SatoshiShelf/satoshi-shelf.git
 git push -u origin main
 ```
 
 Then on GitHub: **Settings → Pages → Source: Deploy from a branch → main / (root)**.
-Live at `https://xghabra.github.io/satoshi-shelf/`.
+Live at `https://satoshishelf.github.io/satoshi-shelf/`.
 
 ## How checkout works
 

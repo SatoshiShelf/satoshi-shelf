@@ -1,7 +1,7 @@
 # Reddit posting pack — Satoshi Shelf
 
-Store: https://xghabra.github.io/satoshi-shelf/
-Free guide: https://xghabra.github.io/satoshi-shelf/free.html
+Store: https://satoshishelf.github.io/satoshi-shelf/
+Free guide: https://satoshishelf.github.io/satoshi-shelf/free.html
 
 ## Golden rules (read or get banned)
 1. **Check each sub's sidebar rules FIRST.** Some ban all links/self-promo.
@@ -41,7 +41,7 @@ Do **not** post promo here. Use it for comments + one honest discussion post.
 >
 > What would you add to the list?
 
-*(Wait for permission / upvotes, then reply with: https://xghabra.github.io/satoshi-shelf/free.html)*
+*(Wait for permission / upvotes, then reply with: https://satoshishelf.github.io/satoshi-shelf/free.html)*
 
 ---
 
@@ -84,7 +84,7 @@ If value posts are allowed:
 > Day 6: free hosting + payment you control (Bitcoin needs no business account).
 > Day 7: launch where those people hang out.
 >
-> Full free guide (no signup): https://xghabra.github.io/satoshi-shelf/free.html
+> Full free guide (no signup): https://satoshishelf.github.io/satoshi-shelf/free.html
 >
 > No gimmicks — it's a process, not a jackpot. Ask me anything.
 

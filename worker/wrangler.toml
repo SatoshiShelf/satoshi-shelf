@@ -4,7 +4,7 @@ compatibility_date = "2024-11-01"
 
 [vars]
 BTC_ADDRESS = "bc1qrs6leywqgu56d8h5ynw9ynn0e3kdduantgd2z3"
-STORE_URL = "https://xghabra.github.io/satoshi-shelf/"
+STORE_URL = "https://satoshishelf.github.io/satoshi-shelf/"
 
 # Optional hardening:
 #   wrangler secret put DOWNLOAD_SECRET   # download-link signing key

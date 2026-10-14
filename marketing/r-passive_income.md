@@ -38,7 +38,7 @@ If a mod removes a link, re-post without it and put the link in your profile / a
 > Not trying to sell you a course. Just tired of seeing people waste money on ones that don't work. Ask me anything.
 > *(disclosure: it's my site, but the guide is free and there's no signup.)*
 
-**Link:** https://xghabra.github.io/satoshi-shelf/free.html
+**Link:** https://satoshishelf.github.io/satoshi-shelf/free.html
 
 ---
 
@@ -48,7 +48,7 @@ If a mod removes a link, re-post without it and put the link in your profile / a
 > I wrote the whole thing up free (no email). Happy to paste the full list in the comments if links aren't allowed here.
 
 Then, only *after* people ask, reply:
-> Here you go (free, no signup): https://xghabra.github.io/satoshi-shelf/free.html
+> Here you go (free, no signup): https://satoshishelf.github.io/satoshi-shelf/free.html
 
 ---
 
@@ -58,7 +58,7 @@ Then, only *after* people ask, reply:
 > The honest answer: pick one narrow problem for one specific group, build the smallest thing that solves it (a checklist qualifies), and spend more time finding the audience than making the product. The product is the easy part. Distribution is 90% of it. Happy to share what I use if useful.
 
 **Template B — when they ask for the link:**
-> No problem — here's the free 7-day plan I mentioned (no email, no upsell): https://xghabra.github.io/satoshi-shelf/free.html
+> No problem — here's the free 7-day plan I mentioned (no email, no upsell): https://satoshishelf.github.io/satoshi-shelf/free.html
 
 ---
 

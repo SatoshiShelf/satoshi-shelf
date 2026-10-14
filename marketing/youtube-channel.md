@@ -22,10 +22,10 @@ Here you'll find simple, honest lessons on:
 No get-rich-quick promises. No guaranteed income. Just a repeatable process you can start this week, explained step by step.
 
 📘 FREE 7-Day Digital Product Kickstart (no email required):
-https://xghabra.github.io/satoshi-shelf/free.html
+https://satoshishelf.github.io/satoshi-shelf/free.html
 
 🛒 Guides, templates and tools (one-time, instant download):
-https://xghabra.github.io/satoshi-shelf/
+https://satoshishelf.github.io/satoshi-shelf/
 
 🗓️ New videos every week. Subscribe and start building.
 
@@ -40,8 +40,8 @@ make money online, side hustle, passive income, digital products, sell digital p
 ```
 
 ## Links block (Channel → Customization → Links)
-- Free guide → https://xghabra.github.io/satoshi-shelf/free.html
-- Store → https://xghabra.github.io/satoshi-shelf/
+- Free guide → https://satoshishelf.github.io/satoshi-shelf/free.html
+- Store → https://satoshishelf.github.io/satoshi-shelf/
 - (Optional) TikTok / Instagram / Pinterest if you post there
 
 ## Banner text (keep it short — 1 line, big)
@@ -57,10 +57,10 @@ make money online, side hustle, passive income, digital products, sell digital p
 ## Pinned free-guide video description (for your best value video)
 ```
 Everything I use to make money online with no budget is in my free 7-day plan:
-https://xghabra.github.io/satoshi-shelf/free.html
+https://satoshishelf.github.io/satoshi-shelf/free.html
 
 Guides & tools (one-time, instant download):
-https://xghabra.github.io/satoshi-shelf/
+https://satoshishelf.github.io/satoshi-shelf/
 
 New videos weekly — subscribe for more.
 

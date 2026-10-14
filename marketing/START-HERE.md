@@ -4,8 +4,8 @@ Everything below can be done from your **PC browser**. If you have a phone, the 
 
 Your two links (you'll need them a lot — copy them now):
 ```
-Free guide:  https://xghabra.github.io/satoshi-shelf/free.html
-Store:       https://xghabra.github.io/satoshi-shelf/
+Free guide:  https://satoshishelf.github.io/satoshi-shelf/free.html
+Store:       https://satoshishelf.github.io/satoshi-shelf/
 ```
 
 ---
@@ -68,9 +68,9 @@ You'll make 6 quick scenes, one per line from the script (see `FIRST-VIDEO.md`).
 5. **Description:** paste:
    ```
    3 side hustles you can start today with $0. Full free 7-day plan:
-   https://xghabra.github.io/satoshi-shelf/free.html
+   https://satoshishelf.github.io/satoshi-shelf/free.html
 
-   Guides & tools: https://xghabra.github.io/satoshi-shelf/
+   Guides & tools: https://satoshishelf.github.io/satoshi-shelf/
 
    #shorts #sidehustle #makemoneyonline #passiveincome
    ```
@@ -110,7 +110,7 @@ You'll make 6 quick scenes, one per line from the script (see `FIRST-VIDEO.md`).
 # PART E — Set up the links people click (10 minutes)
 
 1. **YouTube channel bio/about:** paste the text from `youtube-channel.md`.
-2. **TikTok bio:** put `Free 7-day plan 👉 xghabra.github.io/satoshi-shelf/free.html`.
+2. **TikTok bio:** put `Free 7-day plan 👉 satoshishelf.github.io/satoshi-shelf/free.html`.
 3. **Instagram bio:** same link.
 4. *(Optional)* Make a free **Linktree** so one link in bio holds both the free guide and the store.
 
