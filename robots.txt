@@ -1,9 +1,7 @@
 User-agent: *
 Allow: /
+
+# Trial pages are watermarked duplicates of paid products — keep them out of search.
 Disallow: /previews/
-Disallow: /marketing/
-Disallow: /tools/
-Disallow: /worker/
-Disallow: /README.md
 
 Sitemap: https://xghabra.github.io/satoshi-shelf/sitemap.xml
