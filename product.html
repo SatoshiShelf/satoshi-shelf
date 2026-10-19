@@ -65,6 +65,11 @@ const id = new URLSearchParams(location.search).get("id");
 const p = window.PRODUCTS.find(x => x.id === id) || window.PRODUCTS[0];
 document.title = p.name + " — Satoshi Shelf";
 
+// Escape everything that comes from the catalog before it goes into innerHTML.
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const safeUrl = s => encodeURIComponent(String(s == null ? "" : s));
+const safeJs = s => JSON.stringify(String(s == null ? "" : s)).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026");
+
 function seo(p) {
   const site = location.origin + location.pathname.replace(/[^/]*$/, "");
   const url = site + "product.html?id=" + encodeURIComponent(p.id);
@@ -91,7 +96,7 @@ function seo(p) {
   put("meta", { "data-seo": "tw:image", name: "twitter:image", content: img });
   const s = document.createElement("script");
   s.type = "application/ld+json";
-  s.textContent = JSON.stringify({
+  const jsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
     "name": p.name,
@@ -106,19 +111,21 @@ function seo(p) {
       "availability": "https://schema.org/InStock"
     }
   });
+  // Neutralise the sequence that can close the <script> element from inside JSON.
+  s.textContent = jsonLd.replace(/<\//g, "<\\/");
   document.head.appendChild(s);
 }
 seo(p);
-document.getElementById("crumb").innerHTML = `<a id="crumbcat" href="index.html?cat=${encodeURIComponent(p.category)}#products">${(p.category || "Products").replace(/-/g, " ")}</a> &nbsp;/&nbsp; ${p.name}`;
+document.getElementById("crumb").innerHTML = `<a id="crumbcat" href="index.html?cat=${safeUrl(p.category)}#products">${esc((p.category || "Products").replace(/-/g, " "))}</a> &nbsp;/&nbsp; ${esc(p.name)}`;
 
 function runBlock(p) {
   const info = (window.RUNINFO || {})[p.id];
   if (!info) return "";
   const script = info.script || "your_script.py";
   const deps = info.deps || [];
-  const depText = deps.length ? deps.join(", ") : "none — only the Python standard library";
+  const depText = esc(deps.length ? deps.join(", ") : "none — only the Python standard library");
   const installStep = deps.length
-    ? `<li>Install the dependencies: <code class="run-code">pip install -r requirements.txt</code>${deps.length ? ` <span class="muted">(installs ${deps.join(", ")})</span>` : ""}</li>`
+    ? `<li>Install the dependencies: <code class="run-code">pip install -r requirements.txt</code> <span class="muted">(installs ${esc(deps.join(", "))})</span></li>`
     : "";
   return `
     <h2>How to run it</h2>
@@ -128,7 +135,7 @@ function runBlock(p) {
       <li>Open a <b>terminal</b> (Command Prompt on Windows, Terminal on macOS/Linux) and go into the unzipped folder.</li>
       ${installStep}
       <li>Run the script:
-        <pre class="run-code">python ${script}</pre>
+        <pre class="run-code">python ${esc(script)}</pre>
       </li>
     </ol>
     <p class="muted">Every bundle includes a <b>README.md</b> with full instructions, options and examples — open it for the exact usage.</p>`;
@@ -136,21 +143,21 @@ function runBlock(p) {
 
 document.getElementById("head").innerHTML = `
   <div class="cover product-cover">
-    <img class="cover-img" src="assets/covers/${encodeURIComponent(p.id)}.jpg" alt="${p.name} preview" onerror="this.style.display='none';this.parentNode.classList.add('noimg')">
-    <span class="catbadge">${(p.category || "Digital download").replace(/-/g, " ")}</span>
+    <img class="cover-img" src="assets/covers/${safeUrl(p.id)}.jpg" alt="${esc(p.name)} preview" onerror="this.style.display='none';this.parentNode.classList.add('noimg')">
+    <span class="catbadge">${esc((p.category || "Digital download").replace(/-/g, " "))}</span>
   </div>
-  <h1>${p.name}</h1>
-  <p class="tag">${p.tagline}</p>
-  ${p.format ? `<div class="fmtline"><span class="pill">${p.format}</span></div>` : ""}
+  <h1>${esc(p.name)}</h1>
+  <p class="tag">${esc(p.tagline)}</p>
+  ${p.format ? `<div class="fmtline"><span class="pill">${esc(p.format)}</span></div>` : ""}
   <div class="product-body">
     <h2>What you get</h2>
-    <p>${p.summary}</p>
+    <p>${esc(p.summary)}</p>
     <h2>Highlights</h2>
-    <ul class="checks">${p.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
+    <ul class="checks">${(p.bullets || []).map(b => `<li>${esc(b)}</li>`).join("")}</ul>
     <h2>Delivery</h2>
     <p>Immediately after your payment is confirmed on-chain, a download link appears right here on this page. No account, no email required — keep the page open until you download.</p>
     <h2>Format</h2>
-    <p>${p.format || "Self-contained HTML file"}. ${/\.html$/.test(p.file) ? "Open it in any browser, or use your browser's <b>Print &rarr; Save as PDF</b> for an offline copy you own forever." : "Delivered as an instant download after your payment is verified."}</p>
+    <p>${esc(p.format || "Self-contained HTML file")}. ${/\.html$/.test(String(p.file || "")) ? "Open it in any browser, or use your browser's <b>Print &rarr; Save as PDF</b> for an offline copy you own forever." : "Delivered as an instant download after your payment is verified."}</p>
     ${runBlock(p)}
   </div>`;
 
@@ -158,9 +165,9 @@ const related = window.PRODUCTS.filter(x => x.id !== p.id)
   .sort((a, b) => (b.category === p.category) - (a.category === p.category))
   .slice(0, 6);
 document.getElementById("relatedGrid").innerHTML = related.map(x => `
-  <a class="mini" href="product.html?id=${encodeURIComponent(x.id)}">
-    <span class="g"><img src="assets/covers/${encodeURIComponent(x.id)}.jpg" alt="" loading="lazy" onerror="this.style.display='none'"></span>
-    <span><span class="t">${x.name}</span><br><span class="p">$${x.priceUsd} &middot; ${x.tagline}</span></span>
+  <a class="mini" href="product.html?id=${safeUrl(x.id)}">
+    <span class="g"><img src="assets/covers/${safeUrl(x.id)}.jpg" alt="" loading="lazy" onerror="this.style.display='none'"></span>
+    <span><span class="t">${esc(x.name)}</span><br><span class="p">$${esc(x.priceUsd)} &middot; ${esc(x.tagline)}</span></span>
   </a>`).join("");
 
 const box = document.getElementById("buybox");
@@ -170,8 +177,8 @@ box.innerHTML = `
     <div class="s" id="st2">2&nbsp; Verify</div>
     <div class="s" id="st3">3&nbsp; Download</div>
   </div>
-  <p class="title">${p.name}</p>
-  <div class="amount">${fmtUsd(p.priceUsd)}</div>
+  <p class="title">${esc(p.name)}</p>
+  <div class="amount">${esc(fmtUsd(p.priceUsd))}</div>
   <div class="sats" id="sats">loading live BTC price&hellip;</div>
   <button class="btn ghost block" id="trialBtn" style="margin-bottom:10px">&#9654;&nbsp; Try it free &mdash; 12-second preview</button>
   <div class="trialhint" id="trialHint"></div>
@@ -179,7 +186,7 @@ box.innerHTML = `
 
   <div class="pay" id="pay">
     <div class="qrbox" id="qr"></div>
-    <div class="addr" id="addr" title="Click to copy">${CFG.btcAddress}</div>
+    <div class="addr" id="addr" title="Click to copy">${esc(CFG.btcAddress)}</div>
     <div class="copy-hint" id="hint">Tap the address to copy it</div>
     <a class="btn ghost block small" id="walletLink" style="margin-bottom:16px">Open in wallet</a>
     <label class="field" for="txid">Paste your transaction ID after paying</label>
@@ -292,7 +299,11 @@ document.getElementById("verifyBtn").addEventListener("click", async () => {
     } else {
       note("info", res.confirmed ? "Confirmed on-chain." : "Seen in mempool — confirmation follows shortly.");
       document.getElementById("st3").classList.add("active");
-      document.getElementById("dl").href = url || p.file;
+      const dl = document.getElementById("dl");
+      // Only allow same-origin relative paths or https URLs — never javascript:/data:.
+      const safe = typeof url === "string" && (/^\/[^/]/.test(url) || /^https:\/\//i.test(url)) ? url : null;
+      dl.href = safe || "product.html?id=" + safeUrl(p.id);
+      dl.setAttribute("download", "");
       document.getElementById("deliverMsg").textContent = res.paidSats
         ? "Paid " + res.paidSats.toLocaleString() + " sats. Thanks for supporting a middleman-free store."
         : "Payment verified. Your secure download is ready — the link expires in 15 minutes.";

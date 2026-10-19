@@ -16,9 +16,10 @@ worker/embedded.js
 
 worker/deliveries.local.json
 
-# secure/ holds AES-256-GCM encrypted deliverables — safe to commit (useless
-# without the private key held only by the deployed Worker).
-!secure/
+# Encrypted deliverables catalog.
+# The Worker embeds its own copy at deploy time, so this never needs to be
+# published. Kept local only (it is a mirror of every paid file's ciphertext).
+secure/
 
 # wrangler files
 .wrangler
@@ -29,3 +30,6 @@ worker/deliveries.local.json
 
 # Cloudflare Pages/Workers static publish dir
 dist/
+
+# Build inputs that must never be published
+_headers

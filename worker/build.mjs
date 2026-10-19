@@ -1,9 +1,12 @@
 // Generates src/embedded.js (gitignored) from ../assets/products.js + the product
 // files. Every deliverable is AES-256-GCM encrypted; the decryption key lives only
 // in the (private) worker bundle / Worker secret, so the plaintext files are never
-// public. A public-safe copy of the encrypted catalog is written to
-// ../secure/catalog.enc.json so the deliverables can live in the GitHub repo
-// without anyone being able to use them for free.
+// public.
+//
+// A local mirror of the encrypted catalog is written to ../secure/catalog.enc.json
+// for backup only. That path is gitignored and must NEVER be deployed or published:
+// the Worker already embeds its own copy, and publishing ciphertext of every paid
+// file only hands attackers material to attack offline.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -62,6 +65,8 @@ const content =
 
 fs.writeFileSync(path.join(here, "src", "embedded.js"), content);
 
+// Local-only encrypted mirror, for backup. Gitignored — never publish this:
+// it holds the ciphertext of every paid deliverable.
 fs.mkdirSync(path.join(root, "secure"), { recursive: true });
 fs.writeFileSync(path.join(root, "secure", "catalog.enc.json"), JSON.stringify(secure));
 

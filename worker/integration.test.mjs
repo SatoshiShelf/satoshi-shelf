@@ -24,8 +24,9 @@ const call = (path, opts) => worker.fetch(new Request("https://w.dev" + path, op
 
 {
   const j = await (await call("/health")).json();
-  assert.ok(j.ok && j.products.includes("playbook"));
-  console.log("  ok - health");
+  assert.ok(j.ok && typeof j.count === "number" && j.count > 0, "health should report a count");
+  assert.ok(!j.products, "health must not enumerate the catalog");
+  console.log("  ok - health (count only, no catalog leak)");
 }
 
 let downloadPath;

@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
 Disallow: /previews/
+Disallow: /marketing/
+Disallow: /tools/
+Disallow: /worker/
+Disallow: /README.md
 
 Sitemap: https://xghabra.github.io/satoshi-shelf/sitemap.xml

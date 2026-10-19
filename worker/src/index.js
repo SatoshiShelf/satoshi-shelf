@@ -8,10 +8,34 @@ const CORS = {
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
+// Baseline security headers. The storefront is a static site with no user
+// accounts, so a strict CSP is cheap to enforce and limits the blast radius of
+// any injected markup. frame-ancestors blocks clickjacking of the checkout.
+const SECURITY_HEADERS = {
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "permissions-policy": "geolocation=(), microphone=(), camera=(), payment=(), usb=()",
+  "content-security-policy": [
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline'",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    "font-src 'self' https://fonts.gstatic.com",
+    "img-src 'self' data:",
+    "connect-src 'self' https://mempool.space",
+    "frame-src 'self'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "object-src 'none'",
+    "frame-ancestors 'none'",
+  ].join("; "),
+  "strict-transport-security": "max-age=31536000; includeSubDomains",
+};
+
 function json(obj, status) {
   return new Response(JSON.stringify(obj), {
     status: status || 200,
-    headers: { ...CORS, "content-type": "application/json" },
+    headers: { ...CORS, ...SECURITY_HEADERS, "content-type": "application/json" },
   });
 }
 
@@ -28,11 +52,12 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (request.method === "OPTIONS") return new Response(null, { headers: CORS });
+    if (request.method === "OPTIONS") return new Response(null, { headers: { ...CORS, ...SECURITY_HEADERS } });
     if (url.pathname === "/" || url.pathname === "") {
       return Response.redirect(env.STORE_URL || "https://satoshishelf.github.io/satoshi-shelf/", 302);
     }
-    if (url.pathname === "/health") return json({ ok: true, products: Object.keys(PRODUCTS) });
+    // Liveness only — deliberately does not enumerate the catalog.
+    if (url.pathname === "/health") return json({ ok: true, count: Object.keys(PRODUCTS).length });
 
     const secret = env.DOWNLOAD_SECRET || CONFIG.key;
     const decKey = env.SHELF_KEY || CONFIG.key;
@@ -65,31 +90,32 @@ export default {
     if (url.pathname === "/download" && request.method === "GET") {
       if (!secret) return json({ ok: false, reason: "Server not configured." }, 500);
       const payload = await verifyToken(secret, url.searchParams.get("token"));
-      if (!payload) return new Response("This link is invalid or has expired. Verify your payment again.", { status: 403, headers: CORS });
+      if (!payload) return new Response("This link is invalid or has expired. Verify your payment again.", { status: 403, headers: { ...CORS, ...SECURITY_HEADERS } });
       const product = PRODUCTS[payload.p];
-      if (!product) return new Response("Unknown product.", { status: 404, headers: CORS });
+      if (!product) return new Response("Unknown product.", { status: 404, headers: { ...CORS, ...SECURITY_HEADERS } });
 
       let body;
       if (product.ct) {
-        if (!decKey) return new Response("Server not configured.", { status: 500, headers: CORS });
+        if (!decKey) return new Response("Server not configured.", { status: 500, headers: { ...CORS, ...SECURITY_HEADERS } });
         try {
           body = await decryptBytes(decKey, product.iv, product.ct);
         } catch {
-          return new Response("Delivery error.", { status: 500, headers: CORS });
+          return new Response("Delivery error.", { status: 500, headers: { ...CORS, ...SECURITY_HEADERS } });
         }
       } else if (product.b64) {
         body = b64ToBytes(product.b64);
       } else if (product.url) {
         return Response.redirect(product.url, 302);
       } else {
-        return new Response("Unknown product.", { status: 404, headers: CORS });
+        return new Response("Unknown product.", { status: 404, headers: { ...CORS, ...SECURITY_HEADERS } });
       }
 
       return new Response(body, {
         headers: {
           ...CORS,
+          ...SECURITY_HEADERS,
           "content-type": product.contentType || "application/octet-stream",
-          "content-disposition": `attachment; filename="${product.filename}"`,
+          "content-disposition": `attachment; filename="${String(product.filename).replace(/["\\\r\n]/g, "_")}"`,
           "cache-control": "no-store",
         },
       });
