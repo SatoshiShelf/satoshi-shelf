@@ -1,6 +1,17 @@
-# Private paid product files — must NEVER be committed to the public repo.
-# They are embedded into the Cloudflare Worker at deploy time instead.
+# ---------------------------------------------------------------------------
+# GitHub Pages publishes every non-ignored file at the repo root.
+# Everything below stays OUT of the repo so it can never be fetched from the web.
+# ---------------------------------------------------------------------------
+
+# Private paid deliverables (plaintext) — embedded into the Worker at deploy time.
 products/
+
+# Internal source / build inputs / notes
+_src/
+_headers
+dist/
+worker/
+secure/
 
 # Worker build output + local secrets/deps
 worker/src/embedded.js
@@ -8,28 +19,15 @@ worker/.shelfkey
 worker/node_modules/
 worker/.wrangler/
 worker/.dev.vars
-
-# OS cruft
-.DS_Store
-
 worker/embedded.js
-
 worker/deliveries.local.json
 
-# Encrypted deliverables catalog.
-# The Worker embeds its own copy at deploy time, so this never needs to be
-# published. Kept local only (it is a mirror of every paid file's ciphertext).
-secure/
-
-# wrangler files
+# Wrangler / env
 .wrangler
 .dev.vars*
 !.dev.vars.example
 .env*
 !.env.example
 
-# Cloudflare Pages/Workers static publish dir
-dist/
-
-# Build inputs that must never be published
-_headers
+# OS cruft
+.DS_Store
