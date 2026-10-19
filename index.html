@@ -8,11 +8,21 @@
 <meta property="og:title" content="Satoshi Shelf — Digital products paid in Bitcoin">
 <meta property="og:description" content="Practical guides and tools. No account, no middlemen, instant delivery.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Satoshi Shelf">
+<meta property="og:url" content="https://xghabra.github.io/satoshi-shelf/">
+<meta property="og:image" content="https://xghabra.github.io/satoshi-shelf/assets/covers/arcade-vault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Satoshi Shelf — Digital products paid in Bitcoin">
+<meta name="twitter:description" content="Practical guides, tools and templates. Pay with Bitcoin, instant delivery.">
+<link rel="canonical" href="https://xghabra.github.io/satoshi-shelf/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Satoshi Shelf","url":"https://xghabra.github.io/satoshi-shelf/","description":"Practical guides, tools and templates for building income on a budget, paid in Bitcoin. No account, no middlemen, instant delivery.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://xghabra.github.io/satoshi-shelf/?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+</script>
 <script>if ("scrollRestoration" in history) history.scrollRestoration = "manual";</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23f7931a'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23201400' font-family='Arial' font-weight='bold'>&#8383;</text></svg>">
 </head>
@@ -305,6 +315,25 @@ document.getElementById("clear").addEventListener("click", () => {
 });
 
 update();
+
+// Structured data so search engines discover every product page.
+(function () {
+  const list = P.map((p, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: "https://xghabra.github.io/satoshi-shelf/product.html?id=" + encodeURIComponent(p.id)
+  }));
+  const s = document.createElement("script");
+  s.type = "application/ld+json";
+  s.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Satoshi Shelf products",
+    "numberOfItems": P.length,
+    "itemListElement": list
+  });
+  document.head.appendChild(s);
+})();
 
 const sp = document.getElementById("statProducts");
 if (sp) sp.textContent = P.length;

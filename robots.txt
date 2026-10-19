@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /previews/
 
-Sitemap: https://satoshishelf.github.io/satoshi-shelf/sitemap.xml
+Sitemap: https://xghabra.github.io/satoshi-shelf/sitemap.xml

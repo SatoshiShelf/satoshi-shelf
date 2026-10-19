@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Checkout — Satoshi Shelf</title>
+<meta name="description" content="Buy digital products from Satoshi Shelf with Bitcoin. No account, no middlemen, instant delivery after your payment is confirmed on-chain.">
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="Satoshi Shelf">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -60,6 +64,51 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const id = new URLSearchParams(location.search).get("id");
 const p = window.PRODUCTS.find(x => x.id === id) || window.PRODUCTS[0];
 document.title = p.name + " — Satoshi Shelf";
+
+function seo(p) {
+  const site = location.origin + location.pathname.replace(/[^/]*$/, "");
+  const url = site + "product.html?id=" + encodeURIComponent(p.id);
+  const img = site + "assets/covers/" + encodeURIComponent(p.id) + ".jpg";
+  const desc = (p.summary || p.tagline || "Digital product, paid in Bitcoin.").slice(0, 300);
+  function put(tag, attrs) {
+    const key = attrs["data-seo"];
+    let el = document.head.querySelector('[data-seo="' + key + '"]');
+    if (!el) {
+      el = document.createElement(tag);
+      el.setAttribute("data-seo", key);
+      document.head.appendChild(el);
+    }
+    Object.keys(attrs).forEach(function (k) { el.setAttribute(k, attrs[k]); });
+  }
+  put("link", { "data-seo": "canonical", rel: "canonical", href: url });
+  put("meta", { "data-seo": "desc", name: "description", content: desc });
+  put("meta", { "data-seo": "og:title", property: "og:title", content: p.name + " \u2014 Satoshi Shelf" });
+  put("meta", { "data-seo": "og:desc", property: "og:description", content: desc });
+  put("meta", { "data-seo": "og:url", property: "og:url", content: url });
+  put("meta", { "data-seo": "og:image", property: "og:image", content: img });
+  put("meta", { "data-seo": "tw:title", name: "twitter:title", content: p.name + " \u2014 Satoshi Shelf" });
+  put("meta", { "data-seo": "tw:desc", name: "twitter:description", content: desc });
+  put("meta", { "data-seo": "tw:image", name: "twitter:image", content: img });
+  const s = document.createElement("script");
+  s.type = "application/ld+json";
+  s.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": p.name,
+    "description": desc,
+    "image": img,
+    "brand": { "@type": "Brand", "name": "Satoshi Shelf" },
+    "offers": {
+      "@type": "Offer",
+      "url": url,
+      "priceCurrency": "USD",
+      "price": p.priceUsd,
+      "availability": "https://schema.org/InStock"
+    }
+  });
+  document.head.appendChild(s);
+}
+seo(p);
 document.getElementById("crumb").innerHTML = `<a id="crumbcat" href="index.html?cat=${encodeURIComponent(p.category)}#products">${(p.category || "Products").replace(/-/g, " ")}</a> &nbsp;/&nbsp; ${p.name}`;
 
 function runBlock(p) {
