@@ -288,7 +288,8 @@ function update() {
   st.q ? url.searchParams.set("q", st.q) : url.searchParams.delete("q");
   st.cat ? url.searchParams.set("cat", st.cat) : url.searchParams.delete("cat");
   st.sort !== "price-asc" ? url.searchParams.set("sort", st.sort) : url.searchParams.delete("sort");
-  history.replaceState(null, "", url.pathname + url.search + "#products");
+  const hasFilters = st.q || st.cat || st.sort !== "price-asc";
+  history.replaceState(null, "", url.pathname + url.search + (hasFilters ? "#products" : ""));
 }
 function refresh() { st.shown = PAGE; update(); }
 
