@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sell Digital Products for Bitcoin — What Actually Matters | Satoshi Shelf</title>
+<meta name="description" content="Selling digital downloads for Bitcoin: how to verify payment on-chain, gate delivery so files can't leak, and avoid the mistakes that cost you money.">
+<link rel="canonical" href="https://xghabra.github.io/satoshi-shelf/go-sell-for-bitcoin.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Satoshi Shelf">
+<meta property="og:title" content="Sell Digital Products for Bitcoin — What Actually Matters | Satoshi Shelf">
+<meta property="og:description" content="Selling digital downloads for Bitcoin: how to verify payment on-chain, gate delivery so files can't leak, and avoid the mistakes that cost you money.">
+<meta property="og:url" content="https://xghabra.github.io/satoshi-shelf/go-sell-for-bitcoin.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23f7931a'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23201400' font-family='Arial' font-weight='bold'>&#8383;</text></svg>">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Sell Digital Products for Bitcoin — What Actually Matters | Satoshi Shelf","url":"https://xghabra.github.io/satoshi-shelf/go-sell-for-bitcoin.html","description":"Selling digital downloads for Bitcoin: how to verify payment on-chain, gate delivery so files can't leak, and avoid the mistakes that cost you money.","isPartOf":{"@type":"WebSite","name":"Satoshi Shelf","url":"https://xghabra.github.io/satoshi-shelf/"}}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
+    <nav class="site">
+      <a href="index.html#products">Products</a>
+      <a href="launcher.html">Launcher</a>
+      <a href="custom.html">Hire me</a>
+      <a class="cta" href="index.html#products">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dotlive"></span> Pay with Bitcoin &middot; instant delivery</div>
+    <h1>Sell digital products<br><span class="grad">for Bitcoin.</span></h1>
+    <p class="sub">Card processors take a cut, decide who's allowed to sell, and can freeze you without warning. Accepting Bitcoin sidesteps all three — but the delivery side has traps worth avoiding.</p>
+    <div class="actions">
+      <a class="btn" href="index.html#products">Browse all products</a>
+      <a class="btn ghost" href="index.html#faq">Common questions</a>
+    </div>
+    <div class="trust">
+      <span>&#8383; <b>On-chain payment</b></span>
+      <span>&#9889; <b>Instant delivery</b></span>
+      <span>&#128274; <b>No account needed</b></span>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">The four real problems</div>
+      <h2>What breaks when you accept Bitcoin yourself</h2>
+      <p class="muted">None of these are about price or wallets. They're about proving payment and protecting the file.</p>
+    </div>
+    <div class="grid cols-2">
+      <div class="card"><div class="body">
+        <h3>1. Verifying payment properly</h3>
+        <p class="tag">"The buyer says they paid" is not verification. You need to confirm the transaction exists, actually pays <em>your</em> address, and covers the amount at the rate you quoted — otherwise anyone can claim payment with a random txid.</p>
+      </div></div>
+      <div class="card"><div class="body">
+        <h3>2. Not handing over the file too early</h3>
+        <p class="tag">If the download URL is guessable or permanent, one buyer becomes a distributor. Links should be short-lived, signed and tied to the purchase.</p>
+      </div></div>
+      <div class="card"><div class="body">
+        <h3>3. Keeping the file off a public host</h3>
+        <p class="tag">A public repo or CDN path is a permanent leak. If the plaintext ever touches a public URL, your product is free forever — and the web archives it.</p>
+      </div></div>
+      <div class="card"><div class="body">
+        <h3>4. Exchange-rate drift</h3>
+        <p class="tag">Quote in fiat, charge in Bitcoin, and the amount must be pinned at checkout. An underpayment by 1% shouldn't unlock the file, and an overpayment shouldn't either.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">The pattern that works</div>
+      <h2>Pay-gated delivery, step by step</h2>
+      <p class="muted">This is exactly how Satoshi Shelf is built — and it's reproducible on a weekend.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="stepbox"><div class="num">1</div><h3>Quote in fiat, show BTC</h3><p class="muted">Store prices in USD. At checkout, convert to BTC at a live rate and show the exact amount plus a QR code.</p></div>
+      <div class="stepbox"><div class="num">2</div><h3>Verify on-chain server-side</h3><p class="muted">A small server endpoint takes the txid, checks the transaction against a block explorer, sums outputs to your address, and requires the amount to cover the price.</p></div>
+      <div class="stepbox"><div class="num">3</div><h3>Issue a short-lived token</h3><p class="muted">On success, sign a token that expires in 15 minutes and names only that one product. Store nothing about the buyer.</p></div>
+      <div class="stepbox"><div class="num">4</div><h3>Encrypt the file at rest</h3><p class="muted">Keep deliverables AES-256-GCM encrypted; the key lives only in the deployed server. Decrypt and stream only when a valid token arrives.</p></div>
+    </div>
+    <div class="actions center mt">
+      <a class="btn" href="custom.html">Need this built for you?</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Practical notes</div>
+      <h2>Things that bite people later</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Where do you host it?</summary><div class="a">Anything that can run a function: Cloudflare Workers, a VPS, or a tiny serverless endpoint. If it can fetch a block explorer and HMAC a token, it's enough.</div></details>
+      <details><summary>Should I discount for speed?</summary><div class="a">You can accept unconfirmed transactions — mempool sighting is usually plenty for a $2 product — but decide deliberately rather than by accident.</div></details>
+      <details><summary>What about refunds?</summary><div class="a">Digital goods are typically sold final. Say so clearly up front so it's a stated term, not a surprise.</div></details>
+      <details><summary>Do I lose sales by not taking cards?</summary><div class="a">Some, yes. You gain buyers with no usable card, buyers who don't want to hand over card data, and buyers in countries card processors handle badly — plus zero processor fees and no one able to freeze your account.</div></details>
+      <details><summary>Can I see a working example?</summary><div class="a">Yes — this store is one. Every product page is the full flow: quote, QR, verify, token, decrypt, stream.</div></details>
+    </div>
+    <div class="actions center mt">
+      <a class="btn" href="index.html#products">See the flow in action</a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
+        <p class="muted">Practical digital products, paid in Bitcoin. Independent, no middlemen, no tracking.</p>
+      </div>
+      <div>
+        <a href="index.html#products">All products</a>
+        <a href="go-bitcoin-digital-downloads.html">Buy with Bitcoin</a>
+        <a href="go-pay-without-a-card.html">Pay without a card</a>
+        <a href="go-bitcoin-only-stores.html">Bitcoin-only stores</a>
+        <a href="go-sell-for-bitcoin.html">Sell for Bitcoin</a>
+      </div>
+    </div>
+    <div class="fine">
+      &copy; <span id="year"></span> Satoshi Shelf &middot; Payments to a self-custody Bitcoin address.<br>
+      Digital products delivered as files. All sales final.
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

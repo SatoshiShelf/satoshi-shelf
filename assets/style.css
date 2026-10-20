@@ -179,6 +179,8 @@ nav.site a.cta:hover { color: #201400; filter: brightness(1.06); }
 
 /* ---------- Product grid ---------- */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; }
+.grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 .card {
   background: linear-gradient(180deg, var(--card), var(--bg-soft));
   border: 1px solid var(--border-soft); border-radius: var(--radius);
