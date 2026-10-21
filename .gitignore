@@ -31,3 +31,10 @@ worker/deliveries.local.json
 
 # OS cruft
 .DS_Store
+
+# This repo is now REDIRECT STUBS ONLY for the old /satoshi-shelf/ path.
+# The live storefront is served from https://satoshishelf.github.io/ (the
+# SatoshiShelf.github.io repo). Publishing assets here would re-create the
+# duplicate content the migration removed, so they stay untracked.
+assets/
+previews/
