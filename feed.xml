@@ -1,16 +1,389 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Redirecting — Satoshi Shelf</title>
-<link rel="canonical" href="https://satoshishelf.github.io/feed.xml">
-<meta name="robots" content="noindex, follow">
-<meta http-equiv="refresh" content="0; url=https://satoshishelf.github.io/feed.xml">
-<script>location.replace("https://satoshishelf.github.io/feed.xml" + location.search + location.hash);</script>
-<style>body{font-family:system-ui,sans-serif;background:#0d1117;color:#e6edf3;display:grid;place-items:center;height:100vh;margin:0;text-align:center}a{color:#f7931a}</style>
-</head>
-<body>
-<p>Moved to <a href="https://satoshishelf.github.io/feed.xml">https://satoshishelf.github.io/feed.xml</a></p>
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Satoshi Shelf</title>
+    <link>https://satoshishelf.github.io/</link>
+    <description>Practical digital products paid in Bitcoin — instant download, no account, no middleman.</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 21 Oct 2026 09:11:01 GMT</lastBuildDate>
+    <atom:link href="https://satoshishelf.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Business &amp;amp; Startup Templates — Plans, Models, Pitch Decks | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-business-startup.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-business-startup.html</guid>
+      <description>Business plan templates, financial models, pitch deck frameworks and startup calculators. Buy once, edit forever. No subscription, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Resume Templates &amp;amp; Career Tools — CVs, Cover Letters | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-career-jobs.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-career-jobs.html</guid>
+      <description>Resume and CV templates, cover letters, interview prep and salary negotiation tools. Land the interview. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Design Templates &amp;amp; Creative Assets — Download Instantly | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-creative-design.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-creative-design.html</guid>
+      <description>Brand kits, layout templates, icon sets and design tools for creators. Make something today. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Crypto Portfolio Trackers &amp;amp; Web3 Tools — Digital Downloads | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-crypto-web3.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-crypto-web3.html</guid>
+      <description>Portfolio trackers, DCA planners, tax organisers and crypto calculators. Your keys, your data. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Ecommerce Tools &amp;amp; Listing Templates — Sellers | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-ecommerce.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-ecommerce.html</guid>
+      <description>Product listing templates, profit calculators and store operations tools for online sellers. Sell smarter. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Study Planners &amp;amp; Revision Templates — Students | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-education-study.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-education-study.html</guid>
+      <description>Revision timetables, note templates and study planners. Study smarter. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Workout Plans &amp;amp; Fitness Trackers — Digital Downloads | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-fitness-sports.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-fitness-sports.html</guid>
+      <description>Training programmes, workout logs and progress trackers. Follow a plan you own. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Recipe &amp;amp; Meal Planning Templates — Digital Downloads | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-food-recipes.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-food-recipes.html</guid>
+      <description>Meal planners, recipe cards, shopping-list builders and kitchen organisers. Print or use digitally. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Freelance Contracts &amp;amp; Client Tools — Templates for Freelancers | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-freelancing-remote.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-freelancing-remote.html</guid>
+      <description>Freelance contracts, proposals, invoices, NDAs and rate calculators. Send professional paperwork today. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Browser Games &amp;amp; Arcade Classics — Play in Any Browser | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-games-interactive.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-games-interactive.html</guid>
+      <description>25 classic arcade games — Snake, Breakout, 2048, Space Invaders, Sudoku, Tetris and more. Play instantly in any browser, no install, no ads. $1.99 each.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Wellness Planners &amp;amp; Habit Trackers — Digital Downloads | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-health-wellness.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-health-wellness.html</guid>
+      <description>Habit trackers, sleep and mood journals and wellness planners. Build better routines. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Home Organisation &amp;amp; DIY Project Planners | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-home-diy.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-home-diy.html</guid>
+      <description>Room makeover planners, maintenance schedules and DIY project trackers. Get the house in order. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Kids Activity Printables &amp;amp; Family Planners | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-kids-family.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-kids-family.html</guid>
+      <description>Activity sheets, chore charts, reward trackers and family organisers. Keep everyone on track. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Marketing &amp;amp; Social Media Templates — Posts, Funnels, Copy | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-marketing-social.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-marketing-social.html</guid>
+      <description>Social post templates, content calendars, funnel builders and copy frameworks. Ready to use today. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Budget Spreadsheets &amp;amp; Money Calculators — Own Forever | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-money-finance.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-money-finance.html</guid>
+      <description>Budget dashboards, debt payoff planners, loan and mortgage calculators, savings trackers and net-worth tools. Buy once, no subscription, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Productivity Templates &amp;amp; Planners — Ready to Use Today | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-productivity.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-productivity.html</guid>
+      <description>Task trackers, goal planners, habit systems and focus tools. Ready-made digital templates you own forever. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Teacher Resources &amp;amp; Student Worksheets — Ready to Print | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-teachers-students.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-teachers-students.html</guid>
+      <description>Lesson planners, grading sheets, classroom tools and study worksheets for teachers and students. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Python Scripts &amp;amp; Developer Tools — Automation Downloads | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-tech-code-ai.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-tech-code-ai.html</guid>
+      <description>Python automation scripts, file and data tools and AI utilities. Every bundle includes a README with exact run instructions. Paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Travel Planners &amp;amp; Itinerary Templates — Trip Organisers | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-travel-lifestyle.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-travel-lifestyle.html</guid>
+      <description>Itinerary planners, packing lists and travel budget trackers. Plan the trip, not just the flight. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Wedding Planning Templates &amp;amp; Event Checklists | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/category-weddings-events.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/category-weddings-events.html</guid>
+      <description>Wedding budgets, guest lists, timelines and event checklists. Plan calmly. Instant download, paid in Bitcoin.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Buy Digital Products With Bitcoin — No Account, Instant Download | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/go-bitcoin-digital-downloads.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/go-bitcoin-digital-downloads.html</guid>
+      <description>Buy digital products with Bitcoin — spreadsheets, contracts, calculators, scripts and games. No account, no KYC, no card. Pay on-chain and download instantly.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Bitcoin-Only Stores and Marketplaces (No KYC) — What to Look For | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/go-bitcoin-only-stores.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/go-bitcoin-only-stores.html</guid>
+      <description>How to spot a genuinely Bitcoin-only store: self-custody payments, no KYC, no card fallback. Plus where Satoshi Shelf fits in.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>How to Pay for Digital Downloads Without a Credit Card | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/go-pay-without-a-card.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/go-pay-without-a-card.html</guid>
+      <description>No credit card, no debit card, no bank account, no PayPal. Pay for digital downloads with Bitcoin and get instant access — works from any country.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Sell Digital Products for Bitcoin — What Actually Matters | Satoshi Shelf</title>
+      <link>https://satoshishelf.github.io/go-sell-for-bitcoin.html</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/go-sell-for-bitcoin.html</guid>
+      <description>Selling digital downloads for Bitcoin: how to verify payment on-chain, gate delivery so files can&#39;t leak, and avoid the mistakes that cost you money.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Zero-Budget Online Income Playbook — $8.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=playbook</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=playbook</guid>
+      <description>A no-fluff guide to launching a legitimate online income project with zero upfront money: picking a niche, creating a digital product, accepting crypto, and getting the first buyers.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Bitcoin Storefront Starter Kit — $18.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=starter-kit</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=starter-kit</guid>
+      <description>A working, dependency-free static storefront with live BTC pricing, QR checkout, on-chain payment verification, and instant digital delivery. Drop it on GitHub Pages in 5 minutes.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>AI Automation Toolkit — $11.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=ai-toolkit</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=ai-toolkit</guid>
+      <description>A curated pack of copy-paste prompts and small scripts for automating repetitive work: writing, research, data cleanup, and content pipelines.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Freelance Cold Outreach Pack — $6.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=freelance-outreach-pack</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=freelance-outreach-pack</guid>
+      <description>Fifty done-for-you outreach messages — cold DMs, cold emails, proposals and follow-ups — plus the 5-part formula and the rules that keep you out of the spam folder.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Reddit Traffic Playbook — $8.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=reddit-traffic-playbook</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=reddit-traffic-playbook</guid>
+      <description>How to use Reddit as a traffic source without getting banned: account setup, reading sub rules, building karma, comment templates, and the 10:1 value rule.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Digital Product Launch Checklist — $4.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=launch-checklist</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=launch-checklist</guid>
+      <description>Every step to take a digital product from idea to first sale, organised into phases with checkboxes, a launch-day calendar, and a troubleshooting list.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>First $100 Online: A 14-Day Sprint — $8.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=first-100-sprint</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=first-100-sprint</guid>
+      <description>A realistic 14-day sprint that walks you from picking a painful problem to your first paid sale, with daily tasks and honest checkpoints.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Faceless Content Machine — $11.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=faceless-content-kit</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=faceless-content-kit</guid>
+      <description>A repeatable system for faceless TikTok/Shorts/Reels that drives strangers to your product: formats, 25 hooks, a script template and a batching workflow.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Freelance Client Pack — $8.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=client-contract-pack</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=client-contract-pack</guid>
+      <description>Everything you need to look professional and get paid: proposal, services agreement, scope + revision limits, invoice, late-fee and cancellation clauses, and a short NDA.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>300 AI Prompts for Freelancers &amp; Creators — $4.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=ai-prompt-vault</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=ai-prompt-vault</guid>
+      <description>Three hundred concrete, usable prompts across research, offers, copywriting, content, client comms, productivity and learning — plus a prompt-engineering cheatsheet.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Side Hustle Vault — $4.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=side-hustle-vault</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=side-hustle-vault</guid>
+      <description>Sixty realistic online side hustles in one scored table — startup cost, skill, time to first dollar and ceiling — plus how to start the top ten this week.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Pricing &amp; Niche Finder — $4.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=pricing-niche-finder</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=pricing-niche-finder</guid>
+      <description>A little web tool that scores your niche 0–100 and calculates a price from your income goal — so you stop guessing and start selling the right thing at the right price.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Email List Starter — $6.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=email-list-starter</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=email-list-starter</guid>
+      <description>Build the one asset no platform can ban: your email list. Free tools, lead-magnet ideas, a landing page outline and a full 5-email welcome sequence.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Pinterest Traffic Playbook — $8.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=pinterest-traffic-playbook</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=pinterest-traffic-playbook</guid>
+      <description>Treat Pinterest like the search engine it is: keyword research, boards, pin design, titles and descriptions that rank — and a 30-day starter schedule.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Get Paid in Crypto: The 2026 Setup Guide — $6.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=get-paid-crypto</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=get-paid-crypto</guid>
+      <description>Set up self-custody, generate a receive address, take payment with a QR, confirm it on-chain, convert safely, and avoid the scams aimed at sellers.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Freelancer OS — $8.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=freelancer-os-notion</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=freelancer-os-notion</guid>
+      <description>A build-it-yourself Notion system: exact databases and fields for clients, projects, tasks, an income tracker, a content calendar and a swipe file.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Affiliate Marketing Starter — $8.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=affiliate-starter</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=affiliate-starter</guid>
+      <description>The honest path into affiliate income: picking trustworthy programs, writing reviews that convert, tracking clicks, and staying compliant with disclosure rules.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Freelance Portfolio &amp; Résumé Kit — $4.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=portfolio-resume-kit</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=portfolio-resume-kit</guid>
+      <description>Positioning in one line, case studies instead of galleries, a résumé tuned to outcomes, a cover-letter template, and where to host your portfolio for free.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Money Manager — $8.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=money-manager</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=money-manager</guid>
+      <description>A spreadsheet-style tool that runs in any browser: log your income, expenses, debts and savings goals, watch your net position and savings rate update live, and get an estimate of your debt-free date. Export everything to CSV for Excel or Google Sheets.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Ready-Made Website Templates — $18.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=website-templates</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=website-templates</guid>
+      <description>Four polished, responsive one-page website templates — a restaurant, a boutique shop, a freelancer portfolio and a small-business landing page. Each is a complete, dependency-free HTML file you can preview, copy, customise and host for free.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>CV &amp; Job Application Pack — $6.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=cv-job-pack</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=cv-job-pack</guid>
+      <description>Build a clean, recruiter-ready CV and cover letter in your browser. Fill in the fields and the document updates live, switch between English, French and Arabic, then export to PDF. Includes application tips and a ready-to-edit cover-letter template.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Small Business Toolkit — $18.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=business-toolkit</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=business-toolkit</guid>
+      <description>A browser-based business dashboard: track inventory and margins, log sales and see your profit, manage invoices and outstanding payments, and keep a tidy customer list. Every total updates live, and each tab exports to CSV.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>2048 Puzzle — $1.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=2048-puzzle</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=2048-puzzle</guid>
+      <description>The addictive sliding-tile puzzle in a clean, offline HTML game. Merge matching numbers, chase the 2048 tile, and beat your best score. Runs in any browser, no install.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Memory Match — $1.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=memory-match</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=memory-match</guid>
+      <description>A polished memory card game with a move counter and timer. Great for kids and adults, trains focus and recall, and plays instantly in any browser with no install.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Snake Classic — $1.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=snake-classic</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=snake-classic</guid>
+      <description>The timeless snake game rebuilt in crisp HTML. Steer the snake to the food, grow as long as you can, and avoid the walls and your own tail. Includes keyboard and touch controls.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Sudoku Pack — $1.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=sudoku-pack</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=sudoku-pack</guid>
+      <description>Play unlimited sudoku puzzles without an account. Pick a difficulty, get a fresh generated puzzle every time, fill in the grid, and check your answers. Perfect for a daily brain workout.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Word Search Pack — $1.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=word-search-pack</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=word-search-pack</guid>
+      <description>A word-search generator you can play on screen or print. Choose a theme, get a freshly scrambled grid every time, and find every word. Great for classrooms, travel and quiet time.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Invoice Generator (Web App) — $8.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=invoice-generator</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=invoice-generator</guid>
+      <description>A polished web app to build invoices with line items, tax and discounts, live preview, saved clients and print-to-PDF.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Monthly Budget Dashboard — $11.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=monthly-budget-dashboard</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=monthly-budget-dashboard</guid>
+      <description>A professional Excel budget with three sheets — a guided start page, a full budget, and a dashboard with charts and conditional formatting.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Freelance Service Agreement — $8.99</title>
+      <link>https://satoshishelf.github.io/product.html?id=freelance-service-agreement</link>
+      <guid isPermaLink="true">https://satoshishelf.github.io/product.html?id=freelance-service-agreement</guid>
+      <description>A complete freelance service agreement with 12 clauses covering scope, payment, IP, confidentiality and termination.</description>
+      <pubDate>Wed, 21 Oct 2026 09:11:01 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

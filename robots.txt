@@ -1,6 +1,7 @@
-# This path has moved. The store now lives at the root of this domain.
 User-agent: *
 Allow: /
+
+# Trial pages are watermarked duplicates of paid products — keep them out of search.
 Disallow: /previews/
 
 Sitemap: https://satoshishelf.github.io/sitemap.xml
