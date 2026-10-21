@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script id="themeInit">(function(){try{var t=localStorage.getItem("shelf-theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sell Digital Products for Bitcoin — What Actually Matters | Satoshi Shelf</title>
 <meta name="description" content="Selling digital downloads for Bitcoin: how to verify payment on-chain, gate delivery so files can't leak, and avoid the mistakes that cost you money.">
@@ -34,7 +33,7 @@
     <nav class="site">
       <a href="index.html#products">Products</a>
       <a href="launcher.html">Launcher</a>
-      <a href="custom.html">Hire me</a> <button class="themebtn" type="button" id="themeToggle" aria-label="Switch to light theme" title="Switch theme"><span aria-hidden="true">&#9788;</span></button>
+      <a href="custom.html">Hire me</a>
       <a class="cta" href="index.html#products">Shop</a>
     </nav>
   </div>
@@ -153,6 +152,5 @@
 </footer>
 
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-<script id="themeToggleScript">(function(){var b=document.getElementById("themeToggle");if(!b)return;var r=document.documentElement;function paint(){var d=r.getAttribute("data-theme")!=="light";b.querySelector("span").textContent=d?"\u2600":"\u263D";b.setAttribute("aria-label",d?"Switch to light theme":"Switch to dark theme");}paint();b.addEventListener("click",function(){var next=r.getAttribute("data-theme")==="light"?"dark":"light";r.setAttribute("data-theme",next);try{localStorage.setItem("shelf-theme",next);}catch(e){}paint();});})();</script>
 </body>
 </html>
