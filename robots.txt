@@ -4,4 +4,4 @@ Allow: /
 # Trial pages are watermarked duplicates of paid products — keep them out of search.
 Disallow: /previews/
 
-Sitemap: https://xghabra.github.io/satoshi-shelf/sitemap.xml
+Sitemap: https://satoshishelf.github.io/satoshi-shelf/sitemap.xml
