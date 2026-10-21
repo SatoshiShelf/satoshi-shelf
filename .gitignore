@@ -36,5 +36,15 @@ worker/deliveries.local.json
 # The live storefront is served from https://satoshishelf.github.io/ (the
 # SatoshiShelf.github.io repo). Publishing assets here would re-create the
 # duplicate content the migration removed, so they stay untracked.
+#
+# Exception: the stylesheet and scripts are SOURCE (the theme system lives in
+# style.css), not bulky binary assets. They must be versioned or a fresh clone
+# loses the theme. Git will not descend into an ignored directory, so the
+# directory is re-included first and then its bulky contents are excluded.
 assets/
+!assets/
+assets/*
+!assets/*.css
+!assets/*.js
+!assets/*.png
 previews/
