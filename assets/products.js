@@ -1,6 +1,6 @@
 window.STORE_CONFIG = {
   "storeName": "Satoshi Shelf",
-  "tagline": "Digital goods. Paid in Bitcoin. No middlemen.",
+  "tagline": "Digital goods. Paid in Bitcoin.",
   "btcAddress": "bc1qrs6leywqgu56d8h5ynw9ynn0e3kdduantgd2z3",
   "workerUrl": "https://satoshi-shelf.xghabra.workers.dev",
   "priceApi": "https://mempool.space/api/v1/prices",
@@ -29,34 +29,37 @@ window.PRODUCTS = [
     "id": "starter-kit",
     "category": "Crypto-Web3",
     "name": "Bitcoin Storefront Starter Kit",
-    "tagline": "The exact code running this store. Yours to deploy.",
+    "tagline": "A complete Bitcoin storefront you can deploy this afternoon.",
     "priceUsd": 18.99,
     "emoji": "\ud83d\uded2",
-    "file": "products/bitcoin-storefront-starter-kit.html",
-    "summary": "A working, dependency-free static storefront with live BTC pricing, QR checkout, on-chain payment verification, and instant digital delivery. Drop it on GitHub Pages in 5 minutes.",
+    "file": "products/bitcoin-storefront-starter-kit.zip",
+    "summary": "A real store, not a template mockup: product grid, live BTC pricing, QR checkout, on-chain payment verification and gated downloads. Plain HTML, CSS and JavaScript with no build step and no backend, plus an optional Cloudflare Worker for server-side checks.",
     "bullets": [
-      "Plain HTML/CSS/JS \u2014 no build step",
-      "Live BTC price conversion",
-      "QR + bitcoin: URI checkout",
-      "On-chain txid verification (mempool.space)",
-      "Free hosting instructions included"
+      "Complete storefront: grid, product pages, checkout, downloads",
+      "Live BTC price, QR code, bitcoin: link with the exact amount",
+      "Payment verified against mempool.space before the file unlocks",
+      "Optional Cloudflare Worker for server-side verification",
+      "Demo mode to test the whole flow before going live",
+      "15 files, no framework, no build step, deploy free",
+      "README covers setup, deployment, customization and security"
     ]
   },
   {
     "id": "ai-toolkit",
     "category": "Tech-Code-AI",
     "name": "AI Automation Toolkit",
-    "tagline": "Scripts + prompt templates that save hours every week.",
+    "tagline": "35 prompts that do actual work. Search, fill, copy.",
     "priceUsd": 11.99,
     "emoji": "\ud83e\udd16",
     "file": "products/ai-automation-toolkit.html",
-    "summary": "A curated pack of copy-paste prompts and small scripts for automating repetitive work: writing, research, data cleanup, and content pipelines.",
+    "summary": "A working prompt library, not a PDF: 35 prompts across writing, marketing, code, research, ops and sales. Fill the brackets and the page builds the finished prompt for you. Star the ones you use and export them as Markdown.",
     "bullets": [
-      "50+ battle-tested prompt templates",
-      "Content repurposing pipeline",
-      "Data cleanup scripts",
-      "Outreach + lead-gen templates",
-      "Works with any major AI model"
+      "35 prompts across 6 categories, each with a job",
+      "Fill-in fields build the final prompt for you",
+      "Search, category filters and favorites",
+      "One-click copy, Markdown export of favorites",
+      "Works with any model, no API key needed",
+      "Offline single file, favorites saved in the browser"
     ]
   },
   {
@@ -383,91 +386,6 @@ window.PRODUCTS = [
     ]
   },
   {
-    "id": "2048-puzzle",
-    "name": "2048 Puzzle",
-    "tagline": "Slide and merge tiles to reach 2048 \u2014 and beyond.",
-    "priceUsd": 1.99,
-    "category": "Games-Interactive",
-    "emoji": "\ud83e\udde9",
-    "file": "products/2048-puzzle.html",
-    "summary": "The addictive sliding-tile puzzle in a clean, offline HTML game. Merge matching numbers, chase the 2048 tile, and beat your best score. Runs in any browser, no install.",
-    "bullets": [
-      "Classic 2048 with smooth controls",
-      "Arrow keys + touch/swipe",
-      "Best score saved in your browser",
-      "Works fully offline",
-      "One self-contained file"
-    ]
-  },
-  {
-    "id": "memory-match",
-    "name": "Memory Match",
-    "tagline": "Flip the cards and clear the board in as few moves as possible.",
-    "priceUsd": 1.99,
-    "category": "Games-Interactive",
-    "emoji": "\ud83c\udccf",
-    "file": "products/memory-match.html",
-    "summary": "A polished memory card game with a move counter and timer. Great for kids and adults, trains focus and recall, and plays instantly in any browser with no install.",
-    "bullets": [
-      "Clean flip-and-match gameplay",
-      "Move counter + timer",
-      "Multiple board sizes",
-      "Kid-friendly and offline",
-      "One self-contained file"
-    ]
-  },
-  {
-    "id": "snake-classic",
-    "name": "Snake Classic",
-    "tagline": "The arcade legend \u2014 eat, grow, and survive.",
-    "priceUsd": 1.99,
-    "category": "Games-Interactive",
-    "emoji": "\ud83d\udc0d",
-    "file": "products/snake-classic.html",
-    "summary": "The timeless snake game rebuilt in crisp HTML. Steer the snake to the food, grow as long as you can, and avoid the walls and your own tail. Includes keyboard and touch controls.",
-    "bullets": [
-      "Smooth grid-based movement",
-      "Keyboard + on-screen controls",
-      "Score and high-score tracking",
-      "Adjustable speed setting",
-      "Runs offline in any browser"
-    ]
-  },
-  {
-    "id": "sudoku-pack",
-    "name": "Sudoku Pack",
-    "tagline": "Endless sudoku \u2014 four difficulty levels, generated for you.",
-    "priceUsd": 1.99,
-    "category": "Games-Interactive",
-    "emoji": "\ud83d\udd22",
-    "file": "products/sudoku-pack.html",
-    "summary": "Play unlimited sudoku puzzles without an account. Pick a difficulty, get a fresh generated puzzle every time, fill in the grid, and check your answers. Perfect for a daily brain workout.",
-    "bullets": [
-      "Unlimited generated puzzles",
-      "Easy / medium / hard / expert",
-      "Mistake checking + timer",
-      "Keyboard + touch input",
-      "No ads, no account, offline"
-    ]
-  },
-  {
-    "id": "word-search-pack",
-    "name": "Word Search Pack",
-    "tagline": "Instant word-search puzzles \u2014 play on screen or print.",
-    "priceUsd": 1.99,
-    "category": "Games-Interactive",
-    "emoji": "\ud83d\udd0d",
-    "file": "products/word-search-pack.html",
-    "summary": "A word-search generator you can play on screen or print. Choose a theme, get a freshly scrambled grid every time, and find every word. Great for classrooms, travel and quiet time.",
-    "bullets": [
-      "Fresh puzzle every time",
-      "Multiple word themes",
-      "Play on screen or print",
-      "Difficulty by grid size",
-      "Self-contained, offline"
-    ]
-  },
-  {
     "id": "invoice-generator",
     "name": "Invoice Generator (Web App)",
     "tagline": "Create and print professional invoices in your browser.",
@@ -534,17 +452,19 @@ window.PRODUCTS = [
   {
     "id": "csv-report-tool",
     "name": "CSV Report Tool (Python)",
-    "tagline": "Turn any CSV into a clean summary report.",
+    "tagline": "Profile, filter and group any CSV.",
     "priceUsd": 8.99,
     "category": "Tech-Code-AI",
     "format": "Python \u00b7 .zip",
     "emoji": "\ud83d\udc0d",
     "file": "products/CSV-Report-Tool.zip",
-    "summary": "A dependency-free Python CLI that reads a CSV and prints a summary report with row counts, totals and per-column stats.",
+    "summary": "A standard-library Python tool that detects delimiter and encoding, infers column types and prints a profile. Filter rows, group and aggregate, sort, sample, and flag IQR outliers as text, Markdown or JSON.",
     "bullets": [
-      "No dependencies required",
-      "Per-column statistics",
-      "Works on any CSV"
+      "Column profiles with types and top values",
+      "Filter, sort, limit and sample rows",
+      "Group by a column with sum or mean",
+      "IQR outlier detection",
+      "Text, Markdown or JSON reports"
     ]
   },
   {
@@ -1050,12 +970,14 @@ window.PRODUCTS = [
     "category": "Productivity",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Turn a messy folder into neat subfolders in seconds.",
-    "summary": "A dependency-free Python script that sorts any folder into subfolders by file type or by month, with a safe dry-run preview.",
+    "tagline": "Sort a messy folder without losing a file.",
+    "summary": "A standard-library Python tool that sorts files into type, date or extension folders, or a custom extension map. It previews by default, writes an undo log on every applied run, and handles name collisions.",
     "bullets": [
-      "Sort by type or by date",
-      "Dry-run preview before moving",
-      "No dependencies \u2014 pure Python"
+      "Sort by type, date, extension or custom map",
+      "Dry run is the default",
+      "Undo log reverses every move",
+      "Conflict handling: skip, rename or overwrite",
+      "CSV report of every file"
     ],
     "file": "products/Bulk-File-Organizer.zip"
   },
@@ -1066,12 +988,14 @@ window.PRODUCTS = [
     "category": "Productivity",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Find identical files and reclaim disk space.",
-    "summary": "A Python tool that finds duplicate files anywhere using SHA-256 hashing and tells you how much space you can reclaim.",
+    "tagline": "Find duplicate files by content, not name.",
+    "summary": "A standard-library Python tool that groups files by size, partial hash and full SHA-256, reports reclaimable space and keeps hard links separate. Cleanup is opt-in: move duplicates to a quarantine folder with an undo manifest, or delete with confirmation.",
     "bullets": [
-      "Content-based matching (safe)",
-      "Recursive folder scan",
-      "Reports reclaimable space"
+      "Three-stage SHA-256 matching",
+      "Hard links reported separately",
+      "Keep oldest, newest or shortest path",
+      "Move to quarantine with undo manifest",
+      "JSON and CSV reports"
     ],
     "file": "products/Duplicate-File-Finder.zip"
   },
@@ -1082,12 +1006,14 @@ window.PRODUCTS = [
     "category": "Productivity",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Turn CSVs into a clean, formatted Excel workbook.",
-    "summary": "A Python tool that converts one or many CSV files into a styled .xlsx with header formatting, auto column widths and frozen headers.",
+    "tagline": "Turn CSV files into a formatted workbook.",
+    "summary": "A standard-library Python tool that writes real .xlsx files directly: one sheet per CSV, styled headers, auto column widths, a frozen header row and an autofilter. No Excel, no openpyxl, no account.",
     "bullets": [
-      "Handles many CSVs at once",
-      "Formatted headers and widths",
-      "Freezes the header row"
+      "One worksheet per CSV",
+      "Styled headers and auto widths",
+      "Frozen header and autofilter",
+      "Directory input with glob",
+      "No third-party packages"
     ],
     "file": "products/CSV-to-Excel-Converter.zip"
   },
@@ -1098,12 +1024,14 @@ window.PRODUCTS = [
     "category": "Money-Finance",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Categorise your spending from any bank export.",
-    "summary": "A dependency-free Python script that reads a transactions CSV, auto-categorises each expense and prints a clear spending breakdown.",
+    "tagline": "Turn a bank export into a spending report.",
+    "summary": "A standard-library Python tool that reads a bank CSV, detects columns and decimal style, categorises transactions and reports spending, income, transfers, monthly totals, top merchants and largest expenses. Export clean CSV or JSON.",
     "bullets": [
-      "Auto-categorises transactions",
-      "Totals spent, income and net",
-      "Works with any CSV bank export"
+      "Signed amount or separate debit/credit columns",
+      "Auto-detects date, description and amount",
+      "Category rules you can extend",
+      "Monthly totals and top merchants",
+      "CSV and JSON exports"
     ],
     "file": "products/Expense-CSV-Analyzer.zip"
   },
@@ -1114,12 +1042,14 @@ window.PRODUCTS = [
     "category": "Productivity",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Merge, split, rotate and encrypt PDFs from the terminal.",
-    "summary": "A command-line toolkit to merge, split, rotate, extract pages from and password-protect PDF files.",
+    "tagline": "Merge, split, extract and rotate PDFs.",
+    "summary": "A standard-library Python toolkit for the common PDF jobs: inspect metadata, merge files, split into chunks, extract page ranges, rotate pages and pull out text. No pip install and no external binaries.",
     "bullets": [
-      "Merge and split PDFs",
-      "Rotate and extract pages",
-      "Encrypt with a password"
+      "Merge PDFs in the order you choose",
+      "Split every N pages or extract ranges",
+      "Rotate by any multiple of 90 degrees",
+      "Inspect page sizes, fonts and metadata",
+      "Extract text with the same PDF engine"
     ],
     "file": "products/PDF-Toolkit.zip"
   },
@@ -1130,12 +1060,14 @@ window.PRODUCTS = [
     "category": "Creative-Design",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Resize, convert and watermark whole folders of images.",
-    "summary": "A Pillow-based Python tool that batch-resizes images, converts formats (jpg/png/webp) and adds a text watermark.",
+    "tagline": "Resize, convert and watermark whole folders.",
+    "summary": "A Pillow-based Python tool for batch image work: fit, cover, pad or stretch to a target size, convert to JPEG, PNG or WebP, strip metadata and add a text watermark. Parallel workers and a dry-run mode are included.",
     "bullets": [
-      "Batch resize a whole folder",
-      "Convert to jpg/png/webp",
-      "Add a custom watermark"
+      "Batch resize with contain, cover, pad or stretch",
+      "Convert JPEG, PNG, WebP and BMP",
+      "Text watermark in nine positions",
+      "EXIF rotation and metadata stripping",
+      "Dry run, JSON manifest and parallel workers"
     ],
     "file": "products/Image-Batch-Resizer.zip"
   },
@@ -1145,15 +1077,18 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udd33",
     "category": "Marketing-Social",
     "priceUsd": 8.99,
-    "format": "Python \u00b7 .zip",
-    "tagline": "Make QR codes for links, wifi, email or phone.",
-    "summary": "A Python tool that generates high-quality QR codes for URLs, WiFi networks, email addresses and phone numbers.",
+    "format": "HTML \u00b7 browser app",
+    "tagline": "Make QR codes for links, WiFi, email, phone, SMS and contacts.",
+    "summary": "A complete QR studio in a single HTML file: seven code types, live preview, custom colors, PNG and SVG export, and a searchable library saved in your browser.",
     "bullets": [
-      "URL, WiFi, email and phone QR codes",
-      "High error-correction quality",
-      "Saves as PNG"
+      "Link, text, WiFi, email, phone, SMS and vCard",
+      "Live preview with L, M, Q and H error correction",
+      "PNG export up to 4096 px and crisp SVG",
+      "Custom colors, quiet zone and size presets",
+      "Saved library with search and JSON backup",
+      "Keyboard shortcuts, offline, zero dependencies"
     ],
-    "file": "products/QR-Code-Generator.zip"
+    "file": "products/QR-Code-Generator.html"
   },
   {
     "id": "secure-password-generator",
@@ -1162,12 +1097,14 @@ window.PRODUCTS = [
     "category": "Productivity",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Generate strong, cryptographically secure passwords.",
-    "summary": "A Python tool using the secrets module to create strong passwords and memorable passphrases with a strength score.",
+    "tagline": "Generate strong passwords and passphrases offline.",
+    "summary": "A standard-library Python tool that uses the secrets module for passwords and diceware-style passphrases, reports entropy in bits, and can score an existing password without storing it.",
     "bullets": [
-      "Cryptographically secure",
-      "Passwords or passphrases",
-      "Strength score included"
+      "Cryptographically secure via secrets",
+      "Passwords or word-based passphrases",
+      "Entropy score for every secret",
+      "Exclude ambiguous characters",
+      "JSON output or quiet mode"
     ],
     "file": "products/Secure-Password-Generator.zip"
   },
@@ -1178,12 +1115,14 @@ window.PRODUCTS = [
     "category": "Productivity",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Rename hundreds of files in one go.",
-    "summary": "A safe, dry-run-first Python tool to rename files with find/replace, sequence templates and case changes.",
+    "tagline": "Rename hundreds of files without guessing.",
+    "summary": "A dry-run-first Python tool for bulk renames: prefixes, suffixes, numbered sequences, literal or regex find/replace, case changes and extension filters. Every applied run writes a JSON undo log.",
     "bullets": [
-      "Regex find and replace",
-      "Numbered sequence templates",
-      "Dry-run preview"
+      "Numbered patterns like {n:03} and {date}",
+      "Literal or regex find and replace",
+      "Preview every rename before applying",
+      "Collision detection and optional overwrite",
+      "JSON undo log to reverse a run"
     ],
     "file": "products/Batch-File-Renamer.zip"
   },
@@ -1194,12 +1133,14 @@ window.PRODUCTS = [
     "category": "Tech-Code-AI",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Pull text, links or tables off a web page into CSV.",
-    "summary": "A Python scraper that extracts headings, links, paragraphs or tables from any page and saves them to a CSV.",
+    "tagline": "Pull structured data off public pages.",
+    "summary": "A standard-library Python scraper for headings, links, paragraphs, images, tables and metadata, with a small CSS selector engine and CSV or JSON output. It identifies itself, enforces robots.txt by default and waits between requests.",
     "bullets": [
-      "Extract text, links or tables",
-      "CSS selector support",
-      "Saves straight to CSV"
+      "Eight extraction modes",
+      "CSS selectors: tag, class, id, attribute, child",
+      "CSV or JSON output",
+      "robots.txt respected by default",
+      "Delay, timeout and size limits"
     ],
     "file": "products/Simple-Web-Scraper.zip"
   },
@@ -1211,11 +1152,13 @@ window.PRODUCTS = [
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
     "tagline": "Clean messy spreadsheets in one command.",
-    "summary": "A dependency-free Python tool that trims whitespace, removes duplicate rows, drops blanks and normalises headers.",
+    "summary": "A dependency-free Python CLI that trims cells, normalises headers, drops blank and duplicate rows, fills gaps and writes a clean UTF-8 CSV, with a dry-run report before it touches anything.",
     "bullets": [
-      "Removes duplicate rows",
-      "Trims and normalises data",
-      "Fixes messy headers"
+      "Trims whitespace and normalises headers",
+      "Drops blank and duplicate rows, with an optional key",
+      "Fills blanks, drops or reorders columns",
+      "Dry-run report and JSON summary",
+      "Reads stdin, writes stdout or in place"
     ],
     "file": "products/CSV-Data-Cleaner.zip"
   },
@@ -1226,12 +1169,15 @@ window.PRODUCTS = [
     "category": "Money-Finance",
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
-    "tagline": "Work out any loan payment and full interest in seconds.",
-    "summary": "A browser-based calculator showing monthly payment, total interest, payoff time and a first-year amortization table.",
+    "tagline": "The payment, the payoff date, and what $200 extra really buys.",
+    "summary": "Enter the loan, rate and term to see the monthly payment, total interest and a full amortization schedule. Add an extra monthly payment and the chart shows the shorter payoff and interest saved.",
     "bullets": [
-      "Monthly payment and total interest",
-      "Extra-payment support",
-      "First 12 payments breakdown"
+      "Monthly principal and interest with exact amortization",
+      "Extra monthly payment and interest saved",
+      "Full monthly or yearly schedule",
+      "Balance chart with and without extra",
+      "CSV export of every payment, print view",
+      "Saved locally, no account"
     ],
     "file": "products/Mortgage-and-Loan-Calculator.html"
   },
@@ -1243,11 +1189,14 @@ window.PRODUCTS = [
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
     "tagline": "Split your income the smart way and see what's left.",
-    "summary": "A simple budget tool that applies the 50/30/20 rule to your income and shows a clear breakdown for needs, wants and savings.",
+    "summary": "The 50/30/20 rule with teeth: set your income, tune the split, log expenses into each bucket and see what is actually left before the month ends. Every month is saved separately, offline.",
     "bullets": [
-      "50/30/20 rule built in",
-      "Fine-tune each percentage",
-      "Clear visual breakdown"
+      "Needs, wants and savings buckets with live bars",
+      "Log expenses into the right bucket",
+      "Over-budget warnings, remaining per bucket",
+      "Month-by-month navigation, saved offline",
+      "Adjustable split with a 100% check",
+      "CSV export and print"
     ],
     "file": "products/Budget-Planner.html"
   },
@@ -1258,12 +1207,15 @@ window.PRODUCTS = [
     "category": "Money-Finance",
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
-    "tagline": "Work out the tip and split any bill instantly.",
-    "summary": "A quick calculator for tip, total and per-person split \u2014 perfect for restaurants, trips and group expenses.",
+    "tagline": "Split the bill without doing cents in your head.",
+    "summary": "Tax, tip and rounding are separate decisions. Choose whether the tip is on the pre- or post-tax amount, split evenly or by shares, and every person's amount is shown to the cent.",
     "bullets": [
-      "Tip % and total",
-      "Split between any number of people",
-      "Updates live as you type"
+      "Tip on subtotal or subtotal plus tax",
+      "Even split or weighted shares with names",
+      "Round total up, each share up, or exact cents",
+      "Per-person amounts and collected total",
+      "Saved history of the last ten bills",
+      "CSV export, copy summary, print"
     ],
     "file": "products/Tip-and-Split-Calculator.html"
   },
@@ -1274,12 +1226,15 @@ window.PRODUCTS = [
     "category": "Productivity",
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
-    "tagline": "Track daily habits, streaks and consistency.",
-    "summary": "A browser habit tracker with a 7-day view, automatic streaks and everything saved locally in your browser.",
+    "tagline": "Seven days on screen, thirty days measured.",
+    "summary": "Add the habits that matter, set a weekly target, and tick the grid. It tracks current streak, best streak, weekly progress and a 30-day completion rate without guilt-tripping you.",
     "bullets": [
-      "Streak tracking",
-      "7-day visual grid",
-      "Saves automatically in your browser"
+      "Seven-day grid, tap to mark a day",
+      "Weekly goal per habit with progress bar",
+      "Current and best streak, 30-day rate",
+      "Ten built-in icons, unlimited habits",
+      "CSV export and clean print view",
+      "Offline, single file, saved locally"
     ],
     "file": "products/Habit-Tracker.html"
   },
@@ -1291,11 +1246,14 @@ window.PRODUCTS = [
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
     "tagline": "A simple To do / Doing / Done board.",
-    "summary": "A drag-free kanban board to organise tasks into columns, move them along and clear them when done \u2014 saved locally.",
+    "summary": "A real board, not a demo. Four columns, drag and drop, multiple boards, priorities, due dates, tags, search, CSV export and print. Everything saves in the browser the moment you type.",
     "bullets": [
-      "Three-column board",
-      "Move and delete tasks",
-      "Saves automatically in your browser"
+      "Drag cards between To do, Doing, Review and Done",
+      "Multiple boards, rename and switch instantly",
+      "Priority, tag and due date on every card",
+      "Overdue dates flagged in red",
+      "Search and filter, keyboard shortcut /",
+      "CSV export and a clean print view"
     ],
     "file": "products/Kanban-Task-Board.html"
   },
@@ -1306,12 +1264,15 @@ window.PRODUCTS = [
     "category": "Productivity",
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
-    "tagline": "Convert length, weight, area, volume and temperature.",
-    "summary": "A fast unit converter covering length, weight, area, volume, time and temperature, all offline in your browser.",
+    "tagline": "Nine categories, exact factors, every unit at once.",
+    "summary": "Length, mass, temperature, volume, area, speed, time, data and pressure. Type a value and see the conversion plus every other unit in the category. Copy the result and it lands in your history.",
     "bullets": [
-      "6 categories, dozens of units",
-      "Temperature conversion",
-      "Instant, offline results"
+      "Nine categories, dozens of units",
+      "Temperature handled with real formulas",
+      "See all units in the category at once",
+      "Swap units, copy result, recent history",
+      "Exact factors where defined",
+      "No ads, no tracking, works offline"
     ],
     "file": "products/Universal-Unit-Converter.html"
   },
@@ -1323,11 +1284,14 @@ window.PRODUCTS = [
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
     "tagline": "Focus in 25-minute sprints and take real breaks.",
-    "summary": "A pomodoro timer with configurable focus and break lengths, a completion counter and an audio alert when time is up.",
+    "summary": "A timer with a memory. Track tasks by pomodoro, log every session, keep a daily streak, and get a beep plus a desktop notification when time is up. It keeps counting if you reload the page.",
     "bullets": [
-      "Configurable focus & break",
-      "Completion counter",
-      "Sound alert when time is up"
+      "Focus, short break and long break cycles",
+      "Task list with estimates and completed counts",
+      "Session log, daily totals and streak",
+      "Beep plus optional desktop notifications",
+      "Keyboard: space, R to reset, S to skip",
+      "Survives a page reload, CSV export"
     ],
     "file": "products/Pomodoro-Focus-Timer.html"
   },
@@ -1338,12 +1302,15 @@ window.PRODUCTS = [
     "category": "Health-Wellness",
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
-    "tagline": "Check your BMI, calorie needs and healthy weight range.",
-    "summary": "A health calculator for BMI and daily maintenance calories, with a healthy weight range based on your height and activity level.",
+    "tagline": "BMI, BMR, TDEE and macros \u2014 with the math shown.",
+    "summary": "Switch between metric and imperial, then get BMI, a healthy weight range, Mifflin-St Jeor BMR, TDEE and calorie targets. Pick a macro split and log weigh-ins to see the trend.",
     "bullets": [
-      "BMI with category",
-      "Daily maintenance calories",
-      "Healthy weight range"
+      "Metric and imperial, switches cleanly",
+      "BMI category and healthy weight range",
+      "Mifflin-St Jeor BMR and activity-adjusted TDEE",
+      "Cut, maintain and gain calorie targets",
+      "Protein, carb and fat grams for four splits",
+      "Weight log with trend chart and CSV export"
     ],
     "file": "products/BMI-and-Calorie-Calculator.html"
   },
@@ -1387,7 +1354,7 @@ window.PRODUCTS = [
     "priceUsd": 11.99,
     "format": "Excel \u00b7 .xlsx",
     "tagline": "Plan a week of meals and build your shopping list.",
-    "summary": "A 7-day breakfast/lunch/dinner planner with an auto-linked grocery list sheet.",
+    "summary": "A 7-day breakfast/lunch/dinner planner with a separate grocery list sheet.",
     "bullets": [
       "7-day meal grid",
       "Separate grocery list sheet",
@@ -1866,12 +1833,14 @@ window.PRODUCTS = [
     "category": "Food-Recipes",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Scale any recipe up or down from the terminal.",
-    "summary": "A Python tool that scales a recipe CSV by a factor or by servings, handling fractions cleanly.",
+    "tagline": "Scale a recipe and keep the numbers readable.",
+    "summary": "A standard-library Python tool that scales recipe CSV quantities by a factor or serving change. It handles decimals, fractions, mixed numbers, ranges and non-numeric amounts, and exports CSV, Markdown or text.",
     "bullets": [
       "Scale by factor or servings",
-      "Handles fractions",
-      "Exports a scaled CSV"
+      "Fractions, mixed numbers and ranges",
+      "Optional imperial fraction output",
+      "Combine duplicate ingredient rows",
+      "CSV, Markdown or text output"
     ],
     "file": "products/Recipe-Scaler.zip"
   },
@@ -1882,12 +1851,14 @@ window.PRODUCTS = [
     "category": "Education-Study",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Study any question/answer list in your terminal.",
-    "summary": "A Python quiz app that loads a CSV of cards, shuffles them and scores your answers.",
+    "tagline": "Spaced repetition in your terminal.",
+    "summary": "A standard-library Python quiz that reads question and answer cards from CSV, schedules them with an SM-2-style algorithm and saves progress after every card. Filter by deck or tag, cram, or export your stats.",
     "bullets": [
-      "Interactive terminal quiz",
-      "Shuffle and self-score",
-      "Works with any CSV"
+      "Again, hard, good, easy grading",
+      "Due-only review and a saved schedule",
+      "Filter by deck or tag",
+      "Cram and list modes",
+      "CSV stats export"
     ],
     "file": "products/Flashcard-Quiz.zip"
   },
@@ -1898,12 +1869,14 @@ window.PRODUCTS = [
     "category": "Teachers-Students",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Turn a score CSV into averages and letter grades.",
-    "summary": "A Python tool that computes averages, letter grades and class statistics from a scores CSV.",
+    "tagline": "Weighted grades and class stats from a CSV.",
+    "summary": "A standard-library Python tool that turns a scores CSV into per-student weighted averages, letter grades, class statistics and per-assignment summaries. Drop the lowest score, curve the final mark, and export CSV or JSON.",
     "bullets": [
-      "Averages and letter grades",
-      "Class mean, max, min, median",
-      "Works with multi-column scores"
+      "Weighted assignments or equal weights",
+      "Drop-lowest and curve options",
+      "Custom letter-grade thresholds",
+      "Class and per-assignment statistics",
+      "CSV and JSON exports"
     ],
     "file": "products/Grade-Calculator.zip"
   },
@@ -1914,12 +1887,14 @@ window.PRODUCTS = [
     "category": "Teachers-Students",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Split any class into fair random groups.",
-    "summary": "A Python tool that splits a list of names into random groups by count or size, with optional seed.",
+    "tagline": "Make fair random groups in one command.",
+    "summary": "A standard-library Python tool that shuffles a name list into balanced groups, assigns roles, and can avoid pairings from previous sessions. Use a seed when you need the same result twice.",
     "bullets": [
-      "Split by groups or size",
-      "Reproducible with a seed",
-      "Reads names from a file"
+      "Groups by count or maximum size",
+      "Optional roles and repeat-avoidance history",
+      "Seed for a reproducible shuffle",
+      "Text, Markdown, CSV or JSON output",
+      "Reads names from a file, arguments or stdin"
     ],
     "file": "products/Random-Group-Generator.zip"
   },
@@ -1930,12 +1905,14 @@ window.PRODUCTS = [
     "category": "Travel-Lifestyle",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Get a smart packing list for any trip.",
-    "summary": "A Python tool that builds a packing list from trip length, climate and activities.",
+    "tagline": "A packing list that fits the trip.",
+    "summary": "A standard-library Python tool that builds a categorised packing list from trip length, climate and activities. Quantities react to laundry and carry-on limits, and checked items are saved in JSON between runs.",
     "bullets": [
-      "Climate-aware list",
-      "Activity-specific items",
-      "Scaled to trip length"
+      "Hot, mild, cold or mixed climate",
+      "Beach, business, hiking and more",
+      "Laundry and carry-on quantity rules",
+      "Add or remove custom items",
+      "Saved check-off state in JSON"
     ],
     "file": "products/Packing-List-Generator.zip"
   },
@@ -1946,12 +1923,15 @@ window.PRODUCTS = [
     "category": "Fitness-Sports",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "A HIIT timer that beeps at every change.",
-    "summary": "A terminal interval timer with configurable work, rest, rounds and prepare countdown.",
+    "tagline": "A focused work/rest timer for HIIT, Tabata and sprint intervals.",
+    "summary": "A polished desktop interval timer with a large countdown ring, saved presets, accurate monotonic timing, sound cues and a CSV session log. Pure Python and Tkinter, no third-party dependencies.",
     "bullets": [
-      "Configurable work / rest",
-      "Round tracking",
-      "Audible beep at changes"
+      "Prepare, work, rest and rounds with an optional final rest",
+      "Drift-resistant countdown, pause, skip and fullscreen controls",
+      "Tabata, HIIT, Sprint, EMOM and saved custom presets",
+      "Sound cues, always-on-top mode and keyboard shortcuts",
+      "Session log with CSV export and automatic saved settings",
+      "Python 3 + Tkinter, offline, zero third-party packages"
     ],
     "file": "products/Interval-Timer.zip"
   },
@@ -1962,12 +1942,14 @@ window.PRODUCTS = [
     "category": "Productivity",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Combine photos or scans into one PDF.",
-    "summary": "A Python tool that merges images into a single PDF, one per page \u2014 great for receipts and portfolios.",
+    "tagline": "Turn a folder of photos or scans into one PDF.",
+    "summary": "A standard-library Python tool that combines JPEG and PNG images into a single PDF, one per page. Control page size, margins, orientation and fit, with transparency, CMYK and EXIF rotation handled.",
     "bullets": [
-      "Combine many images",
-      "One image per page",
-      "Works with folders"
+      "JPEG and PNG, including transparency and CMYK",
+      "A4, A5, Letter, Legal or exact image size",
+      "Contain, cover or actual-size placement",
+      "Folder scanning, natural sort and dry run",
+      "No third-party packages"
     ],
     "file": "products/Images-to-PDF.zip"
   },
@@ -1978,12 +1960,14 @@ window.PRODUCTS = [
     "category": "Productivity",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Extract the text from any PDF.",
-    "summary": "A Python tool that extracts text from a PDF to an editable .txt file, with page selection.",
+    "tagline": "Pull the text out of a PDF, page by page.",
+    "summary": "A standard-library Python tool that reads text-based PDFs, including compressed streams, embedded fonts and ToUnicode maps, and writes clean .txt or JSON. Pick pages, keep page markers, or inspect metadata first.",
     "bullets": [
-      "Extract all or selected pages",
-      "Saves to .txt",
-      "Works on text PDFs"
+      "Extract all pages or a range like 1-5,8-",
+      "Text or JSON output, UTF-8 by default",
+      "Metadata and page-size report",
+      "Handles compressed PDFs and embedded fonts",
+      "No third-party packages"
     ],
     "file": "products/PDF-to-Text.zip"
   },
@@ -1994,12 +1978,14 @@ window.PRODUCTS = [
     "category": "Food-Recipes",
     "priceUsd": 8.99,
     "format": "Python \u00b7 .zip",
-    "tagline": "Turn ingredients into a categorised shopping list.",
-    "summary": "A Python tool that sorts any ingredient list into supermarket categories with checkboxes.",
+    "tagline": "Turn ingredients into a sorted shopping list.",
+    "summary": "A standard-library Python tool that builds a categorised grocery list from a comma list, text file or CSV. It merges duplicates, converts units, adds checkboxes and remembers checked items in JSON.",
     "bullets": [
-      "Auto-categorised list",
-      "Deduplicates items",
-      "Saves to a text file"
+      "Auto-categorised supermarket sections",
+      "Merges duplicate ingredients",
+      "Converts grams/kilograms and millilitres/litres",
+      "Saved check-off state",
+      "Text, Markdown or CSV output"
     ],
     "file": "products/Grocery-List-Builder.zip"
   },
@@ -2026,12 +2012,15 @@ window.PRODUCTS = [
     "category": "Food-Recipes",
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
-    "tagline": "Scale any recipe and get exact amounts.",
-    "summary": "A browser tool that scales ingredient lists by any factor, handling fractions neatly.",
+    "tagline": "Scale a recipe and keep the fractions readable.",
+    "summary": "Set the servings you have and the servings you need. Amounts accept fractions and mixed numbers, scale live, and print as a clean shopping list with the method.",
     "bullets": [
-      "Scale by any factor",
-      "Handles fractions",
-      "Halve or double in one click"
+      "Scale by servings or 0.5\u00d7\u20134\u00d7 shortcuts",
+      "Parses 1/2, 1 1/4 and decimals",
+      "Kitchen-friendly fractions and units",
+      "Add, edit and remove ingredients",
+      "Copy shopping list, CSV export, print",
+      "Autosaved locally, works offline"
     ],
     "file": "products/Recipe-Scaler.html"
   },
@@ -2042,12 +2031,15 @@ window.PRODUCTS = [
     "category": "Teachers-Students",
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
-    "tagline": "Instant averages and letter grades.",
-    "summary": "A browser grade calculator that computes averages, letter grades and class stats as you type.",
+    "tagline": "Your current grade, and the score still needed.",
+    "summary": "Build weighted categories, add scores, and see the real course grade. The target box calculates exactly what you need on the remaining weight \u2014 including when the answer is 'not possible'.",
     "bullets": [
-      "Instant averages and grades",
-      "Class stats",
-      "Saves your class locally"
+      "Weighted categories and points-based averages",
+      "Current grade, letter and GPA estimate",
+      "Target-grade calculator for remaining work",
+      "Per-assignment percentages and category averages",
+      "CSV export, print, sample gradebook",
+      "Saved offline in the browser"
     ],
     "file": "products/Grade-Calculator.html"
   },
@@ -2058,12 +2050,15 @@ window.PRODUCTS = [
     "category": "Education-Study",
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
-    "tagline": "Flip cards to study any question list.",
-    "summary": "A browser flashcard app with flip cards, shuffle, and progress for any question/answer list.",
+    "tagline": "Spaced repetition in one file, no account.",
+    "summary": "Create decks, add cards, and study with a simple spaced-repetition scheduler. Rate Again, Good or Easy and the card returns when it is due. Import lines in bulk and export the deck as CSV.",
     "bullets": [
-      "Flip cards to reveal answers",
-      "Shuffle and next/prev",
-      "Paste any card list"
+      "Multiple decks, unlimited cards",
+      "Spaced repetition: again, good, easy",
+      "Keyboard: space to flip, 1/2/3 to rate",
+      "Bulk import one card per line",
+      "Due, new, learned and accuracy stats",
+      "CSV export, offline, no account"
     ],
     "file": "products/Flashcard-Study-App.html"
   },
@@ -2074,12 +2069,15 @@ window.PRODUCTS = [
     "category": "Travel-Lifestyle",
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
-    "tagline": "Generate and tick off a packing list.",
-    "summary": "A browser packing list generator based on trip days, climate and activities, with tick boxes.",
+    "tagline": "Every trip has its own list, sorted by category.",
+    "summary": "Create a trip, load a template, then edit. Items are grouped by documents, clothes, toiletries, tech, health and misc. Tick as you pack and the progress bar does the counting.",
     "bullets": [
-      "Climate and activity aware",
-      "Tick off as you pack",
-      "Print the list"
+      "One list per trip, with dates and destination",
+      "Four templates: weekend, beach, business, winter",
+      "Six categories, quantities, custom items",
+      "Packed progress and per-category counts",
+      "CSV export and print-friendly layout",
+      "Saved offline for bad airport Wi-Fi"
     ],
     "file": "products/Travel-Packing-List.html"
   },
@@ -2090,12 +2088,15 @@ window.PRODUCTS = [
     "category": "Health-Wellness",
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
-    "tagline": "Set a goal and track your water each day.",
-    "summary": "A browser water tracker with a daily goal, tap-to-drink glasses and progress bar, saved for today.",
+    "tagline": "A counter with a memory: today, the week, and the streak.",
+    "summary": "Log a glass, a bottle or a custom amount. The page keeps a seven-day chart, a goal streak and a full history, in ml, oz or glasses. Export the lot as CSV.",
     "bullets": [
-      "Daily goal and progress",
-      "Tap to log a glass",
-      "Saves for today"
+      "Quick add a glass, 250 ml, 500 ml or any amount",
+      "Switch between ml, oz and glasses",
+      "Seven-day chart, 7-day average and goal streak",
+      "Editable daily goal and glass size",
+      "Fourteen-day history, CSV export, print",
+      "Offline, single file, saved in the browser"
     ],
     "file": "products/Water-Intake-Tracker.html"
   },
@@ -2107,11 +2108,11 @@ window.PRODUCTS = [
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
     "tagline": "Reward good behaviour with stars.",
-    "summary": "A colourful star chart for kids with multiple children and tap-to-add stars, saved locally.",
+    "summary": "Multiple children, weekly star charts, chores, goal rewards and a saved star bank, all in one offline page.",
     "bullets": [
-      "Multiple children",
-      "Tap to add stars",
-      "Saved in your browser"
+      "Multiple children and weekly charts",
+      "Star bank, goals and rewards",
+      "CSV and print export"
     ],
     "file": "products/Kids-Star-Chart.html"
   },
@@ -2122,12 +2123,15 @@ window.PRODUCTS = [
     "category": "Food-Recipes",
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
-    "tagline": "Add items and tick them off while shopping.",
-    "summary": "A browser shopping list that saves items, lets you tick them off and clears what you've bought.",
+    "tagline": "A list that sorts itself by aisle and adds up as you go.",
+    "summary": "Multiple lists, automatic aisle grouping, quantities and prices. It totals the shop, tracks what is already in the basket, and warns you when you pass your budget. Copy it as text or export CSV.",
     "bullets": [
-      "Tick items off",
-      "Clear bought items",
-      "Saves automatically"
+      "Multiple lists with rename and per-list budget",
+      "Auto-detects the aisle from the item name",
+      "Quantity and price per item, live total",
+      "Check items off, clear checked in one tap",
+      "Copy as text, CSV export, print",
+      "Offline, works in the supermarket dead zone"
     ],
     "file": "products/Grocery-List-App.html"
   },
@@ -2155,11 +2159,12 @@ window.PRODUCTS = [
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
     "tagline": "Box breathing to calm down and refocus.",
-    "summary": "A guided box-breathing timer (4-4-4-4) with an animated circle to follow.",
+    "summary": "Guided box, 4-7-8, coherent and calm breathing patterns with a custom rhythm, session log and CSV export.",
     "bullets": [
-      "Guided 4-4-4-4 breathing",
-      "Animated circle",
-      "No sound needed"
+      "Guided patterns and custom rhythm",
+      "Animated circle, chime or voice cues",
+      "Saved stats and session log",
+      "CSV and print export"
     ],
     "file": "products/Breathing-Relax-Timer.html"
   },
@@ -2458,12 +2463,12 @@ window.PRODUCTS = [
     "emoji": "\ud83c\udfcb",
     "format": "HTML app",
     "file": "products/One-Rep-Max-Calculator.html",
-    "summary": "Estimate your one-rep max from any set and get a full percentage training table.",
+    "summary": "Five one-rep-max formulas, a full percentage table, warm-up ramp and kg/lb plate calculator, saved locally.",
     "bullets": [
-      "Estimate your 1RM from any set",
-      "Full percentage training table",
-      "Switch between kg and lb",
-      "Works offline"
+      "Five formulas plus an average",
+      "Percentage table and warm-up ramp",
+      "kg/lb plate calculator",
+      "Saved history, CSV and print"
     ]
   },
   {
@@ -2509,12 +2514,12 @@ window.PRODUCTS = [
     "emoji": "\ud83e\uddfe",
     "format": "HTML app",
     "file": "products/JSON-Formatter.html",
-    "summary": "Validate, pretty-print or minify JSON with clear error messages when something is wrong.",
+    "summary": "Format, minify and sort JSON with syntax highlighting, exact line/column errors, copy/download and a local draft.",
     "bullets": [
-      "Pretty-print with 2 or 4 spaces",
-      "Minify in one click",
-      "Clear validation errors",
-      "Works offline"
+      "Format, minify and sort keys",
+      "Syntax highlighting and line numbers",
+      "Line/column errors and stats",
+      "Copy, download and saved draft"
     ]
   },
   {
@@ -3035,6 +3040,25 @@ window.PRODUCTS = [
       "Searchable game menu",
       "Keyboard, mouse & touch support",
       "One file you own and can back up"
+    ]
+  },
+  {
+    "id": "bitcoin-invoice-builder",
+    "category": "Freelancing-Remote",
+    "name": "Bitcoin Invoice Builder",
+    "tagline": "Invoice clients in BTC. No processor, no fees.",
+    "priceUsd": 12.99,
+    "emoji": "\ud83e\uddfe",
+    "format": "HTML app",
+    "file": "products/bitcoin-invoice-builder.html",
+    "summary": "A complete invoicing tool in one offline file. Build the invoice, price it in Bitcoin at the rate you choose, and hand the client a payment link that needs no bank, no card and no account. Every invoice is saved in your browser, so nothing leaves your machine.",
+    "bullets": [
+      "Line items, tax, discounts, totals \u2014 automatic",
+      "Converts the total to BTC at your rate, or fetches it live",
+      "Copy a bitcoin: payment link or your address in one click",
+      "Print or save any invoice as a clean PDF",
+      "Multiple invoices stored offline in your browser",
+      "CSV export and JSON backup, no account required"
     ]
   }
 ];

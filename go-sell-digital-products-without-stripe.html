@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sell Digital Products Without Stripe | Satoshi Shelf</title>
+<meta name="description" content="A practical alternative to card processors for digital downloads: direct Bitcoin checkout, instant delivery, no merchant account, and the trade-offs sellers need to know.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://satoshishelf.github.io/go-sell-digital-products-without-stripe.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:image:alt" content="Satoshi Shelf — practical digital products, paid in Bitcoin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="alternate" type="application/rss+xml" title="Satoshi Shelf" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23f7931a'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23201400' font-family='Arial' font-weight='bold'>&#8383;</text></svg>">
+<meta name="theme-color" content="#0b0d12">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Sell Digital Products Without Stripe or PayPal — Bitcoin Checkout (2026)","description":"Direct Bitcoin checkout for digital downloads, the trade-offs, and a practical migration path.","url":"https://satoshishelf.github.io/go-sell-digital-products-without-stripe.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://satoshishelf.github.io/go-sell-digital-products-without-stripe.html"},"image":"https://satoshishelf.github.io/assets/og-cover.jpg","datePublished":"2026-10-22","dateModified":"2026-10-22","inLanguage":"en","isAccessibleForFree":true,"articleSection":"Bitcoin","author":{"@type":"Organization","name":"Satoshi Shelf","url":"https://satoshishelf.github.io/"},"publisher":{"@type":"Organization","name":"Satoshi Shelf","url":"https://satoshishelf.github.io/","logo":{"@type":"ImageObject","url":"https://satoshishelf.github.io/assets/logo.png"}},"about":{"@type":"Thing","name":"Bitcoin payments for digital products"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://satoshishelf.github.io/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://satoshishelf.github.io/guides.html"},{"@type":"ListItem","position":3,"name":"Sell without Stripe","item":"https://satoshishelf.github.io/go-sell-digital-products-without-stripe.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I sell digital products without a payment processor?","acceptedAnswer":{"@type":"Answer","text":"Yes. A direct Bitcoin payment goes from the buyer’s wallet to yours; the blockchain is the settlement layer. You still need a way to quote a price, verify the transaction, and deliver the file, but you do not need a merchant account or a card processor."}},{"@type":"Question","name":"Will I lose buyers if I do not take cards?","acceptedAnswer":{"@type":"Answer","text":"Some, yes. Card checkout is familiar and works for buyers who already have cards. Bitcoin checkout wins with buyers who have no usable card, do not want to share card data, or are in countries your card processor handles poorly. A hybrid store can serve both."}},{"@type":"Question","name":"Is it cheaper than Stripe?","acceptedAnswer":{"@type":"Answer","text":"The platform percentage can be lower because there is no card processor in the path. Network fees and hosting still exist, and your time has a cost. For small digital products, the bigger win is often access and control rather than a dramatic fee difference."}},{"@type":"Question","name":"Do I have to handle sales tax myself?","acceptedAnswer":{"@type":"Answer","text":"If you sell directly, you are generally responsible for understanding your tax obligations. A marketplace or merchant-of-record can handle some of that for you, but it also takes a cut and controls the checkout. Do not assume Bitcoin removes tax complexity."}},{"@type":"Question","name":"What about chargebacks and refunds?","acceptedAnswer":{"@type":"Answer","text":"On-chain Bitcoin payments do not have card chargebacks. That does not mean every sale is final in the eyes of the law. Publish a clear refund policy and handle genuine mistakes like wrong-amount payments or duplicate orders."}},{"@type":"Question","name":"Can I start with one product?","acceptedAnswer":{"@type":"Answer","text":"Yes. One product, one wallet, one static page, one verification endpoint. Test the full path with a real payment before you add categories, discounts, or a second payment rail."}}]}]</script>
+<!-- SOCIAL:BEGIN (generated by _src/tools/fix_social_meta.py) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Satoshi Shelf">
+<meta property="og:title" content="Sell Digital Products Without Stripe | Satoshi Shelf">
+<meta property="og:description" content="A practical alternative to card processors for digital downloads: direct Bitcoin checkout, instant delivery, no merchant account, and the trade-offs sellers need to know.">
+<meta property="og:url" content="https://satoshishelf.github.io/go-sell-digital-products-without-stripe.html">
+<meta property="og:image" content="https://satoshishelf.github.io/assets/og-cover.jpg">
+<meta property="og:image:alt" content="Sell Digital Products Without Stripe | Satoshi Shelf">
+<meta name="twitter:title" content="Sell Digital Products Without Stripe | Satoshi Shelf">
+<meta name="twitter:description" content="A practical alternative to card processors for digital downloads: direct Bitcoin checkout, instant delivery, no merchant account, and the trade-offs sellers need to know.">
+<meta name="twitter:image" content="https://satoshishelf.github.io/assets/og-cover.jpg">
+<!-- SOCIAL:END -->
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
+    <nav class="site">
+      <a href="p/">All products</a>
+      <a href="guides.html">Guides</a>
+      <a href="launcher.html">Launcher</a>
+      <a href="custom.html">Hire me</a>
+      <a class="cta" href="p/">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dotlive"></span> Pay with Bitcoin &middot; instant delivery</div>
+    <h1>Sell downloads<br><span class="grad">without Stripe.</span></h1>
+    <p class="sub">Direct Bitcoin checkout is a real option for digital products. Here is what it replaces, what it does not, and how to migrate one product without rebuilding your whole business.</p>
+    <div class="actions">
+      <a class="btn" href="p/">Browse all products</a>
+      <a class="btn ghost" href="index.html#faq">Common questions</a>
+    </div>
+    <div class="trust">
+      <span>&#8383; <b>On-chain checkout</b></span>
+      <span>&#9889; <b>Instant delivery</b></span>
+      <span>&#128274; <b>No account needed</b></span>
+    </div>
+  </div>
+</section>
+
+<section class="section"><div class="wrap"><article class="article"><div class="meta"><span>Updated 22 October 2026</span><span>8 minute read</span><span>By Satoshi Shelf</span></div><p class="lead">Stripe is convenient. It is also a permission slip. If you sell digital downloads to buyers who do not have a usable card, or you do not want a processor deciding whether your product is allowed, Bitcoin checkout is a real alternative. It is not a drop-in replacement.</p>
+    <nav class="toc" aria-label="On this page"><strong>On this page</strong><a href="#why">Why sellers look elsewhere</a><a href="#fit">Who it fits</a><a href="#options">Four ways to take Bitcoin</a><a href="#tradeoffs">The trade-offs</a><a href="#migration">A practical migration</a><a href="#faq">FAQ</a></nav>
+    <p>Card processors solve a hard problem: they let strangers pay each other without trusting each other. That convenience has a price. Accounts can be frozen, payouts can be delayed, categories can be restricted, and buyers in some countries cannot complete a card checkout at all.</p>
+    <p>Direct Bitcoin payments remove the processor from the path. They also remove the safety net, the dispute layer, and the familiar checkout. The right choice depends on what you sell and who buys it.</p>
+
+    <h2 id="why">Why sellers look elsewhere</h2>
+    <ul>
+      <li><strong>Access.</strong> A buyer without a usable card can still pay on-chain.</li>
+      <li><strong>Control.</strong> No processor can freeze a self-custody wallet or change your payout schedule.</li>
+      <li><strong>Finality.</strong> A confirmed Bitcoin payment cannot be charged back through the card network.</li>
+      <li><strong>Privacy.</strong> No card number, no customer account, and no need to store a buyer database.</li>
+      <li><strong>Global reach.</strong> A wallet works across borders in a way that a merchant account often does not.</li>
+    </ul>
+    <p>None of those benefits are absolute. Each one has an operational cost, and the cost is usually paid in support time rather than a monthly fee.</p>
+
+    <h2 id="fit">Who it fits</h2>
+    <div class="grid cols-2">
+      <div class="card"><div class="body"><h3>Good fit</h3><p class="tag">Digital downloads with instant delivery, a small catalog, and buyers who already use Bitcoin or cannot use cards. You are willing to test the payment flow and answer edge-case support.</p></div></div>
+      <div class="card"><div class="body"><h3>Poor fit</h3><p class="tag">Subscriptions, high-volume mainstream retail, buyers who expect cards, and stores that cannot support a failed payment without a help desk. A card processor is still the simpler default.</p></div></div>
+    </div>
+
+    <h2 id="options">Four ways to take Bitcoin</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Option</th><th>Best for</th><th>Trade-off</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Direct static checkout</strong></td><td>A small catalog and full control.</td><td>You build and maintain verification and delivery.</td></tr>
+          <tr><td><strong>BTCPay Server</strong></td><td>Open-source, self-hosted invoices and plugins.</td><td>Infrastructure, backups, and upgrades.</td></tr>
+          <tr><td><strong>Hosted Bitcoin gateway</strong></td><td>Fast setup and invoice tooling.</td><td>Fees, KYC, custody model, and terms vary by provider.</td></tr>
+          <tr><td><strong>Marketplace</strong></td><td>Built-in discovery and checkout.</td><td>Platform cut, rules, and less control over the buyer experience.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>If your goal is to test demand, a marketplace or a hosted gateway is faster. If your goal is a durable direct store, own the checkout and the files. The two can coexist: use a marketplace for discovery and your own store for repeat buyers.</p>
+
+    <h2 id="tradeoffs">The trade-offs</h2>
+    <h3>You own the edge cases</h3>
+    <p>Underpayments, late payments, duplicate transaction IDs, wrong-network transfers, and buyers who close the tab before the file unlocks. A card processor absorbs some of this. A direct store does not.</p>
+
+    <h3>You own the tax question</h3>
+    <p>Gumroad is a merchant of record and handles sales tax for its sellers. A direct store is a direct sale. If you sell internationally, tax and consumer-law obligations are yours to understand.</p>
+
+    <h3>You own the trust signal</h3>
+    <p>A buyer who has never heard of you may hesitate before sending irreversible money. Clear product pages, a real support channel, a sample, and a precise delivery promise do more than a “powered by Bitcoin” badge.</p>
+
+    <h3>You own the price risk</h3>
+    <p>If you quote in Bitcoin and the price moves before the buyer pays, you carry the difference. Quote in fiat, lock the satoshi amount for a short window, and make the expiry visible.</p>
+
+    <h2 id="migration">A practical migration</h2>
+    <ol>
+      <li><strong>Pick one product.</strong> Not the whole catalog. Choose a product with a clear price and an instant delivery path.</li>
+      <li><strong>Create a self-custody wallet.</strong> Back it up, test recovery, and decide how you will generate receiving addresses.</li>
+      <li><strong>Build or buy checkout.</strong> Static page plus serverless verification, BTCPay Server, or a hosted gateway. Keep the first version small.</li>
+      <li><strong>Write the policy.</strong> Delivery, refunds, underpayments, support, and what data you do or do not collect.</li>
+      <li><strong>Test with real money.</strong> A tiny real payment catches more than a testnet transaction. Test the unhappy paths too.</li>
+      <li><strong>Add a card rail later if you need one.</strong> Keep the two flows separate so a failed card payment cannot leave a Bitcoin order in limbo.</li>
+    </ol>
+
+    <div class="callout"><p><strong>Do not lead with “no Stripe.”</strong> Lead with the buyer’s problem: “Pay without a card,” “Download instantly,” or “No account required.” The payment rail is a feature, not the product.</p></div>
+
+    <h2 id="faq">FAQ</h2>
+    <div class="faq"><details><summary>Can I sell digital products without a payment processor?</summary><div class="a">Yes. A direct Bitcoin payment goes from the buyer’s wallet to yours; the blockchain is the settlement layer. You still need a way to quote a price, verify the transaction, and deliver the file, but you do not need a merchant account or a card processor.</div></details><details><summary>Will I lose buyers if I do not take cards?</summary><div class="a">Some, yes. Card checkout is familiar and works for buyers who already have cards. Bitcoin checkout wins with buyers who have no usable card, do not want to share card data, or are in countries your card processor handles poorly. A hybrid store can serve both.</div></details><details><summary>Is it cheaper than Stripe?</summary><div class="a">The platform percentage can be lower because there is no card processor in the path. Network fees and hosting still exist, and your time has a cost. For small digital products, the bigger win is often access and control rather than a dramatic fee difference.</div></details><details><summary>Do I have to handle sales tax myself?</summary><div class="a">If you sell directly, you are generally responsible for understanding your tax obligations. A marketplace or merchant-of-record can handle some of that for you, but it also takes a cut and controls the checkout. Do not assume Bitcoin removes tax complexity.</div></details><details><summary>What about chargebacks and refunds?</summary><div class="a">On-chain Bitcoin payments do not have card chargebacks. That does not mean every sale is final in the eyes of the law. Publish a clear refund policy and handle genuine mistakes like wrong-amount payments or duplicate orders.</div></details><details><summary>Can I start with one product?</summary><div class="a">Yes. One product, one wallet, one static page, one verification endpoint. Test the full path with a real payment before you add categories, discounts, or a second payment rail.</div></details></div>
+
+    <div class="cta-box"><h2>A working starting point</h2><p>The Bitcoin Storefront Starter Kit is a static storefront with live BTC quotes, QR checkout, on-chain verification, and gated delivery. Start there, then replace the sample products with yours.</p><div class="actions"><a class="btn" href="p/starter-kit.html">See what is included</a><a class="btn ghost" href="go-gumroad-alternative-bitcoin.html">Compare with Gumroad</a></div></div>
+
+    <h2>Keep reading</h2>
+    <div class="related-grid"><a href="go-accept-bitcoin-digital-downloads.html"><b>Accept Bitcoin</b><span>The full seller flow.</span></a><a href="go-verify-bitcoin-payment.html"><b>Verify payment</b><span>The checks that prevent free downloads.</span></a><a href="go-bitcoin-storefront-checklist.html"><b>Launch checklist</b><span>31 checks before the first sale.</span></a></div>
+  </article></div></section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
+        <p class="muted">Practical digital products, paid in Bitcoin on-chain. Independent, no account, no tracking.</p>
+      </div>
+      <div>
+        <strong class="fhead">Shop</strong>
+        <a href="p/">All products</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="launcher.html">Free launcher</a>
+        <a href="custom.html">Hire me</a>
+        <a href="about.html">About</a>
+        <a href="policies.html">Policies</a>
+      </div>
+      <div>
+        <strong class="fhead">Learn</strong>
+        <a href="guides.html">All guides</a>
+        <a href="go-bitcoin-digital-downloads.html">Buy with Bitcoin</a>
+        <a href="go-pay-without-a-card.html">Pay without a card</a>
+        <a href="go-bitcoin-only-stores.html">Bitcoin-only stores</a>
+        <a href="go-sell-for-bitcoin.html">Sell for Bitcoin</a>
+      </div>
+      <div>
+        <strong class="fhead">Connect</strong>
+        <a href="https://www.youtube.com/@SatoshiShelf" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://github.com/SatoshiShelf" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://t.me/xsaifsaifx" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+    <div class="fine">
+      &copy; <span id="year"></span> Satoshi Shelf &middot; Bitcoin on-chain &middot; verified before download.<br>
+      Digital products delivered as files. All sales final.
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

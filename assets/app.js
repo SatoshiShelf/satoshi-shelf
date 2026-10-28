@@ -78,25 +78,36 @@
     return (CFG.workerUrl || "").replace(/\/+$/, "");
   }
 
+  function workerDownloadUrl(u) {
+    const s = String(u || "");
+    if (/^https:\/\//i.test(s)) return s;
+    if (/^\/[^/]/.test(s)) return workerBase() + s;
+    return "";
+  }
+
   async function workerPurchase(productId, txid) {
     const base = workerBase();
     if (!base) return { ok: false, reason: "Secure delivery not configured." };
-    const r = await fetch(base + "/verify", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ productId, txid: (txid || "").trim() }),
-    });
+    let r;
+    try {
+      r = await fetch(base + "/verify", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ productId, txid: (txid || "").trim() }),
+      });
+    } catch {
+      return { ok: false, reason: "Could not reach the delivery server. Try again." };
+    }
     let d = {};
     try { d = await r.json(); } catch {}
     if (!r.ok) return { ok: false, reason: d.reason || ("Server error (" + r.status + ").") };
     if (!d.ok) return { ok: false, reason: d.reason || "Payment could not be verified." };
-    const u = d.downloadUrl || "";
-    const downloadUrl = /^https?:\/\//i.test(u) ? u : base + u;
-    return { ok: true, downloadUrl, paidSats: d.paid || null, confirmed: !!d.confirmed };
+    return { ok: true, downloadUrl: workerDownloadUrl(d.downloadUrl), paidSats: d.paid || null, confirmed: !!d.confirmed };
   }
 
   window.Shelf = {
     fmtUsd, fmtSats, getBtcPrice, usdToBtc, btcUri, renderQR,
-    verifyPayment, workerPurchase, isSecure: () => !!workerBase(), CFG,
+    verifyPayment, workerPurchase,
+    isSecure: () => !!workerBase(), CFG,
   };
 })();

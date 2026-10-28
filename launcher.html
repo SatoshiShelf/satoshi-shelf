@@ -108,6 +108,9 @@
         <a href="index.html#products">All products</a>
         <a href="index.html#categories">Categories</a>
         <a href="index.html#faq">FAQ</a>
+        <a href="guides.html">All guides</a>
+        <a href="about.html">About</a>
+        <a href="policies.html">Policies</a>
       </div>
       <div>
         <strong class="fhead">Connect</strong>
@@ -179,8 +182,8 @@ function card(p) {
         <div class="cardbtns">
           ${owned
             ? `<button class="btn small" data-open="${esc(p.id)}">&#9654; Open file</button>
-               <a class="btn ghost small" href="product.html?id=${encodeURIComponent(p.id)}">Details</a>`
-            : `<a class="btn ghost small" href="product.html?id=${encodeURIComponent(p.id)}">View &amp; buy</a>`}
+               <a class="btn ghost small" href="p/${encodeURIComponent(p.id)}.html">Details</a>`
+            : `<a class="btn ghost small" href="p/${encodeURIComponent(p.id)}.html">View &amp; buy</a>`}
         </div>
       </div>
     </div>

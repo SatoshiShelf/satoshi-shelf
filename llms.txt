@@ -1,0 +1,84 @@
+# Satoshi Shelf
+
+> Practical digital products paid in Bitcoin: spreadsheets, contracts, templates, scripts, tools and browser games. One-time purchase, instant download, no account required.
+
+- Store: https://satoshishelf.github.io/
+- All 179 products: https://satoshishelf.github.io/p/
+- Sitemap: https://satoshishelf.github.io/sitemap.xml
+- Feed: https://satoshishelf.github.io/feed.xml
+- Payments: Bitcoin on-chain; no account, no email, no card.
+
+## Categories
+- [Business Startup](https://satoshishelf.github.io/category-business-startup.html) — 23 products
+- [Career Jobs](https://satoshishelf.github.io/category-career-jobs.html) — 6 products
+- [Creative Design](https://satoshishelf.github.io/category-creative-design.html) — 5 products
+- [Crypto Web3](https://satoshishelf.github.io/category-crypto-web3.html) — 5 products
+- [Ecommerce](https://satoshishelf.github.io/category-ecommerce.html) — 4 products
+- [Education Study](https://satoshishelf.github.io/category-education-study.html) — 5 products
+- [Fitness Sports](https://satoshishelf.github.io/category-fitness-sports.html) — 7 products
+- [Food Recipes](https://satoshishelf.github.io/category-food-recipes.html) — 10 products
+- [Freelancing Remote](https://satoshishelf.github.io/category-freelancing-remote.html) — 8 products
+- [Games Interactive](https://satoshishelf.github.io/category-games-interactive.html) — 26 products
+- [Health Wellness](https://satoshishelf.github.io/category-health-wellness.html) — 6 products
+- [Home DIY](https://satoshishelf.github.io/category-home-diy.html) — 3 products
+- [Kids Family](https://satoshishelf.github.io/category-kids-family.html) — 3 products
+- [Marketing Social](https://satoshishelf.github.io/category-marketing-social.html) — 11 products
+- [Money Finance](https://satoshishelf.github.io/category-money-finance.html) — 13 products
+- [Productivity](https://satoshishelf.github.io/category-productivity.html) — 16 products
+- [Teachers Students](https://satoshishelf.github.io/category-teachers-students.html) — 10 products
+- [Tech Code AI](https://satoshishelf.github.io/category-tech-code-ai.html) — 7 products
+- [Travel Lifestyle](https://satoshishelf.github.io/category-travel-lifestyle.html) — 5 products
+- [Weddings Events](https://satoshishelf.github.io/category-weddings-events.html) — 6 products
+
+## Featured products
+- [The Zero-Budget Online Income Playbook](https://satoshishelf.github.io/p/playbook.html) — Turn a laptop and $0 into a real side income. ($8.99)
+- [Bitcoin Storefront Starter Kit](https://satoshishelf.github.io/p/starter-kit.html) — A complete Bitcoin storefront you can deploy this afternoon. ($18.99)
+- [AI Automation Toolkit](https://satoshishelf.github.io/p/ai-toolkit.html) — 35 prompts that do actual work. Search, fill, copy. ($11.99)
+- [The Freelance Cold Outreach Pack](https://satoshishelf.github.io/p/freelance-outreach-pack.html) — 50 fill-in-the-blank messages that win freelance clients. ($6.99)
+- [The Reddit Traffic Playbook](https://satoshishelf.github.io/p/reddit-traffic-playbook.html) — Promote honestly, get real visitors, and don't get banned. ($8.99)
+- [The Digital Product Launch Checklist](https://satoshishelf.github.io/p/launch-checklist.html) — The exact 43-step checklist from idea to first sale. ($4.99)
+- [First $100 Online: A 14-Day Sprint](https://satoshishelf.github.io/p/first-100-sprint.html) — A day-by-day plan to make your first $100 online with $0. ($8.99)
+- [The Faceless Content Machine](https://satoshishelf.github.io/p/faceless-content-kit.html) — Build a faceless short-form channel that funnels buyers. ($11.99)
+- [The Freelance Client Pack](https://satoshishelf.github.io/p/client-contract-pack.html) — Proposal, contract, scope, invoice & payment templates. ($8.99)
+- [300 AI Prompts for Freelancers & Creators](https://satoshishelf.github.io/p/ai-prompt-vault.html) — Copy-paste prompts that turn any AI into your assistant. ($4.99)
+- [The Side Hustle Vault](https://satoshishelf.github.io/p/side-hustle-vault.html) — 60 legitimate ways to earn online — scored for you. ($4.99)
+- [The Pricing & Niche Finder](https://satoshishelf.github.io/p/pricing-niche-finder.html) — An interactive tool to score your niche and price your product. ($4.99)
+- [The Email List Starter](https://satoshishelf.github.io/p/email-list-starter.html) — Turn visitors into an audience you own — for free. ($6.99)
+- [The Pinterest Traffic Playbook](https://satoshishelf.github.io/p/pinterest-traffic-playbook.html) — The slow-burn traffic engine that keeps sending buyers. ($8.99)
+- [Get Paid in Crypto: The 2026 Setup Guide](https://satoshishelf.github.io/p/get-paid-crypto.html) — Accept money from anywhere with no business account. ($6.99)
+- [Freelancer OS](https://satoshishelf.github.io/p/freelancer-os-notion.html) — A Notion workspace for clients, projects, invoices & content. ($8.99)
+- [Affiliate Marketing Starter](https://satoshishelf.github.io/p/affiliate-starter.html) — Earn a commission recommending things you actually use. ($8.99)
+- [The Freelance Portfolio & Résumé Kit](https://satoshishelf.github.io/p/portfolio-resume-kit.html) — Position yourself and build a portfolio that converts. ($4.99)
+- [The Money Manager](https://satoshishelf.github.io/p/money-manager.html) — Track income, expenses, debts & savings — automatically. ($8.99)
+- [Ready-Made Website Templates](https://satoshishelf.github.io/p/website-templates.html) — Four complete sites for shops, restaurants & freelancers. ($18.99)
+
+## Guides
+- [All guides](https://satoshishelf.github.io/guides.html) — seller and buyer guides for Bitcoin digital products.
+- [Accept Bitcoin for digital downloads](https://satoshishelf.github.io/go-accept-bitcoin-digital-downloads.html) — wallet, quote, checkout, verification, and delivery.
+- [Verify a Bitcoin payment](https://satoshishelf.github.io/go-verify-bitcoin-payment.html) — the five checks, replay attacks, and confirmation risk.
+- [Sell without Stripe](https://satoshishelf.github.io/go-sell-digital-products-without-stripe.html) — direct Bitcoin checkout and the trade-offs.
+- [Gumroad alternative](https://satoshishelf.github.io/go-gumroad-alternative-bitcoin.html) — fees, tax, control, and migration.
+- [Bitcoin storefront checklist](https://satoshishelf.github.io/go-bitcoin-storefront-checklist.html) — 31 pre-launch checks, printable and free.
+- [Buy digital products with Bitcoin](https://satoshishelf.github.io/go-bitcoin-digital-downloads.html) — the buyer flow with no account or card.
+
+## About and policies
+- [About Satoshi Shelf](https://satoshishelf.github.io/about.html) — who runs the store, why Bitcoin, and press facts.
+- [Policies](https://satoshishelf.github.io/policies.html) — delivery, refunds, privacy, and product license terms.
+
+## How buying works
+1. Open a product page and choose Pay with Bitcoin.
+2. The checkout shows a Bitcoin address and QR code with the exact amount; pay from any Bitcoin wallet.
+3. Paste the transaction ID; the store verifies it server-side and the download link unlocks.
+
+## Good to know
+- Every product is a one-time purchase, not a subscription.
+- Files are delivered digitally; there is no shipping and no physical product.
+- Preview pages are free 12-second demos and are intentionally excluded from search.
+- No analytics or advertising trackers are installed on the storefront.
+
+## Social
+- YouTube: https://www.youtube.com/@SatoshiShelf
+- GitHub: https://github.com/SatoshiShelf
+- Telegram: https://t.me/xsaifsaifx
+
+Last updated: 2026-10-28

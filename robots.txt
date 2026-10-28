@@ -1,7 +1,11 @@
 User-agent: *
 Allow: /
+Allow: /p/
 
 # Trial pages are watermarked duplicates of paid products — keep them out of search.
 Disallow: /previews/
+
+# Yandex accepts this hint; other crawlers ignore it.
+Host: https://satoshishelf.github.io
 
 Sitemap: https://satoshishelf.github.io/sitemap.xml

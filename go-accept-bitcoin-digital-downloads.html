@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accept Bitcoin for Digital Downloads — Step-by-Step | Satoshi Shelf</title>
+<meta name="description" content="How to accept Bitcoin for digital downloads: self-custody wallet, live BTC quote, QR checkout, on-chain verification, and gated delivery. No payment processor required.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://satoshishelf.github.io/go-accept-bitcoin-digital-downloads.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:image:alt" content="Satoshi Shelf — practical digital products, paid in Bitcoin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="alternate" type="application/rss+xml" title="Satoshi Shelf" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23f7931a'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23201400' font-family='Arial' font-weight='bold'>&#8383;</text></svg>">
+<meta name="theme-color" content="#0b0d12">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Article","headline":"Accept Bitcoin for Digital Downloads — Step-by-Step (2026)","description":"How to accept Bitcoin for digital downloads: self-custody wallet, live BTC quote, QR checkout, on-chain verification, and gated delivery.","url":"https://satoshishelf.github.io/go-accept-bitcoin-digital-downloads.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://satoshishelf.github.io/go-accept-bitcoin-digital-downloads.html"},"image":"https://satoshishelf.github.io/assets/og-cover.jpg","datePublished":"2026-10-22","dateModified":"2026-10-22","inLanguage":"en","isAccessibleForFree":true,"articleSection":"Bitcoin","author":{"@type":"Organization","name":"Satoshi Shelf","url":"https://satoshishelf.github.io/"},"publisher":{"@type":"Organization","name":"Satoshi Shelf","url":"https://satoshishelf.github.io/","logo":{"@type":"ImageObject","url":"https://satoshishelf.github.io/assets/logo.png"}},"about":{"@type":"Thing","name":"Bitcoin payments for digital products"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://satoshishelf.github.io/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://satoshishelf.github.io/guides.html"},{"@type":"ListItem","position":3,"name":"Accept Bitcoin for digital downloads","item":"https://satoshishelf.github.io/go-accept-bitcoin-digital-downloads.html"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a company to accept Bitcoin?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily, but the answer depends on where you live and what you sell. Accepting Bitcoin does not remove income tax, sales tax, consumer-protection rules, or sanctions obligations. Check your local rules before you launch, and talk to an accountant if the volume justifies it."}},{"@type":"Question","name":"Can I use the Bitcoin address from an exchange?","acceptedAnswer":{"@type":"Answer","text":"No. Use a wallet where you control the keys. An exchange address can be frozen, mixed with other customers, or closed to your account. A self-custody wallet also lets you generate a fresh receiving address for each order."}},{"@type":"Question","name":"Do buyers need to create an account?","acceptedAnswer":{"@type":"Answer","text":"No. A wallet is enough. The buyer scans a QR code or copies a bitcoin: URI, sends the exact amount, and submits the transaction ID. Your store verifies the payment and unlocks the file. No email address is required unless you choose to collect one."}},{"@type":"Question","name":"How many confirmations should I wait for?","acceptedAnswer":{"@type":"Answer","text":"For a low-priced digital download, many stores accept a transaction as soon as it is visible in the mempool. That is a business risk, not a guarantee. For higher-value products, wait for one or more confirmations, and make the threshold explicit in your checkout copy."}},{"@type":"Question","name":"What if the buyer underpays or overpays?","acceptedAnswer":{"@type":"Answer","text":"Do not unlock the file automatically on an underpayment. Show the expected and received amounts, and give the buyer a support path. For an overpayment, either deliver and note the difference or refund the excess according to your published policy. Decide this before launch."}},{"@type":"Question","name":"Can I accept both cards and Bitcoin?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many stores run a card checkout for mainstream buyers and a separate Bitcoin checkout for buyers who prefer it. The trade-off is more code, more support, and more places where an order can go wrong. Start with one rail if you are testing demand."}},{"@type":"Question","name":"Is a Bitcoin payment anonymous?","acceptedAnswer":{"@type":"Answer","text":"No. The blockchain is public. A buyer does not need an account, but the transaction, addresses, and amount are visible forever. Do not promise anonymity. If privacy matters, explain exactly what your store does and does not collect."}},{"@type":"Question","name":"Do I need Lightning?","acceptedAnswer":{"@type":"Answer","text":"On-chain Bitcoin works for digital downloads and is simpler to verify. Lightning is better for very small payments and instant checkout, but it adds channel liquidity and routing considerations. Choose one, test it, and do not claim support for a rail you have not tested."}}]}]</script>
+<!-- SOCIAL:BEGIN (generated by _src/tools/fix_social_meta.py) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Satoshi Shelf">
+<meta property="og:title" content="Accept Bitcoin for Digital Downloads — Step-by-Step | Satoshi Shelf">
+<meta property="og:description" content="How to accept Bitcoin for digital downloads: self-custody wallet, live BTC quote, QR checkout, on-chain verification, and gated delivery. No payment processor required.">
+<meta property="og:url" content="https://satoshishelf.github.io/go-accept-bitcoin-digital-downloads.html">
+<meta property="og:image" content="https://satoshishelf.github.io/assets/og-cover.jpg">
+<meta property="og:image:alt" content="Accept Bitcoin for Digital Downloads — Step-by-Step | Satoshi Shelf">
+<meta name="twitter:title" content="Accept Bitcoin for Digital Downloads — Step-by-Step | Satoshi Shelf">
+<meta name="twitter:description" content="How to accept Bitcoin for digital downloads: self-custody wallet, live BTC quote, QR checkout, on-chain verification, and gated delivery. No payment processor required.">
+<meta name="twitter:image" content="https://satoshishelf.github.io/assets/og-cover.jpg">
+<!-- SOCIAL:END -->
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
+    <nav class="site">
+      <a href="p/">All products</a>
+      <a href="guides.html">Guides</a>
+      <a href="launcher.html">Launcher</a>
+      <a href="custom.html">Hire me</a>
+      <a class="cta" href="p/">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dotlive"></span> Pay with Bitcoin &middot; instant delivery</div>
+    <h1>Accept Bitcoin<br><span class="grad">for digital downloads.</span></h1>
+    <p class="sub">A practical seller’s guide to taking on-chain payments without Stripe, a merchant account, or a KYC’d gateway — including the delivery step most guides skip.</p>
+    <div class="actions">
+      <a class="btn" href="p/">Browse all products</a>
+      <a class="btn ghost" href="index.html#faq">Common questions</a>
+    </div>
+    <div class="trust">
+      <span>&#8383; <b>On-chain checkout</b></span>
+      <span>&#9889; <b>Instant delivery</b></span>
+      <span>&#128274; <b>No account needed</b></span>
+    </div>
+  </div>
+</section>
+
+<section class="section"><div class="wrap"><article class="article"><div class="meta"><span>Updated 22 October 2026</span><span>9 minute read</span><span>By Satoshi Shelf</span></div><p class="lead">Taking Bitcoin for a digital download is not hard. Taking it <strong>safely</strong> is a small engineering problem: you need a wallet you control, a quote the buyer can trust, a payment check that cannot be faked, and a download that expires.</p>
+    <nav class="toc" aria-label="On this page"><strong>On this page</strong><a href="#what-you-need">What you need</a><a href="#five-step-flow">The five-step flow</a><a href="#options">Compare your options</a><a href="#edge-cases">Edge cases</a><a href="#costs-taxes">Costs, taxes, and rules</a><a href="#faq">FAQ</a></nav>
+    <p>Most “accept Bitcoin” advice stops at “paste a wallet address on your site.” That gets you a payment. It does not get you a reliable order. The buyer can pay the wrong amount, reuse another buyer’s transaction ID, or claim a payment that never happened. You can hand over a file before the money is really yours.</p>
+    <p>This guide covers the whole path for a digital product: quote, checkout, verification, delivery, and the edge cases that otherwise turn into support tickets.</p>
+
+    <h2 id="what-you-need">What you need before the first sale</h2>
+    <ul>
+      <li><strong>A self-custody wallet.</strong> Not an exchange balance. Back up the seed phrase offline, and test recovery before you take a real payment.</li>
+      <li><strong>A receiving address strategy.</strong> A fresh address per order is strongest. If your wallet cannot do that, use a dedicated address per product and pair it with a unique amount and a short time window.</li>
+      <li><strong>A storefront page.</strong> It can be a static page. It needs the product, the fiat price, the BTC quote, and a clear “pay with Bitcoin” action.</li>
+      <li><strong>A verification endpoint.</strong> A serverless function or small server that checks the transaction against an independent source, not the buyer’s screenshot.</li>
+      <li><strong>Private file storage.</strong> The deliverable must not sit at a public URL. A public link is a permanent leak, even if you later delete the file.</li>
+      <li><strong>A written delivery and refund policy.</strong> Digital goods are usually final, but “usually” is not a policy. Put the terms on the product page and checkout.</li>
+    </ul>
+
+    <h2 id="five-step-flow">The five-step flow</h2>
+    <h3>1. Price in fiat, quote in Bitcoin</h3>
+    <p>Keep the product price in the currency you understand. At checkout, convert it to BTC at a live rate, then <strong>lock that amount for a short window</strong> — ten to fifteen minutes is common. Show the fiat price, the BTC amount, and the expiry time on the same screen.</p>
+    <p>Use integer satoshis in your code. Floating-point BTC amounts invite rounding bugs, and a one-satoshi mismatch should not be a support ticket.</p>
+
+    <h3>2. Show a QR code and an exact amount</h3>
+    <p>The buyer should be able to scan a QR code, copy the address, or open a <code>bitcoin:</code> URI. The URI can include the address, amount, and a label. Test it with at least two wallets before launch; wallet support for URI parameters is not perfectly uniform.</p>
+    <p>Make the network fee explicit. The buyer pays the miner fee. If your checkout implies the fee is included, you will spend the first week explaining why the received amount is lower than the sticker price.</p>
+
+    <h3>3. Verify the transaction on-chain</h3>
+    <p>Never trust a transaction ID by itself. Check that the transaction exists, that one of its outputs pays <em>your</em> address, and that the amount covers the quote. Then decide how many confirmations you require.</p>
+    <p>This is the step most DIY stores get wrong. The full check, including a code example and the common traps, is in <a href="go-verify-bitcoin-payment.html">how to verify a Bitcoin payment before delivering a file</a>.</p>
+
+    <h3>4. Gate the download</h3>
+    <p>Do not send a permanent file URL. On a successful check, issue a short-lived signed token that names one product and expires quickly. The download endpoint validates the token and streams the file from private storage. The plaintext file should never be reachable directly from the public web root.</p>
+    <p>If you sell multiple products, scope the token to the product ID. A token for a $4 checklist should not unlock a $19 storefront kit.</p>
+
+    <h3>5. Record only what you need</h3>
+    <p>For reconciliation, store the product ID, the transaction ID, the amount, and the timestamp. You do not need a customer database to deliver a file. If you collect an email for support, say so and keep it separate from the payment flow.</p>
+
+    <h2 id="options">Compare your options</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Approach</th><th>Control</th><th>Setup</th><th>Watch out for</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Static store + serverless verifier</strong></td><td>High. Your wallet, your files, your checkout.</td><td>Hours to a weekend.</td><td>You own verification, delivery, and support.</td></tr>
+          <tr><td><strong>BTCPay Server</strong></td><td>High. Open-source and self-hosted.</td><td>Longer if you run your own node.</td><td>Hosting, backups, and upgrades are your job.</td></tr>
+          <tr><td><strong>Hosted Bitcoin gateway</strong></td><td>Medium. The gateway handles invoices.</td><td>Fast.</td><td>Fees, KYC, custody model, and terms vary. Read them.</td></tr>
+          <tr><td><strong>Marketplace</strong></td><td>Lower. The platform controls checkout and discovery.</td><td>Fastest.</td><td>Platform cut, content rules, and less customer ownership.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>There is no universal winner. A hosted gateway is sensible if you want invoices and do not want to run infrastructure. A static store is sensible when you want a small catalog, a direct wallet, and no platform account. BTCPay Server is sensible when you want open-source tooling and are willing to operate it.</p>
+
+    <h2 id="edge-cases">Edge cases that turn into support tickets</h2>
+    <ul>
+      <li><strong>Underpayment.</strong> Do not unlock. Show the shortfall and let the buyer send the difference or contact you.</li>
+      <li><strong>Overpayment.</strong> Decide whether to deliver and keep the difference or refund the excess. Put the rule in your policy.</li>
+      <li><strong>Payment after the quote expires.</strong> The BTC amount may no longer match the fiat price. Do not silently accept it. Give the buyer a fresh quote or a refund path.</li>
+      <li><strong>Zero-confirmation payments.</strong> A mempool sighting can be replaced or orphaned. For cheap products, the risk may be acceptable; for expensive ones, wait for confirmations.</li>
+      <li><strong>Duplicate transaction IDs.</strong> If several orders share one address, a buyer may submit another buyer’s txid. Use a unique address per order or a unique amount-and-time window, and mark used transaction IDs as consumed.</li>
+      <li><strong>Wrong network or asset.</strong> A testnet transaction or a different coin is not payment. Check the network and the asset explicitly.</li>
+    </ul>
+
+    <h2 id="costs-taxes">Costs, taxes, and rules</h2>
+    <p>The obvious saving is the card processor’s percentage. The costs do not disappear; they move:</p>
+    <ul>
+      <li><strong>Network fees</strong> are paid by the buyer, but they affect whether a small product is practical.</li>
+      <li><strong>Hosting and verification</strong> cost something, even if it is only a free-tier worker and your time.</li>
+      <li><strong>Volatility</strong> is yours once the payment arrives. Some sellers convert immediately; others keep a BTC balance deliberately.</li>
+      <li><strong>Tax and consumer law</strong> still apply. Bitcoin does not make a sale invisible to a tax authority, and it does not remove refund rights that your jurisdiction grants.</li>
+      <li><strong>Support</strong> is real work. Every edge case above needs an answer a buyer can understand.</li>
+    </ul>
+    <div class="callout"><p><strong>Privacy is not the same as anonymity.</strong> A direct Bitcoin payment avoids a card network and a customer account, but the transaction is public. Do not make claims your architecture cannot support.</p></div>
+
+    <h2 id="faq">FAQ</h2>
+    <div class="faq"><details><summary>Do I need a company to accept Bitcoin?</summary><div class="a">Not necessarily, but the answer depends on where you live and what you sell. Accepting Bitcoin does not remove income tax, sales tax, consumer-protection rules, or sanctions obligations. Check your local rules before you launch, and talk to an accountant if the volume justifies it.</div></details><details><summary>Can I use the Bitcoin address from an exchange?</summary><div class="a">No. Use a wallet where you control the keys. An exchange address can be frozen, mixed with other customers, or closed to your account. A self-custody wallet also lets you generate a fresh receiving address for each order.</div></details><details><summary>Do buyers need to create an account?</summary><div class="a">No. A wallet is enough. The buyer scans a QR code or copies a bitcoin: URI, sends the exact amount, and submits the transaction ID. Your store verifies the payment and unlocks the file. No email address is required unless you choose to collect one.</div></details><details><summary>How many confirmations should I wait for?</summary><div class="a">For a low-priced digital download, many stores accept a transaction as soon as it is visible in the mempool. That is a business risk, not a guarantee. For higher-value products, wait for one or more confirmations, and make the threshold explicit in your checkout copy.</div></details><details><summary>What if the buyer underpays or overpays?</summary><div class="a">Do not unlock the file automatically on an underpayment. Show the expected and received amounts, and give the buyer a support path. For an overpayment, either deliver and note the difference or refund the excess according to your published policy. Decide this before launch.</div></details><details><summary>Can I accept both cards and Bitcoin?</summary><div class="a">Yes. Many stores run a card checkout for mainstream buyers and a separate Bitcoin checkout for buyers who prefer it. The trade-off is more code, more support, and more places where an order can go wrong. Start with one rail if you are testing demand.</div></details><details><summary>Is a Bitcoin payment anonymous?</summary><div class="a">No. The blockchain is public. A buyer does not need an account, but the transaction, addresses, and amount are visible forever. Do not promise anonymity. If privacy matters, explain exactly what your store does and does not collect.</div></details><details><summary>Do I need Lightning?</summary><div class="a">On-chain Bitcoin works for digital downloads and is simpler to verify. Lightning is better for very small payments and instant checkout, but it adds channel liquidity and routing considerations. Choose one, test it, and do not claim support for a rail you have not tested.</div></details></div>
+
+    <div class="cta-box"><h2>Want the working version?</h2><p>The Bitcoin Storefront Starter Kit packages the full flow: static product pages, live BTC quotes, QR checkout, on-chain verification, and gated delivery. One folder, no build step.</p><div class="actions"><a class="btn" href="p/starter-kit.html">See the starter kit</a><a class="btn ghost" href="go-bitcoin-storefront-checklist.html">Get the launch checklist</a></div></div>
+
+    <h2>Keep reading</h2>
+    <div class="related-grid"><a href="go-verify-bitcoin-payment.html"><b>Verify a Bitcoin payment</b><span>The five checks and a code example.</span></a><a href="go-sell-digital-products-without-stripe.html"><b>Sell without Stripe</b><span>What changes when you drop the card processor.</span></a><a href="go-gumroad-alternative-bitcoin.html"><b>Gumroad or your own store?</b><span>Fees, tax, control, and the honest trade-offs.</span></a></div>
+  </article></div></section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
+        <p class="muted">Practical digital products, paid in Bitcoin on-chain. Independent, no account, no tracking.</p>
+      </div>
+      <div>
+        <strong class="fhead">Shop</strong>
+        <a href="p/">All products</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="launcher.html">Free launcher</a>
+        <a href="custom.html">Hire me</a>
+        <a href="about.html">About</a>
+        <a href="policies.html">Policies</a>
+      </div>
+      <div>
+        <strong class="fhead">Learn</strong>
+        <a href="guides.html">All guides</a>
+        <a href="go-bitcoin-digital-downloads.html">Buy with Bitcoin</a>
+        <a href="go-pay-without-a-card.html">Pay without a card</a>
+        <a href="go-bitcoin-only-stores.html">Bitcoin-only stores</a>
+        <a href="go-sell-for-bitcoin.html">Sell for Bitcoin</a>
+      </div>
+      <div>
+        <strong class="fhead">Connect</strong>
+        <a href="https://www.youtube.com/@SatoshiShelf" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://github.com/SatoshiShelf" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://t.me/xsaifsaifx" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+    <div class="fine">
+      &copy; <span id="year"></span> Satoshi Shelf &middot; Bitcoin on-chain &middot; verified before download.<br>
+      Digital products delivered as files. All sales final.
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Checkout — Satoshi Shelf</title>
-<meta name="description" content="Buy digital products from Satoshi Shelf with Bitcoin. No account, no middlemen, instant delivery after your payment is confirmed on-chain.">
+<meta data-seo="desc" name="description" content="Buy digital products from Satoshi Shelf with Bitcoin on-chain. No account, no card, instant delivery after the payment is verified.">
+<meta name="robots" content="noindex,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,25 +16,25 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Satoshi Shelf">
 <meta property="og:title" content="Checkout — Satoshi Shelf">
-<meta property="og:description" content="Buy digital products from Satoshi Shelf with Bitcoin. No account, no middlemen, instant delivery after your payment is confirmed on-chain.">
+<meta property="og:description" content="Practical guides, tools and templates for building income on a budget. Pay with Bitcoin — no account, no middlemen, instant delivery.">
 <meta property="og:url" content="https://satoshishelf.github.io/product.html">
-<meta property="og:image" content="https://satoshishelf.github.io/assets/covers/arcade-vault.jpg">
+<meta property="og:image" content="https://satoshishelf.github.io/assets/og-cover.jpg">
 <meta property="og:image:alt" content="Checkout — Satoshi Shelf">
 <meta name="twitter:title" content="Checkout — Satoshi Shelf">
-<meta name="twitter:description" content="Buy digital products from Satoshi Shelf with Bitcoin. No account, no middlemen, instant delivery after your payment is confirmed on-chain.">
-<meta name="twitter:image" content="https://satoshishelf.github.io/assets/covers/arcade-vault.jpg">
+<meta name="twitter:description" content="Practical guides, tools and templates for building income on a budget. Pay with Bitcoin — no account, no middlemen, instant delivery.">
+<meta name="twitter:image" content="https://satoshishelf.github.io/assets/og-cover.jpg">
 <!-- SOCIAL:END -->
 </head>
 <body>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="index.html"><span class="mark">&#8383;</span> Satoshi Shelf</a>
-    <nav class="site"><a href="index.html#products">All products</a></nav>
+    <nav class="site"><a href="p/">All products</a></nav>
   </div>
 </header>
 
 <div class="wrap">
-  <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#products">Products</a> &nbsp;/&nbsp; <span id="crumb"></span></div>
+  <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="p/">Products</a> &nbsp;/&nbsp; <span id="crumb"></span></div>
   <div class="product-layout">
     <div class="product-head" id="head"></div>
     <aside class="buybox" id="buybox"></aside>
@@ -47,7 +48,7 @@
 <footer class="site">
   <div class="wrap">
     <div class="fine" style="border-top:none;margin-top:0;padding-top:0">
-      &copy; <span id="year"></span> Satoshi Shelf &middot; Payments to <span style="font-family:var(--mono)">bc1qrs6...gd2z3</span> &middot; All sales final
+      &copy; <span id="year"></span> Satoshi Shelf &middot; <a href="p/">All products</a> &middot; <a href="policies.html">Policies</a> &middot; Bitcoin on-chain &middot; All sales final
     </div>
   </div>
 </footer>
@@ -78,11 +79,10 @@ document.title = p.name + " — Satoshi Shelf";
 // Escape everything that comes from the catalog before it goes into innerHTML.
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const safeUrl = s => encodeURIComponent(String(s == null ? "" : s));
-const safeJs = s => JSON.stringify(String(s == null ? "" : s)).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026");
 
 function seo(p) {
   const site = location.origin + location.pathname.replace(/[^/]*$/, "");
-  const url = site + "product.html?id=" + encodeURIComponent(p.id);
+  const url = site + "p/" + encodeURIComponent(p.id) + ".html";
   const img = site + "assets/covers/" + encodeURIComponent(p.id) + ".jpg";
   const desc = (p.summary || p.tagline || "Digital product, paid in Bitcoin.").slice(0, 300);
   function put(tag, attrs) {
@@ -97,13 +97,16 @@ function seo(p) {
   }
   put("link", { "data-seo": "canonical", rel: "canonical", href: url });
   put("meta", { "data-seo": "desc", name: "description", content: desc });
+  put("meta", { "data-seo": "og:type", property: "og:type", content: "product" });
   put("meta", { "data-seo": "og:title", property: "og:title", content: p.name + " \u2014 Satoshi Shelf" });
   put("meta", { "data-seo": "og:desc", property: "og:description", content: desc });
   put("meta", { "data-seo": "og:url", property: "og:url", content: url });
   put("meta", { "data-seo": "og:image", property: "og:image", content: img });
+  put("meta", { "data-seo": "og:image:alt", property: "og:image:alt", content: p.name + " \u2014 " + p.tagline });
   put("meta", { "data-seo": "tw:title", name: "twitter:title", content: p.name + " \u2014 Satoshi Shelf" });
   put("meta", { "data-seo": "tw:desc", name: "twitter:description", content: desc });
   put("meta", { "data-seo": "tw:image", name: "twitter:image", content: img });
+  put("meta", { "data-seo": "tw:image:alt", name: "twitter:image:alt", content: p.name + " \u2014 " + p.tagline });
   const s = document.createElement("script");
   s.type = "application/ld+json";
   const jsonLd = JSON.stringify({
@@ -126,7 +129,7 @@ function seo(p) {
   document.head.appendChild(s);
 }
 seo(p);
-document.getElementById("crumb").innerHTML = `<a id="crumbcat" href="index.html?cat=${safeUrl(p.category)}#products">${esc((p.category || "Products").replace(/-/g, " "))}</a> &nbsp;/&nbsp; ${esc(p.name)}`;
+document.getElementById("crumb").innerHTML = `<a id="crumbcat" href="category-${safeUrl(String(p.category || "").toLowerCase())}.html">${esc((p.category || "Products").replace(/-/g, " "))}</a> &nbsp;/&nbsp; ${esc(p.name)}`;
 
 function runBlock(p) {
   const info = (window.RUNINFO || {})[p.id];
@@ -142,7 +145,7 @@ function runBlock(p) {
     <p>This is a Python script bundle. You only need <b>Python 3</b> installed (free from <span class="mono">python.org</span>). External libraries: <b>${depText}</b>.</p>
     <ol class="run-steps">
       <li>Download and <b>unzip</b> the file.</li>
-      <li>Open a <b>terminal</b> (Command Prompt on Windows, Terminal on macOS/Linux) and go into the unzipped folder.</li>
+      <li>Open a <b>terminal</b> (Command Prompt on Windows, Terminal on macOS/Linux) inside the unzipped folder (the one containing README.md and the script).</li>
       ${installStep}
       <li>Run the script:
         <pre class="run-code">python ${esc(script)}</pre>
@@ -165,7 +168,7 @@ document.getElementById("head").innerHTML = `
     <h2>Highlights</h2>
     <ul class="checks">${(p.bullets || []).map(b => `<li>${esc(b)}</li>`).join("")}</ul>
     <h2>Delivery</h2>
-    <p>Immediately after your payment is confirmed on-chain, a download link appears right here on this page. No account, no email required — keep the page open until you download.</p>
+    <p>After your on-chain payment is verified, a download link appears right here on this page. No account, no email required — keep the page open until you download.</p>
     <h2>Format</h2>
     <p>${esc(p.format || "Self-contained HTML file")}. ${/\.html$/.test(String(p.file || "")) ? "Open it in any browser, or use your browser's <b>Print &rarr; Save as PDF</b> for an offline copy you own forever." : "Delivered as an instant download after your payment is verified."}</p>
     ${runBlock(p)}
@@ -175,7 +178,7 @@ const related = window.PRODUCTS.filter(x => x.id !== p.id)
   .sort((a, b) => (b.category === p.category) - (a.category === p.category))
   .slice(0, 6);
 document.getElementById("relatedGrid").innerHTML = related.map(x => `
-  <a class="mini" href="product.html?id=${safeUrl(x.id)}">
+  <a class="mini" href="p/${safeUrl(x.id)}.html">
     <span class="g"><img src="assets/covers/${safeUrl(x.id)}.jpg" alt="" loading="lazy" onerror="this.style.display='none'"></span>
     <span><span class="t">${esc(x.name)}</span><br><span class="p">$${esc(x.priceUsd)} &middot; ${esc(x.tagline)}</span></span>
   </a>`).join("");
@@ -195,25 +198,27 @@ box.innerHTML = `
   <button class="btn block" id="payBtn">Pay with Bitcoin</button>
 
   <div class="pay" id="pay">
+    <div class="payhead"><span class="pill">On-chain</span><span class="muted">Bitcoin network</span></div>
     <div class="qrbox" id="qr"></div>
     <div class="addr" id="addr" title="Click to copy">${esc(CFG.btcAddress)}</div>
     <div class="copy-hint" id="hint">Tap the address to copy it</div>
     <a class="btn ghost block small" id="walletLink" style="margin-bottom:16px">Open in wallet</a>
+    <p class="muted" id="payAmount" style="font-size:13px;margin:0 0 14px">Send the exact BTC amount shown above. Bitcoin network only.</p>
     <label class="field" for="txid">Paste your transaction ID after paying</label>
     <input class="control" id="txid" placeholder="64-character transaction ID" autocomplete="off" spellcheck="false">
     <button class="btn block" id="verifyBtn" style="margin-top:12px">Verify payment</button>
     <div class="notice" id="note"></div>
     <div class="deliver hidden" id="deliver">
-      <h4>&#10004; Payment confirmed</h4>
+      <h4>&#10004; Payment verified</h4>
       <p class="muted" id="deliverMsg" style="margin:0 0 12px"></p>
       <a class="btn small block" id="dl" href="#" download>Download now</a>
     </div>
   </div>
 
   <div class="guarantee">
-    <div>&#9889; Instant delivery after payment</div>
+    <div>&#8383; On-chain Bitcoin only</div>
     <div>&#128274; No signup &middot; no card &middot; no tracking</div>
-    <div>&#8383; Paid on-chain to a self-custody address</div>
+    <div>&#9939; Verified before download</div>
   </div>`;
 
 let btcAmt = null;
@@ -261,40 +266,62 @@ function note(kind, msg) {
   n.textContent = msg;
 }
 
+function setStep(step) {
+  ["st1", "st2", "st3"].forEach((id, i) => {
+    document.getElementById(id).classList.toggle("active", i < step);
+  });
+}
+
+function safeDownloadUrl(url) {
+  const s = String(url || "");
+  if (/^https:\/\//i.test(s)) return s;
+  if (/^\/[^/]/.test(s)) return s;
+  return "";
+}
+
+async function renderPayment() {
+  if (!btcAmt) return;
+  const uri = btcUri(CFG.btcAddress, btcAmt, "Satoshi Shelf: " + p.id);
+  renderQR(document.getElementById("qr"), uri);
+  document.getElementById("walletLink").href = uri;
+  document.getElementById("payAmount").textContent =
+    "Send exactly " + btcAmt.toFixed(8) + " BTC (" + fmtSats(btcAmt) + ") on the Bitcoin network. Then paste the transaction ID below.";
+}
+
 async function initPrice() {
   try {
     btcAmt = await usdToBtc(p.priceUsd);
-    document.getElementById("sats").innerHTML = fmtSats(btcAmt) + " BTC &middot; " + btcAmt.toFixed(8) + " BTC";
+    document.getElementById("sats").innerHTML = fmtSats(btcAmt) + " &middot; " + btcAmt.toFixed(8) + " BTC";
+    renderPayment();
   } catch (e) {
-    document.getElementById("sats").textContent = "live price unavailable — send the USD equivalent";
+    document.getElementById("sats").textContent = "live price unavailable — refresh to load the exact amount";
   }
 }
 initPrice();
 
 document.getElementById("payBtn").addEventListener("click", async () => {
   document.getElementById("pay").classList.add("show");
-  document.getElementById("st1").classList.add("active");
+  setStep(1);
   if (!btcAmt) await initPrice();
-  const uri = btcUri(CFG.btcAddress, btcAmt, "Satoshi Shelf: " + p.id);
-  renderQR(document.getElementById("qr"), uri);
-  document.getElementById("walletLink").href = uri;
-  const btn = document.getElementById("payBtn");
-  btn.textContent = "Waiting for payment\u2026";
-  btn.disabled = true;
+  document.getElementById("pay").scrollIntoView({ behavior: "smooth", block: "nearest" });
 });
 
 document.getElementById("addr").addEventListener("click", async () => {
   const h = document.getElementById("hint");
   const old = h.textContent;
-  try { await navigator.clipboard.writeText(CFG.btcAddress); h.textContent = "Address copied \u2713"; }
-  catch { h.textContent = "Select and copy manually"; }
+  try {
+    await navigator.clipboard.writeText(CFG.btcAddress);
+    h.textContent = "Address copied \u2713";
+  } catch {
+    h.textContent = "Select and copy manually";
+  }
   setTimeout(() => { h.textContent = old; }, 1600);
 });
 
 document.getElementById("verifyBtn").addEventListener("click", async () => {
   const btn = document.getElementById("verifyBtn");
-  btn.disabled = true; btn.textContent = "Checking\u2026";
-  document.getElementById("st2").classList.add("active");
+  btn.disabled = true; btn.textContent = "Checking…";
+  setStep(2);
   try {
     if (!btcAmt) await initPrice();
     let res, url = null;
@@ -306,21 +333,25 @@ document.getElementById("verifyBtn").addEventListener("click", async () => {
     }
     if (!res.ok) {
       note("err", res.reason);
+      setStep(1);
     } else {
       note("info", res.confirmed ? "Confirmed on-chain." : "Seen in mempool — confirmation follows shortly.");
-      document.getElementById("st3").classList.add("active");
+      setStep(3);
       const dl = document.getElementById("dl");
       // Only allow same-origin relative paths or https URLs — never javascript:/data:.
-      const safe = typeof url === "string" && (/^\/[^/]/.test(url) || /^https:\/\//i.test(url)) ? url : null;
-      dl.href = safe || "product.html?id=" + safeUrl(p.id);
+      dl.href = safeDownloadUrl(url) || ("product.html?id=" + safeUrl(p.id));
       dl.setAttribute("download", "");
       document.getElementById("deliverMsg").textContent = res.paidSats
-        ? "Paid " + res.paidSats.toLocaleString() + " sats. Thanks for supporting a middleman-free store."
+        ? "Paid " + Number(res.paidSats).toLocaleString() + " sats. Thanks for supporting a small independent store."
         : "Payment verified. Your secure download is ready — the link expires in 15 minutes.";
       document.getElementById("deliver").classList.remove("hidden");
+      const payBtn = document.getElementById("payBtn");
+      payBtn.textContent = "Payment verified \u2713";
+      payBtn.disabled = true;
     }
   } catch (e) {
     note("err", "Error: " + e.message);
+    setStep(1);
   } finally {
     btn.disabled = false; btn.textContent = "Verify payment";
   }

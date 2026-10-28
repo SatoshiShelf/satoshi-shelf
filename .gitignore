@@ -48,3 +48,9 @@ assets/*
 !assets/*.js
 !assets/*.png
 previews/
+
+# local bulk backups
+.backups/
+
+# generated product landing pages (built by _src/tools/make_product_pages.mjs)
+p/
