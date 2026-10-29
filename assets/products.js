@@ -2143,11 +2143,11 @@ window.PRODUCTS = [
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
     "tagline": "Work out profit, ROI and break-even.",
-    "summary": "A browser calculator for crypto trades showing profit/loss, ROI and break-even sell price including fees.",
+    "summary": "Add every buy to see your true average cost, fee-aware break-even and profit at the current price, with saved snapshots and CSV export.",
     "bullets": [
-      "Profit/loss and ROI",
-      "Break-even price",
-      "Includes trading fees"
+      "Multiple buys with weighted average cost",
+      "Profit, ROI and fee-aware break-even",
+      "Saved snapshots and CSV export"
     ],
     "file": "products/Crypto-Profit-Calculator.html"
   },
@@ -2192,11 +2192,12 @@ window.PRODUCTS = [
     "priceUsd": 8.99,
     "format": "HTML \u00b7 browser app",
     "tagline": "Pick names at random or make fair groups.",
-    "summary": "A browser tool to pick a random name, shuffle a whole class, or split into groups.",
+    "summary": "Paste any list, pick without repeats, shuffle the whole class, or split into fair groups, with saved lists and CSV export.",
     "bullets": [
-      "Pick one or shuffle all",
-      "Split into groups",
-      "Paste any name list"
+      "Pick one, shuffle all or make groups",
+      "No repeats until you reset",
+      "Saved lists and CSV export",
+      "Space, S and G shortcuts"
     ],
     "file": "products/Random-Name-Picker.html"
   },
@@ -2497,12 +2498,12 @@ window.PRODUCTS = [
     "emoji": "\ud83c\udfa8",
     "format": "HTML app",
     "file": "products/Paint-Material-Estimator.html",
-    "summary": "Work out wall area and how many litres and tins of paint a room needs.",
+    "summary": "Measure each room, subtract doors and windows, then turn litres into whole tins from the sizes you can actually buy, with project totals.",
     "bullets": [
-      "Calculates paintable wall area",
-      "Accounts for doors and windows",
-      "Tells you litres and tins needed",
-      "Works offline"
+      "Wall, ceiling and trim areas",
+      "Door and window deductions",
+      "Whole-tin plan with cost",
+      "Multi-room project, CSV and print"
     ]
   },
   {
@@ -2582,12 +2583,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udc0d",
     "format": "HTML game",
     "file": "products/game-snake.html",
-    "summary": "The classic. Steer the snake, eat the food, and grow as long as you can without crashing into yourself or the walls. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "The classic. Steer the snake, eat the food, and grow as long as you can without crashing into yourself or the walls. It runs instantly in any browser, works fully offline, and keeps your best score and last 30 runs on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Keyboard, swipe, mouse or on-screen arrows",
+      "Best score and last 30 runs saved locally",
       "One clean HTML file you own"
     ]
   },
@@ -2600,12 +2601,12 @@ window.PRODUCTS = [
     "emoji": "\ud83e\uddf1",
     "format": "HTML game",
     "file": "products/game-breakout.html",
-    "summary": "Bounce the ball off your paddle and clear the wall of bricks. Lose the ball and it costs you a life. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Bounce the ball off your paddle and clear the wall of bricks. Lose the ball and it costs you a life. It runs instantly in any browser, works fully offline, and keeps your best score and last 30 runs on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Mouse, finger or arrow-key paddle",
+      "Three lives, rising levels and score history",
       "One clean HTML file you own"
     ]
   },
@@ -2618,12 +2619,12 @@ window.PRODUCTS = [
     "emoji": "\ud83c\udfd3",
     "format": "HTML game",
     "file": "products/game-pong.html",
-    "summary": "The original arcade duel. Move your paddle, outplay the CPU, and reach the winning score. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "The original arcade duel. Move your paddle, outplay the CPU, and reach seven goals first. It runs instantly in any browser, works fully offline, and keeps your match history on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Three CPU levels, first to seven",
+      "Mouse, finger, arrow or W/S control",
       "One clean HTML file you own"
     ]
   },
@@ -2636,12 +2637,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udfe6",
     "format": "HTML game",
     "file": "products/game-blockfall.html",
-    "summary": "Rotate and drop the falling pieces, fill complete lines to clear them, and survive as the speed ramps up. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Rotate and drop the falling pieces, fill complete lines to clear them, and survive as the speed ramps up. It runs instantly in any browser, works fully offline, and keeps your best score and last 30 runs on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "All seven pieces with next preview",
+      "Soft drop, hard drop, levels and score history",
       "One clean HTML file you own"
     ]
   },
@@ -2654,12 +2655,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udc24",
     "format": "HTML game",
     "file": "products/game-flappy.html",
-    "summary": "Tap to flap and thread the bird through the pipes. Simple to learn, brutal to master. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Tap to flap and thread the bird through the pipes. Simple to learn, brutal to master. It runs instantly in any browser, works fully offline, and keeps your best score and last 30 flights on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Tap, click, Space or on-screen Flap",
+      "Bronze, silver and gold medals",
       "One clean HTML file you own"
     ]
   },
@@ -2672,12 +2673,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udd22",
     "format": "HTML game",
     "file": "products/game-2048.html",
-    "summary": "Slide the tiles, merge matching numbers, and chase the 2048 tile before the board fills up. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Slide the tiles, merge matching numbers, and chase the 2048 tile before the board fills up. It runs instantly in any browser, works fully offline, and saves the board, your score and the last 30 runs on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Arrow keys, swipe or mouse drag",
+      "Undo, saved board and score history",
       "One clean HTML file you own"
     ]
   },
@@ -2690,12 +2691,12 @@ window.PRODUCTS = [
     "emoji": "\ud83c\udccf",
     "format": "HTML game",
     "file": "products/game-memory.html",
-    "summary": "Flip cards two at a time and memorise where each symbol hides. Clear the board in as few moves as possible. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Flip cards two at a time and memorise where each symbol hides. Clear the board in as few moves as possible. It runs instantly in any browser, works fully offline, and keeps a best-moves record for every board size on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "4\u00d74, 5\u00d74 and 6\u00d76 boards",
+      "Move counter, timer and per-board best",
       "One clean HTML file you own"
     ]
   },
@@ -2708,12 +2709,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udca3",
     "format": "HTML game",
     "file": "products/game-minefield.html",
-    "summary": "Use the number clues to work out where the mines are, then reveal every safe square without detonating one. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Use the number clues to work out where the mines are, then reveal every safe square without detonating one. It runs instantly in any browser, works fully offline, and keeps a best time for each field size on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "9\u00d79, 12\u00d712 and 16\u00d716 fields",
+      "Safe first tap, flags and best times",
       "One clean HTML file you own"
     ]
   },
@@ -2726,12 +2727,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udc7e",
     "format": "HTML game",
     "file": "products/game-invaders.html",
-    "summary": "Aliens march down the screen as you shoot from below. Don't let them reach the bottom. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Aliens march down the screen as you shoot from below. Don't let them reach the bottom. It runs instantly in any browser, works fully offline, and keeps your best score and last 30 runs on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Destructible shields and rising waves",
+      "Keyboard or on-screen move and fire",
       "One clean HTML file you own"
     ]
   },
@@ -2744,12 +2745,12 @@ window.PRODUCTS = [
     "emoji": "\u274c",
     "format": "HTML game",
     "file": "products/game-tictactoe.html",
-    "summary": "Play X against a CPU that never loses. Can you force a draw, or catch it off guard? It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Play X against a CPU that plays a perfect game on Hard. Can you force a draw, or catch it off guard on an easier level? It runs instantly in any browser, works fully offline, and keeps your scoreboard and streak on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Three AI levels \u2014 hard plays perfect",
+      "Win streak and scoreboard saved locally",
       "One clean HTML file you own"
     ]
   },
@@ -2762,12 +2763,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udd32",
     "format": "HTML game",
     "file": "products/game-sudoku.html",
-    "summary": "Fill the grid so every row, column and box holds the digits 1-9. A new puzzle is generated each game. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Fill the grid so every row, column and box holds the digits 1-9. Every puzzle is generated with one solution. It runs instantly in any browser, works fully offline, and keeps a best time for each difficulty on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Three difficulties, notes and hints",
+      "Unique puzzle, conflict check and timer",
       "One clean HTML file you own"
     ]
   },
@@ -2780,12 +2781,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udd24",
     "format": "HTML game",
     "file": "products/game-wordsearch.html",
-    "summary": "Words are hidden across the grid in every direction. Find them all against the clock. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Words are hidden across the grid in every direction. Find them all against the clock. It runs instantly in any browser, works fully offline, and keeps your best time and last 30 solves on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Fresh 12\u00d712 grid with ten words",
+      "Eight directions, hints and a timer",
       "One clean HTML file you own"
     ]
   },
@@ -2798,12 +2799,12 @@ window.PRODUCTS = [
     "emoji": "\ud83e\ude9d",
     "format": "HTML game",
     "file": "products/game-hangman.html",
-    "summary": "Pick letters to reveal the secret word. Six wrong guesses and it's over. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Pick letters to reveal the secret word. Six wrong guesses and it's over. It runs instantly in any browser, works fully offline, and keeps your best streak and last 30 rounds on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "60 words across eight categories",
+      "Six misses, streak record and CSV history",
       "One clean HTML file you own"
     ]
   },
@@ -2816,12 +2817,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udd34",
     "format": "HTML game",
     "file": "products/game-simon.html",
-    "summary": "Watch the colours light up, then repeat the sequence. It gets one step longer every round. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Watch the colours light up, then repeat the sequence. It gets one step longer every round. It runs instantly in any browser, works fully offline, and keeps your best round and last 30 games on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Four tones and a growing sequence",
+      "Tap the pads or press 1\u20134",
       "One clean HTML file you own"
     ]
   },
@@ -2834,12 +2835,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udd28",
     "format": "HTML game",
     "file": "products/game-whack.html",
-    "summary": "Moles pop up all over the board - hit as many as you can before the clock runs out. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Moles pop up all over the board \u2014 hit as many as you can before the clock runs out. It runs instantly in any browser, works fully offline, and keeps your best score and last 30 rounds on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "30-second round with rising speed",
+      "Keys 1\u20139, tap and accuracy tracking",
       "One clean HTML file you own"
     ]
   },
@@ -2852,12 +2853,12 @@ window.PRODUCTS = [
     "emoji": "\ud83e\udd98",
     "format": "HTML game",
     "file": "products/game-doodle.html",
-    "summary": "Bounce your way up an endless tower of platforms. Miss one and you fall. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Bounce your way up an endless tower of platforms. Miss one and you fall. It runs instantly in any browser, works fully offline, and keeps your best height and last 30 runs on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Endless platforms and breakable ledges",
+      "Keyboard, touch buttons and height record",
       "One clean HTML file you own"
     ]
   },
@@ -2870,12 +2871,12 @@ window.PRODUCTS = [
     "emoji": "\u2604\ufe0f",
     "format": "HTML game",
     "file": "products/game-asteroids.html",
-    "summary": "Spin, thrust and shoot through a field of asteroids that split into smaller ones when hit. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Spin, thrust and shoot through a field of asteroids that split into smaller ones when hit. It runs instantly in any browser, works fully offline, and keeps your best score and last 30 runs on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Rocks split into smaller rocks",
+      "Turn, thrust and fire with keys or buttons",
       "One clean HTML file you own"
     ]
   },
@@ -2888,12 +2889,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udce6",
     "format": "HTML game",
     "file": "products/game-sokoban.html",
-    "summary": "A classic box-pushing puzzle. Plan your moves carefully - one wrong shove and you're stuck. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "A classic box-pushing puzzle. Plan your moves carefully \u2014 one wrong shove and you're stuck. It runs instantly in any browser, works fully offline, and keeps your best levels-cleared record and last 30 runs on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Five hand-built levels with undo",
+      "Move and push counters, reset and swipe",
       "One clean HTML file you own"
     ]
   },
@@ -2906,12 +2907,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udca1",
     "format": "HTML game",
     "file": "products/game-lightsout.html",
-    "summary": "Tapping a light toggles it and its neighbours. Turn the whole grid off in the fewest taps. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Tapping a light toggles it and its neighbours. Turn the whole grid off in the fewest taps. It runs instantly in any browser, works fully offline, and keeps your fewest-moves record and last 30 solves on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Solvable 5\u00d75 puzzles",
+      "Move counter and fewest-moves record",
       "One clean HTML file you own"
     ]
   },
@@ -2924,12 +2925,12 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udd35",
     "format": "HTML game",
     "file": "products/game-connect4.html",
-    "summary": "Drop your discs and line up four before the CPU does. It blocks - and it attacks. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Drop your discs and line up four before the CPU does. It blocks, it attacks, and Hard looks four moves ahead. It runs instantly in any browser, works fully offline, and keeps your scoreboard and streak on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Three AI levels \u2014 hard looks four ahead",
+      "Win streak and scoreboard saved locally",
       "One clean HTML file you own"
     ]
   },
@@ -2942,12 +2943,12 @@ window.PRODUCTS = [
     "emoji": "\ud83c\udfd7\ufe0f",
     "format": "HTML game",
     "file": "products/game-stacker.html",
-    "summary": "Time your moves to stack blocks into a tower. Overhang gets trimmed away - stay precise. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Time your moves to stack blocks into a tower. Overhang gets trimmed away \u2014 stay precise. It runs instantly in any browser, works fully offline, and keeps your best floors and last 30 runs on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Perfect-stack bonus and rising speed",
+      "Tap, click or Space to drop",
       "One clean HTML file you own"
     ]
   },
@@ -2960,12 +2961,12 @@ window.PRODUCTS = [
     "emoji": "\ud83c\udf00",
     "format": "HTML game",
     "file": "products/game-maze.html",
-    "summary": "A randomly generated maze every time. Race to the exit and try to beat your best time. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "A freshly generated maze every level, growing larger each time. Race to the exit and try to beat your best. It runs instantly in any browser, works fully offline, and keeps your best-level record and last 30 runs on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Five generated mazes, growing in size",
+      "Timer and best-level record",
       "One clean HTML file you own"
     ]
   },
@@ -2978,12 +2979,12 @@ window.PRODUCTS = [
     "emoji": "\u26a1",
     "format": "HTML game",
     "file": "products/game-reaction.html",
-    "summary": "Wait for green, then click as fast as you can. Average your five tries for a true score. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Wait for green, then click as fast as you can. Five clean rounds make a set, with the average and every split shown. It runs instantly in any browser, works fully offline, and keeps your best time and last 30 sets on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "Five timed rounds \u2014 false starts are voided",
+      "Best time, splits and average saved",
       "One clean HTML file you own"
     ]
   },
@@ -2996,12 +2997,12 @@ window.PRODUCTS = [
     "emoji": "\u2328\ufe0f",
     "format": "HTML game",
     "file": "products/game-typing.html",
-    "summary": "Type the passage against the clock and get your real words-per-minute and accuracy score. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "Type the passage against the clock and get your real words-per-minute and accuracy score. It runs instantly in any browser, works fully offline, and keeps your best WPM and last 30 sets on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "60-second clock with live WPM",
+      "Accuracy and character count",
       "One clean HTML file you own"
     ]
   },
@@ -3014,12 +3015,12 @@ window.PRODUCTS = [
     "emoji": "\u270a",
     "format": "HTML game",
     "file": "products/game-rps.html",
-    "summary": "The timeless duel. First to three wins the match - the CPU mixes it up to keep you guessing. It runs instantly in any browser \u2014 no install, fully offline \u2014 and saves your best score on your own device.",
+    "summary": "The timeless duel. First to three wins the match, and the CPU picks uniformly at random \u2014 no pattern to read. It runs instantly in any browser, works fully offline, and keeps your best streak and last 30 matches on your own device.",
     "bullets": [
       "Plays instantly in any browser \u2014 no install",
       "Works fully offline, forever",
-      "Saves your best score on your device",
-      "Keyboard, mouse & touch controls",
+      "First to three against the CPU",
+      "Uniform random CPU, streak record saved",
       "One clean HTML file you own"
     ]
   },
