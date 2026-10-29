@@ -2311,12 +2311,13 @@ window.PRODUCTS = [
     "emoji": "\ud83d\udcac",
     "format": "HTML app",
     "file": "products/Interview-Question-Bank.html",
-    "summary": "Practise real interview questions by category and draft answers with the STAR method.",
+    "summary": "Seventy common interview questions across eight categories, each with a guided STAR answer editor, saved drafts, confidence ratings and a searchable bank. Export every answer to CSV or print.",
     "bullets": [
-      "Dozens of real interview questions",
-      "Grouped by behavioural, situational and more",
-      "STAR answer framework built in",
-      "Works offline"
+      "70 questions across 8 categories",
+      "STAR editor with saved drafts",
+      "Confidence, stars and progress by category",
+      "Searchable bank, CSV and print",
+      "Works offline, one HTML file"
     ]
   },
   {
