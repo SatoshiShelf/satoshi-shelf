@@ -47,6 +47,7 @@ assets/*
 !assets/*.css
 !assets/*.js
 !assets/*.png
+!assets/*.ico
 previews/
 
 # local bulk backups
