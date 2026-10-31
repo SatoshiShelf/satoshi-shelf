@@ -40,7 +40,7 @@
 - [First $100 Online: A 14-Day Sprint](https://satoshishelf.github.io/p/first-100-sprint.html) — A day-by-day plan to make your first $100 online with $0. ($8.99)
 - [The Faceless Content Machine](https://satoshishelf.github.io/p/faceless-content-kit.html) — Build a faceless short-form channel that funnels buyers. ($11.99)
 - [The Freelance Client Pack](https://satoshishelf.github.io/p/client-contract-pack.html) — Proposal, contract, scope, invoice & payment templates. ($8.99)
-- [300 AI Prompts for Freelancers & Creators](https://satoshishelf.github.io/p/ai-prompt-vault.html) — Copy-paste prompts that turn any AI into your assistant. ($4.99)
+- [80 AI Prompts for Freelancers & Creators](https://satoshishelf.github.io/p/ai-prompt-vault.html) — Copy-paste prompts that turn any AI into your assistant. ($4.99)
 - [The Side Hustle Vault](https://satoshishelf.github.io/p/side-hustle-vault.html) — 60 legitimate ways to earn online — scored for you. ($4.99)
 - [The Pricing & Niche Finder](https://satoshishelf.github.io/p/pricing-niche-finder.html) — An interactive tool to score your niche and price your product. ($4.99)
 - [The Email List Starter](https://satoshishelf.github.io/p/email-list-starter.html) — Turn visitors into an audience you own — for free. ($6.99)
@@ -81,4 +81,4 @@
 - GitHub: https://github.com/SatoshiShelf
 - Telegram: https://t.me/xsaifsaifx
 
-Last updated: 2026-10-29
+Last updated: 2026-10-31

@@ -167,14 +167,14 @@ window.PRODUCTS = [
   {
     "id": "ai-prompt-vault",
     "category": "Tech-Code-AI",
-    "name": "300 AI Prompts for Freelancers & Creators",
+    "name": "80 AI Prompts for Freelancers & Creators",
     "tagline": "Copy-paste prompts that turn any AI into your assistant.",
     "priceUsd": 4.99,
     "emoji": "\ud83e\udde0",
     "file": "products/ai-prompt-vault.html",
-    "summary": "Three hundred concrete, usable prompts across research, offers, copywriting, content, client comms, productivity and learning \u2014 plus a prompt-engineering cheatsheet.",
+    "summary": "Eighty concrete, usable prompts across research, offers, copywriting, content, client comms, productivity and learning \u2014 plus a prompt-engineering cheatsheet.",
     "bullets": [
-      "300 ready-to-use prompts",
+      "80 ready-to-use prompts",
       "8 organised categories",
       "Copywriting + content packs",
       "Client communication prompts",
