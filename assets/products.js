@@ -3062,5 +3062,157 @@ window.PRODUCTS = [
       "Multiple invoices stored offline in your browser",
       "CSV export and JSON backup, no account required"
     ]
+  },
+  {
+    "id": "crypto-tax-tracker",
+    "category": "Crypto-Web3",
+    "name": "Crypto Tax & Cost-Basis Tracker",
+    "tagline": "Turn your trades into FIFO gains by tax year.",
+    "priceUsd": 13.99,
+    "emoji": "\ud83e\uddfe",
+    "format": "HTML app",
+    "file": "products/Crypto-Tax-Tracker.html",
+    "summary": "A private, offline organizer for crypto trades. Log or import buys and sells, match every sell to its buy lots with FIFO cost basis, see realized gains by tax year, and export CSV or JSON for your accountant. No exchange login and no data leaves the browser.",
+    "bullets": [
+      "Manual entry and CSV import",
+      "FIFO cost basis with fees included",
+      "Realized gains by tax year",
+      "Short-term vs long-term split",
+      "CSV, JSON and print exports",
+      "Runs offline, data stays local"
+    ]
+  },
+  {
+    "id": "freelancer-tax-planner",
+    "category": "Freelancing-Remote",
+    "name": "Freelancer Tax Set-Aside Planner",
+    "tagline": "Know what to set aside before the tax bill lands.",
+    "priceUsd": 9.99,
+    "emoji": "\ud83e\uddee",
+    "format": "HTML app",
+    "file": "products/Freelancer-Tax-Planner.html",
+    "summary": "A simple planner for freelancers and solo operators. Enter your income, expenses and your own tax rates, then see the amount to set aside, split it across quarterly dates, and log each payment. Includes CSV, JSON and print exports.",
+    "bullets": [
+      "Set your own income and self-employment rates",
+      "Set-aside, take-home and effective rate",
+      "Quarterly schedule with editable dates",
+      "Payment log and remaining balance",
+      "CSV, JSON and print exports",
+      "Works offline, data stays local"
+    ]
+  },
+  {
+    "id": "etsy-listing-seo",
+    "category": "Ecommerce",
+    "name": "Etsy & Digital Product Listing SEO Kit",
+    "tagline": "Write titles and tags that fit the limits and get found.",
+    "priceUsd": 8.99,
+    "emoji": "\ud83c\udff7",
+    "format": "HTML app",
+    "file": "products/Etsy-Listing-SEO.html",
+    "summary": "Turn a short product brief into an Etsy-ready title, 13 tags, a description draft and image alt text. Character limits are checked as you type, a listing score flags gaps, and you can save versions to compare. No keyword service or account required.",
+    "bullets": [
+      "Title builder with a 140-character check",
+      "13 tags, each checked against the 20-character limit",
+      "Description and alt-text drafts",
+      "Listing score with practical fixes",
+      "Save and compare listing versions",
+      "CSV, JSON and print exports"
+    ]
+  },
+  {
+    "id": "subscription-audit",
+    "category": "Money-Finance",
+    "name": "Subscription Audit & Bill Negotiation Kit",
+    "tagline": "Find the subscriptions quietly draining your account.",
+    "priceUsd": 7.99,
+    "emoji": "\ud83d\udcb3",
+    "format": "HTML app",
+    "file": "products/Subscription-Audit.html",
+    "summary": "List every subscription, see its true annual cost, and flag what renews in the next 30 days. Mark each one keep, review or cancel, work through a cancellation checklist, and copy scripts for negotiating internet, phone, insurance, gym or software bills.",
+    "bullets": [
+      "Monthly and true annual cost",
+      "Next-30-days renewal list",
+      "Keep / review / cancel decisions",
+      "Cancellation checklist that saves",
+      "Four copyable negotiation scripts",
+      "CSV, JSON and print exports"
+    ]
+  },
+  {
+    "id": "digital-nomad-kit",
+    "category": "Travel-Lifestyle",
+    "name": "Digital Nomad Setup Kit",
+    "tagline": "The checklists, numbers and questions before you move abroad.",
+    "priceUsd": 12.99,
+    "emoji": "\ud83c\udf0d",
+    "format": "HTML app",
+    "file": "products/Digital-Nomad-Kit.html",
+    "summary": "A planning kit for working abroad: saved checklists for visas, money, tax residency, insurance, housing and work, a monthly budget with a buffer, a country comparison table you fill in yourself, and a notes page. Includes CSV, JSON and print exports.",
+    "bullets": [
+      "45-item setup checklist across 7 sections",
+      "Monthly budget with buffer and runway",
+      "Country comparison table with your own notes",
+      "Saved notes and progress",
+      "CSV, JSON and print exports",
+      "Planning tool, not legal or tax advice"
+    ]
+  },
+  {
+    "id": "bitcoin-self-custody",
+    "category": "Crypto-Web3",
+    "name": "Bitcoin Self-Custody & Inheritance Kit",
+    "tagline": "Set up cold storage, verify backups, and leave clear instructions.",
+    "priceUsd": 16.99,
+    "emoji": "\ud83d\udd10",
+    "format": "HTML app",
+    "file": "products/Bitcoin-Self-Custody.html",
+    "summary": "A practical kit for holding your own Bitcoin and leaving a plan behind. Work through an ordered setup checklist, record wallets and backup locations without ever storing seed words, build a printable inheritance letter, and keep a yearly audit log.",
+    "bullets": [
+      "Ordered self-custody checklist",
+      "Wallet and backup inventory",
+      "Printable inheritance letter builder",
+      "Yearly audit log",
+      "Never asks for seed words",
+      "CSV, JSON and print exports"
+    ]
+  },
+  {
+    "id": "wedding-speeches",
+    "category": "Weddings-Events",
+    "name": "Wedding Speech Templates",
+    "tagline": "Ten speeches that sound like you, not a greeting card.",
+    "priceUsd": 8.99,
+    "emoji": "\ud83c\udfa4",
+    "format": "Word \u00b7 .docx",
+    "file": "products/Wedding-Speech-Templates.docx",
+    "summary": "Ten editable wedding speeches for the best man, maid of honour, parents, siblings, friends, bride and groom, plus a short rehearsal-dinner toast. Each template includes a five-part structure, timing guidance, fill-in lines and a make-it-yours checklist.",
+    "bullets": [
+      "10 full templates plus a short toast",
+      "Best man, maid of honour, parents, siblings, friends",
+      "Five-part speech map with timing",
+      "Fill-in brackets and worked openings",
+      "Do-and-do-not table",
+      "Final read-through checklist"
+    ]
+  },
+  {
+    "id": "substitute-teacher-kit",
+    "category": "Teachers-Students",
+    "name": "Substitute Teacher Emergency Kit",
+    "tagline": "A full day of plans when you cannot be in the classroom.",
+    "priceUsd": 9.99,
+    "emoji": "\ud83c\udf4e",
+    "format": "Word \u00b7 .docx",
+    "file": "products/Substitute-Teacher-Kit.docx",
+    "summary": "An editable substitute folder: welcome letter, class information, timetable, medical and safety notes, emergency lesson plans for K\u20132 through 9\u201312, fill-in activities, behaviour and incident logs, an end-of-day report, a seating chart and a preparation checklist.",
+    "bullets": [
+      "Welcome letter and class information sheets",
+      "Emergency plans for K\u20132, 3\u20135, 6\u20138 and 9\u201312",
+      "Five fill-in activities",
+      "Behaviour and incident log",
+      "End-of-day report form",
+      "Seating chart and prep checklist"
+    ]
   }
 ];

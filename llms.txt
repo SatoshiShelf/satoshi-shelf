@@ -3,7 +3,7 @@
 > Practical digital products paid in Bitcoin: spreadsheets, contracts, templates, scripts, tools and browser games. One-time purchase, instant download, no account required.
 
 - Store: https://satoshishelf.github.io/
-- All 179 products: https://satoshishelf.github.io/p/
+- All 187 products: https://satoshishelf.github.io/p/
 - Sitemap: https://satoshishelf.github.io/sitemap.xml
 - Feed: https://satoshishelf.github.io/feed.xml
 - Payments: Bitcoin on-chain; no account, no email, no card.
@@ -12,23 +12,23 @@
 - [Business Startup](https://satoshishelf.github.io/category-business-startup.html) — 23 products
 - [Career Jobs](https://satoshishelf.github.io/category-career-jobs.html) — 6 products
 - [Creative Design](https://satoshishelf.github.io/category-creative-design.html) — 5 products
-- [Crypto Web3](https://satoshishelf.github.io/category-crypto-web3.html) — 5 products
-- [Ecommerce](https://satoshishelf.github.io/category-ecommerce.html) — 4 products
+- [Crypto Web3](https://satoshishelf.github.io/category-crypto-web3.html) — 7 products
+- [Ecommerce](https://satoshishelf.github.io/category-ecommerce.html) — 5 products
 - [Education Study](https://satoshishelf.github.io/category-education-study.html) — 5 products
 - [Fitness Sports](https://satoshishelf.github.io/category-fitness-sports.html) — 7 products
 - [Food Recipes](https://satoshishelf.github.io/category-food-recipes.html) — 10 products
-- [Freelancing Remote](https://satoshishelf.github.io/category-freelancing-remote.html) — 8 products
+- [Freelancing Remote](https://satoshishelf.github.io/category-freelancing-remote.html) — 9 products
 - [Games Interactive](https://satoshishelf.github.io/category-games-interactive.html) — 26 products
 - [Health Wellness](https://satoshishelf.github.io/category-health-wellness.html) — 6 products
 - [Home DIY](https://satoshishelf.github.io/category-home-diy.html) — 3 products
 - [Kids Family](https://satoshishelf.github.io/category-kids-family.html) — 3 products
 - [Marketing Social](https://satoshishelf.github.io/category-marketing-social.html) — 11 products
-- [Money Finance](https://satoshishelf.github.io/category-money-finance.html) — 13 products
+- [Money Finance](https://satoshishelf.github.io/category-money-finance.html) — 14 products
 - [Productivity](https://satoshishelf.github.io/category-productivity.html) — 16 products
-- [Teachers Students](https://satoshishelf.github.io/category-teachers-students.html) — 10 products
+- [Teachers Students](https://satoshishelf.github.io/category-teachers-students.html) — 11 products
 - [Tech Code AI](https://satoshishelf.github.io/category-tech-code-ai.html) — 7 products
-- [Travel Lifestyle](https://satoshishelf.github.io/category-travel-lifestyle.html) — 5 products
-- [Weddings Events](https://satoshishelf.github.io/category-weddings-events.html) — 6 products
+- [Travel Lifestyle](https://satoshishelf.github.io/category-travel-lifestyle.html) — 6 products
+- [Weddings Events](https://satoshishelf.github.io/category-weddings-events.html) — 7 products
 
 ## Featured products
 - [The Zero-Budget Online Income Playbook](https://satoshishelf.github.io/p/playbook.html) — Turn a laptop and $0 into a real side income. ($8.99)
