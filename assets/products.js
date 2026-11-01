@@ -20,7 +20,7 @@ window.PRODUCTS = [
     "bullets": [
       "Pick a sellable niche fast",
       "Create a product in a weekend",
-      "Accept Bitcoin with no fees or middlemen",
+      "Accept Bitcoin directly, with no middlemen",
       "Where to find your first buyers",
       "Free hosting, free tools, zero budget"
     ]
@@ -3048,7 +3048,7 @@ window.PRODUCTS = [
     "id": "bitcoin-invoice-builder",
     "category": "Freelancing-Remote",
     "name": "Bitcoin Invoice Builder",
-    "tagline": "Invoice clients in BTC. No processor, no fees.",
+    "tagline": "Invoice clients in BTC. No processor, no account.",
     "priceUsd": 12.99,
     "emoji": "\ud83e\uddfe",
     "format": "HTML app",
